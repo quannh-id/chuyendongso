@@ -1,0 +1,36 @@
+/* Mặc định toàn bộ trang web là Dark Theme */
+:root {
+    --cds-color-dark-blue: #01081C;
+    --cds-color-light-blue: #0071E3;
+    --cds-color-red: #F1001D;
+
+    --bg-primary-color: #01081C;
+    --bg-secondary-color: rgba(255, 255, 255, 0.05);
+
+    --text-primary-color: #ffffff;
+    --text-secondary-color: rgba(255, 255, 255, 0.5);
+
+    --color-white-10: rgba(255, 255, 255, 0.1);
+    --color-white-15: rgba(255, 255, 255, 0.15);
+    --color-black-10: rgba(0, 0, 0, 0.1);
+    --color-black-15: rgba(0, 0, 0, 0.15);
+
+    --font-primary: 'IBM Plex Serif', serif;
+    --font-secondary: 'IBM Plex Sans', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+}
+
+/* Chỉ khi người dùng bật Light Theme mới ghi đè lại */
+.light-theme {
+
+    --bg-primary-color: #f1f1f1;
+    --bg-secondary-color: #fff;
+
+    --text-primary-color: #282522;
+    --text-secondary-color: rgba(0, 0, 0, 0.5);
+
+
+}
