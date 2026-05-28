@@ -185,11 +185,11 @@ a {
 /* Mặc định toàn bộ trang web là Dark Theme */
 :root {
   /* ── Brand Colors ── */
-  --cds-color-dark-blue: #01081C;
-  --cds-color-light-blue: #0071E3;
-  --cds-color-red: #F1001D;
+  --cds-color-dark-blue: #01081c;
+  --cds-color-light-blue: #0071e3;
+  --cds-color-red: #f1001d;
   /* ── Background ── */
-  --bg-primary-color: #01081C;
+  --bg-primary-color: #01081c;
   --bg-secondary-color: rgba(255, 255, 255, 0.05);
   /* ── Text ── */
   --text-primary-color: #ffffff;
@@ -201,13 +201,14 @@ a {
   --color-white-15: rgba(255, 255, 255, 0.15);
   --color-white-20: rgba(255, 255, 255, 0.2);
   --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-80: rgba(255, 255, 255, 0.8);
   --color-black-10: rgba(0, 0, 0, 0.1);
   --color-black-15: rgba(0, 0, 0, 0.15);
   --color-black-60: rgba(0, 0, 0, 0.6);
   --color-black-80: rgba(0, 0, 0, 0.8);
   /* ── Typography ── */
-  --font-primary: 'IBM Plex Serif', serif;
-  --font-secondary: 'IBM Plex Sans', sans-serif;
+  --font-primary: "IBM Plex Serif", serif;
+  --font-secondary: "IBM Plex Sans", sans-serif;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
@@ -235,7 +236,6 @@ a {
   --space-5xl: 100px;
   /* ── Layout ── */
   --container-width: 1260px;
-  --page-width: 1440px;
   /* ── Border Radius ── */
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -261,12 +261,39 @@ a {
   --z-above: 2;
   --z-base: 1;
   /* ── Gradients ── */
-  --gradient-hero-overlay: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
-  --gradient-stories: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.9) 100%);
-  --gradient-media: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
-  --gradient-media-overlay: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
-  --gradient-fade-right: linear-gradient(to left, var(--bg-primary-color) 0%, rgba(1,8,28,0) 100%);
-  --gradient-fade-left: linear-gradient(to right, var(--bg-primary-color) 0%, rgba(1,8,28,0) 100%);
+  --gradient-hero-overlay: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  --gradient-stories: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  --gradient-media: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  --gradient-media-overlay: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  --gradient-fade-right: linear-gradient(
+    to left,
+    var(--bg-primary-color) 0%,
+    rgba(1, 8, 28, 0) 100%
+  );
+  --gradient-fade-left: linear-gradient(
+    to right,
+    var(--bg-primary-color) 0%,
+    rgba(1, 8, 28, 0) 100%
+  );
 }
 
 /* Chỉ khi người dùng bật Light Theme mới ghi đè lại */
@@ -326,7 +353,7 @@ img {
 }
 .site-header__top {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   max-width: var(--container-width);
   margin: 0 auto;
@@ -409,11 +436,14 @@ img {
   width: 30px;
   height: 30px;
   flex-shrink: 0;
+  background-color: var(--color-white-10);
+  border: 1px solid var(--color-white-15);
+  border-radius: 10px;
 }
 .site-nav__home-icon img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+  display: block;
+  width: 12px;
+  height: auto;
 }
 .site-nav__item {
   display: inline-flex;
@@ -441,18 +471,6 @@ img {
 }
 .site-nav__item:hover span {
   color: var(--cds-color-light-blue);
-}
-
-.section-container {
-  width: 100%;
-  max-width: var(--page-width);
-  margin: 0 auto;
-}
-.section-container .container {
-  width: 100%;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0;
 }
 
 .home-section {
@@ -549,6 +567,7 @@ img {
   background: var(--color-white-50);
   transition: width var(--transition-base), background var(--transition-base);
   cursor: pointer;
+  border: none;
 }
 .pagination-dots .dot--active {
   width: 24px;
@@ -640,7 +659,6 @@ img {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
 }
 .top-featured__slide-wrapper {
   position: relative;
@@ -716,6 +734,9 @@ img {
   background: var(--color-white-10);
   border-radius: 0 0 var(--radius-xl) var(--radius-xl);
 }
+.top-featured .pagination-dots {
+  margin-top: 15px;
+}
 .top-featured__recent {
   flex: 1;
   min-width: 0;
@@ -760,8 +781,7 @@ img {
   display: flex;
   gap: var(--space-lg);
   align-items: flex-start;
-  padding: var(--space-xl) 0;
-  border-bottom: var(--border-subtle-dashed);
+  margin-bottom: 20px;
 }
 .top-featured__news-item:first-child {
   padding-top: 0;
@@ -773,7 +793,6 @@ img {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 .top-featured__news-item .news-body {
   flex: 1;
@@ -995,7 +1014,7 @@ img {
   transition: color var(--transition-fast);
 }
 .spotlight-section__card-sm .card-title:hover {
-  color: var(--cds-color-light-blue);
+  color: var(--color-white-80);
 }
 .spotlight-section__card-sm .card-excerpt {
   font-family: var(--font-secondary);
@@ -1042,7 +1061,7 @@ img {
   transition: color var(--transition-fast);
 }
 .spotlight-section__card-lg .card-title:hover {
-  color: var(--cds-color-light-blue);
+  color: var(--color-white-80);
 }
 .spotlight-section__card-lg .card-excerpt {
   font-family: var(--font-secondary);
@@ -1069,9 +1088,11 @@ img {
   align-items: flex-start;
   justify-content: space-between;
 }
-.spotlight-section__pub-header .pub-link-icon {
-  height: 33px;
-  width: auto;
+.spotlight-section__pub-header .external-icon {
+  display: flex;
+  padding: 10px 18px;
+  background-color: var(--cds-color-light-blue);
+  border-radius: 15px;
 }
 .spotlight-section__pub-book {
   width: 300px;
@@ -1080,6 +1101,7 @@ img {
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-stack-1);
   overflow: hidden;
+  margin-bottom: 15px;
 }
 .spotlight-section__pub-book img {
   position: absolute;
@@ -1143,11 +1165,12 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
+  height: stretch;
 }
 .category-section__col-divider {
   width: 1px;
   align-self: stretch;
-  border-left: 1px dashed var(--color-black-10);
+  border-left: 1px dashed var(--color-white-10);
   flex-shrink: 0;
 }
 .category-section__col-header {
@@ -1171,6 +1194,14 @@ img {
   flex-shrink: 0;
   cursor: pointer;
   transition: transform var(--transition-fast);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cds-color-light-blue);
+  border-radius: 100px;
+}
+.category-section__col-header .col-link-icon img {
+  margin-left: 1px;
 }
 .category-section__col-header .col-link-icon:hover {
   transform: translateX(2px);
@@ -1179,11 +1210,13 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+  height: stretch;
 }
 .category-section__top-news {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  height: stretch;
 }
 .category-section__top-news .top-news-img {
   aspect-ratio: 160/100;
@@ -1217,7 +1250,7 @@ img {
   transition: color var(--transition-fast);
 }
 .category-section__top-news .top-news-title:hover {
-  color: var(--cds-color-light-blue);
+  color: var(--color-white-80);
 }
 .category-section__top-news .top-news-excerpt {
   font-family: var(--font-secondary);
@@ -1256,7 +1289,7 @@ img {
   transition: color var(--transition-fast);
 }
 .category-section__text-news .text-news-title:hover {
-  color: var(--cds-color-light-blue);
+  color: var(--color-white-80);
 }
 
 .profile-section {
@@ -1340,7 +1373,7 @@ img {
   transition: color var(--transition-fast);
 }
 .profile-section__related-item .related-title:hover {
-  color: var(--cds-color-light-blue);
+  color: var(--color-white-80);
 }
 .profile-section__photo {
   width: 820px;
@@ -1816,7 +1849,7 @@ img {
   transition: color var(--transition-fast);
 }
 .site-footer__links .footer-link:hover {
-  color: var(--cds-color-light-blue);
+  color: var(--color-white-80);
 }
 .site-footer__links .footer-link--sep {
   color: var(--text-secondary-color);

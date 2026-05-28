@@ -1,110 +1,135 @@
 /* Mặc định toàn bộ trang web là Dark Theme */
 :root {
-    /* ── Brand Colors ── */
-    --cds-color-dark-blue: #01081C;
-    --cds-color-light-blue: #0071E3;
-    --cds-color-red: #F1001D;
+  /* ── Brand Colors ── */
+  --cds-color-dark-blue: #01081c;
+  --cds-color-light-blue: #0071e3;
+  --cds-color-red: #f1001d;
 
-    /* ── Background ── */
-    --bg-primary-color: #01081C;
-    --bg-secondary-color: rgba(255, 255, 255, 0.05);
+  /* ── Background ── */
+  --bg-primary-color: #01081c;
+  --bg-secondary-color: rgba(255, 255, 255, 0.05);
 
-    /* ── Text ── */
-    --text-primary-color: #ffffff;
-    --text-secondary-color: rgba(255, 255, 255, 0.5);
-    --text-tertiary-color: rgba(255, 255, 255, 0.8);
+  /* ── Text ── */
+  --text-primary-color: #ffffff;
+  --text-secondary-color: rgba(255, 255, 255, 0.5);
+  --text-tertiary-color: rgba(255, 255, 255, 0.8);
 
-    /* ── Alpha Overlays ── */
-    --color-white-05: rgba(255, 255, 255, 0.05);
-    --color-white-10: rgba(255, 255, 255, 0.1);
-    --color-white-15: rgba(255, 255, 255, 0.15);
-    --color-white-20: rgba(255, 255, 255, 0.2);
-    --color-white-50: rgba(255, 255, 255, 0.5);
-    --color-black-10: rgba(0, 0, 0, 0.1);
-    --color-black-15: rgba(0, 0, 0, 0.15);
-    --color-black-60: rgba(0, 0, 0, 0.6);
-    --color-black-80: rgba(0, 0, 0, 0.8);
+  /* ── Alpha Overlays ── */
+  --color-white-05: rgba(255, 255, 255, 0.05);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-15: rgba(255, 255, 255, 0.15);
+  --color-white-20: rgba(255, 255, 255, 0.2);
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-black-10: rgba(0, 0, 0, 0.1);
+  --color-black-15: rgba(0, 0, 0, 0.15);
+  --color-black-60: rgba(0, 0, 0, 0.6);
+  --color-black-80: rgba(0, 0, 0, 0.8);
 
-    /* ── Typography ── */
-    --font-primary: 'IBM Plex Serif', serif;
-    --font-secondary: 'IBM Plex Sans', sans-serif;
-    --font-weight-regular: 400;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+  /* ── Typography ── */
+  --font-primary: "IBM Plex Serif", serif;
+  --font-secondary: "IBM Plex Sans", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
-    /* ── Font Sizes ── */
-    --fs-xs: 12px;
-    --fs-sm: 13px;
-    --fs-base: 14px;
-    --fs-md: 16px;
-    --fs-lg: 18px;
-    --fs-xl: 20px;
-    --fs-2xl: 24px;
-    --fs-3xl: 30px;
-    --fs-4xl: 32px;
-    --fs-5xl: 40px;
-    --fs-6xl: 48px;
+  /* ── Font Sizes ── */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 20px;
+  --fs-2xl: 24px;
+  --fs-3xl: 30px;
+  --fs-4xl: 32px;
+  --fs-5xl: 40px;
+  --fs-6xl: 48px;
 
-    /* ── Spacing ── */
-    --space-xs: 8px;
-    --space-sm: 10px;
-    --space-md: 15px;
-    --space-lg: 20px;
-    --space-xl: 30px;
-    --space-2xl: 40px;
-    --space-3xl: 50px;
-    --space-4xl: 80px;
-    --space-5xl: 100px;
+  /* ── Spacing ── */
+  --space-xs: 8px;
+  --space-sm: 10px;
+  --space-md: 15px;
+  --space-lg: 20px;
+  --space-xl: 30px;
+  --space-2xl: 40px;
+  --space-3xl: 50px;
+  --space-4xl: 80px;
+  --space-5xl: 100px;
 
-    /* ── Layout ── */
-    --container-width: 1260px;
+  /* ── Layout ── */
+  --container-width: 1260px;
 
-    /* ── Border Radius ── */
-    --radius-sm: 4px;
-    --radius-md: 6px;
-    --radius-lg: 8px;
-    --radius-xl: 10px;
-    --radius-2xl: 12px;
-    --radius-pill: 9999px;
+  /* ── Border Radius ── */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-pill: 9999px;
 
-    /* ── Borders ── */
-    --border-subtle: 1px solid var(--color-white-10);
-    --border-subtle-dashed: 1px dashed var(--color-white-10);
+  /* ── Borders ── */
+  --border-subtle: 1px solid var(--color-white-10);
+  --border-subtle-dashed: 1px dashed var(--color-white-10);
 
-    /* ── Shadows ── */
-    --shadow-card: 0 5px 10px rgba(0, 0, 0, 0.05);
-    --shadow-stack-1: 0 8px 0 0 var(--color-white-05);
-    --shadow-header: 0 10px 20px rgba(0, 0, 0, 0.15);
+  /* ── Shadows ── */
+  --shadow-card: 0 5px 10px rgba(0, 0, 0, 0.05);
+  --shadow-stack-1: 0 8px 0 0 var(--color-white-05);
+  --shadow-header: 0 10px 20px rgba(0, 0, 0, 0.15);
 
-    /* ── Transitions ── */
-    --transition-fast: 0.15s ease;
-    --transition-base: 0.25s ease;
-    --transition-slow: 0.4s ease;
+  /* ── Transitions ── */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
 
-    /* ── Z-index ── */
-    --z-header: 100;
-    --z-nav: 90;
-    --z-overlay: 10;
-    --z-above: 2;
-    --z-base: 1;
+  /* ── Z-index ── */
+  --z-header: 100;
+  --z-nav: 90;
+  --z-overlay: 10;
+  --z-above: 2;
+  --z-base: 1;
 
-    /* ── Gradients ── */
-    --gradient-hero-overlay: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
-    --gradient-stories: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.9) 100%);
-    --gradient-media: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-    --gradient-media-overlay: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
-    --gradient-fade-right: linear-gradient(to left, var(--bg-primary-color) 0%, rgba(1, 8, 28, 0) 100%);
-    --gradient-fade-left: linear-gradient(to right, var(--bg-primary-color) 0%, rgba(1, 8, 28, 0) 100%);
+  /* ── Gradients ── */
+  --gradient-hero-overlay: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  --gradient-stories: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  --gradient-media: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  --gradient-media-overlay: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  --gradient-fade-right: linear-gradient(
+    to left,
+    var(--bg-primary-color) 0%,
+    rgba(1, 8, 28, 0) 100%
+  );
+  --gradient-fade-left: linear-gradient(
+    to right,
+    var(--bg-primary-color) 0%,
+    rgba(1, 8, 28, 0) 100%
+  );
 }
 
 /* Chỉ khi người dùng bật Light Theme mới ghi đè lại */
 .light-theme {
+  --bg-primary-color: #f1f1f1;
+  --bg-secondary-color: #fff;
 
-    --bg-primary-color: #f1f1f1;
-    --bg-secondary-color: #fff;
-
-    --text-primary-color: #282522;
-    --text-secondary-color: rgba(0, 0, 0, 0.5);
-
-
+  --text-primary-color: #282522;
+  --text-secondary-color: rgba(0, 0, 0, 0.5);
 }
