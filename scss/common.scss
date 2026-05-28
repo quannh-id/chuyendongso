@@ -1,0 +1,210 @@
+// common.scss – Shared layout and body base styles
+// All values reference variables defined in theme.scss
+
+// ---------------------------------------------------------------------------
+// Box-sizing reset
+// ---------------------------------------------------------------------------
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+// ---------------------------------------------------------------------------
+// Base body
+// ---------------------------------------------------------------------------
+body {
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+}
+
+// ---------------------------------------------------------------------------
+// Images: non-draggable by default
+// ---------------------------------------------------------------------------
+img {
+    max-width: 100%;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+// ---------------------------------------------------------------------------
+// Accessible focus ring
+// ---------------------------------------------------------------------------
+:focus-visible {
+    outline: 2px solid var(--cds-color-light-blue);
+    outline-offset: 2px;
+}
+
+// ---------------------------------------------------------------------------
+// Scrollbar customisation (webkit)
+// ---------------------------------------------------------------------------
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-white-15);
+    border-radius: var(--radius-pill);
+
+    &:hover {
+        background: var(--color-white-20);
+    }
+}
+
+
+// ---------------------------------------------------------------------------
+// 1. HEADER – sticky top bar with logo + brand
+// ---------------------------------------------------------------------------
+
+.site-header {
+    z-index: var(--z-header);
+    background: var(--bg-primary-color);
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 20px 0 10px;
+
+        .partner-logo {
+            height: 42.5px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .cds-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+
+            .btn-search {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+
+                img {
+                    width: 22px;
+                    height: auto;
+                }
+            }
+
+            .btn-login {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 28px;
+                background: var(--cds-color-light-blue);
+                border: none;
+                border-radius: 980px;
+                color: var(--text-primary-color);
+                font-family: var(--font-secondary);
+                font-weight: var(--font-weight-semibold);
+                font-size: var(--fs-md);
+                letter-spacing: -0.15px;
+                cursor: pointer;
+                transition: opacity var(--transition-fast);
+
+                &:hover {
+                    opacity: 0.85;
+                }
+            }
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// 2. NAV MENU – sticky sub-navigation bar
+// ---------------------------------------------------------------------------
+
+.site-nav {
+
+    z-index: var(--z-nav);
+    background: var(--bg-primary-color);
+    border-bottom: 1px solid var(--color-white-15);
+    box-shadow: var(--shadow-header);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 34px;
+        padding: 20px 0 21px;
+        max-width: var(--page-width);
+        margin: 0 auto;
+        overflow-x: auto;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__home-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+
+        img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+    }
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+        cursor: pointer;
+        flex-shrink: 0;
+        text-decoration: none;
+
+        span {
+            font-family: var(--font-primary);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--fs-md);
+            color: var(--text-primary-color);
+            letter-spacing: -0.15px;
+            line-height: 24px;
+            transition: color var(--transition-fast);
+        }
+
+        .dropdown-arrow {
+            width: 7px;
+            height: 4px;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        &:hover span {
+            color: var(--cds-color-light-blue);
+        }
+    }
+}
