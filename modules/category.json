@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "title": "Chính sách",
+        "children": [
+            {
+                "id": 11,
+                "title": "Chiến lược, Nghị quyết"
+            },
+            {
+                "id": 12,
+                "title": "Chính quyền số"
+            },
+            {
+                "id": 13,
+                "title": "Kinh tế & Xã hội số"
+            },
+            {
+                "id": 14,
+                "title": "Phân tích & Phản hồi"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Khoa học - công nghệ",
+        "children": [
+            {
+                "id": 21,
+                "title": "Hạ tầng số"
+            },
+            {
+                "id": 22,
+                "title": "Nền tảng số"
+            },
+            {
+                "id": 23,
+                "title": "AI & Automation"
+            },
+            {
+                "id": 24,
+                "title": "Deep Tech"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Đổi mới sáng tạo",
+        "children": [
+            {
+                "id": 31,
+                "title": "Doanh nghiệp đổi mới"
+            },
+            {
+                "id": 32,
+                "title": "Sản phẩm mới"
+            },
+            {
+                "id": 33,
+                "title": "Startup Việt"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "An ninh mạng",
+        "children": [
+            {
+                "id": 41,
+                "title": "Chủ quyền số"
+            },
+            {
+                "id": 42,
+                "title": "An toàn thông tin"
+            },
+            {
+                "id": 43,
+                "title": "Ý kiến chuyên gia"
+            },
+            {
+                "id": 44,
+                "title": "Hỏi đáp"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Nhân vật"
+    },
+    {
+        "id": 6,
+        "title": "Tiêu điểm"
+    },
+    {
+        "id": 7,
+        "title": "Multimedia",
+        "children": [
+            {
+                "id": 71,
+                "title": "Video"
+            },
+            {
+                "id": 72,
+                "title": "Podcast"
+            },
+            {
+                "id": 73,
+                "title": "Infographic"
+            },
+            {
+                "id": 74,
+                "title": "Chùm ảnh"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Global",
+        "children": [
+            {
+                "id": 81,
+                "title": "Kinh nghiệm tham chiếu"
+            },
+            {
+                "id": 82,
+                "title": "Tri thức Việt"
+            },
+            {
+                "id": 83,
+                "title": "Big tech"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Newswire"
+    }
+]

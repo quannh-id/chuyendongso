@@ -143,6 +143,7 @@
   // with updated spaceBetween on resize.
   // ---------------------------------------------------------------------------
   var policySwiperInstance = null;
+  var pubSwiperInstance = null;
 
   function getPolicyConfig() {
     return {
@@ -173,19 +174,91 @@
       resizeObserver: true,
 
       on: {
-        // `this` inside updatePolicyDots is the Swiper instance
-        slideChange: updatePolicyDots,
-        afterInit: updatePolicyDots,
-        transitionEnd: updatePolicyDots
+        // `this` inside each handler is the Swiper instance
+        slideChange: function () {
+          updatePolicyScrollbar.call(this);
+          updatePolicyNav.call(this);
+        },
+        afterInit: function () {
+          updatePolicyScrollbar.call(this);
+          updatePolicyNav.call(this);
+        },
+        transitionEnd: function () {
+          updatePolicyScrollbar.call(this);
+          updatePolicyNav.call(this);
+        },
+        reachBeginning: updatePolicyNav,
+        reachEnd: updatePolicyNav,
+        fromEdge: updatePolicyNav
       }
     };
   }
 
-  function updatePolicyDots() {
+  function updatePolicyScrollbar() {
     // `this` is the Swiper instance when called as a Swiper event handler
-    var paginationEl = document.getElementById("policy-pagination");
-    if (!paginationEl || !this || typeof this.activeIndex === "undefined") return;
-    setActiveDot(paginationEl, this.activeIndex, false);
+    var thumb = document.getElementById("policy-scrollbar-thumb");
+    var track = document.getElementById("policy-pagination");
+    if (!thumb || !track || !this || typeof this.progress === "undefined") return;
+
+    var total = this.slides ? this.slides.length : 0;
+    if (total <= 0) return;
+
+    var trackWidth = track.offsetWidth;
+
+    // Thumb width represents the visible "viewport" fraction of all slides.
+    // With slidesPerView:"auto" we use the Swiper-calculated visibleSlides count,
+    // falling back to a reasonable estimate if not available.
+    var visibleCount =
+      this.visibleSlides && this.visibleSlides.length > 0
+        ? this.visibleSlides.length
+        : 1;
+    var thumbWidth = Math.max(
+      Math.round((visibleCount / total) * trackWidth),
+      20 // minimum thumb size so it's always visible
+    );
+
+    // this.progress goes from 0.0 (beginning) to 1.0 (end) — correct regardless
+    // of slidesPerView or how many slides are currently visible.
+    var maxOffset = trackWidth - thumbWidth;
+    var offset = Math.round(this.progress * maxOffset);
+
+    thumb.style.width = thumbWidth + "px";
+    thumb.style.transform = "translateX(" + offset + "px)";
+
+    // Update ARIA
+    var pct = Math.round(this.progress * 100);
+    track.setAttribute("aria-valuenow", pct);
+  }
+
+  // Toggle .hidden on .policy-section__nav wrappers based on swiper edge state.
+  // `this` is the Swiper instance when called as a Swiper event handler.
+  function updatePolicyNav() {
+    if (!this || typeof this.isBeginning === "undefined") return;
+
+    var prevNav = document.querySelector(".policy-section__nav--prev");
+    var nextNav = document.querySelector(".policy-section__nav--next");
+
+    if (prevNav) {
+      var prevBtn = prevNav.querySelector(".nav-btn");
+      if (this.isBeginning) {
+        prevNav.classList.add("hidden");
+        if (prevBtn) prevBtn.disabled = true;
+      } else {
+        prevNav.classList.remove("hidden");
+        if (prevBtn) prevBtn.disabled = false;
+      }
+    }
+
+    if (nextNav) {
+      var nextBtn = nextNav.querySelector(".nav-btn");
+      if (this.isEnd) {
+        nextNav.classList.add("hidden");
+        if (nextBtn) nextBtn.disabled = true;
+      } else {
+        nextNav.classList.remove("hidden");
+        if (nextBtn) nextBtn.disabled = false;
+      }
+    }
   }
 
   function initPolicySwiper() {
@@ -250,29 +323,227 @@
   }
 
   // ---------------------------------------------------------------------------
-  // Module: Social Hub – cosmetic pagination only
+  // Module: Social Swiper (#social-swiper) – dots pagination
   // ---------------------------------------------------------------------------
-  function initSocialPagination() {
-    var paginationEl = document.getElementById("social-pagination");
-    if (!paginationEl) return;
+  var socialSwiperInstance = null;
 
-    paginationEl.querySelectorAll(".dot").forEach(function (dot, i) {
-      dot.addEventListener("click", function () {
-        setActiveDot(paginationEl, i, false);
-      });
+  function initSocialSwiper() {
+    var el = document.getElementById("social-swiper");
+    if (!el) return;
+
+    if (socialSwiperInstance && !socialSwiperInstance.destroyed) {
+      socialSwiperInstance.destroy(true, true);
+      socialSwiperInstance = null;
+    }
+
+    var isMobile = window.innerWidth < MOBILE_BP;
+
+    socialSwiperInstance = new Swiper(el, {
+      slidesPerView: isMobile ? 1.15 : 4,
+      spaceBetween: 16,
+      loop: false,
+      grabCursor: true,
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+      a11y: {
+        enabled: true,
+        prevSlideMessage: "Video tr\u01b0\u1edbc",
+        nextSlideMessage: "Video ti\u1ebfp theo"
+      },
+      on: {
+        afterInit: function () {
+          var paginationEl = document.getElementById("social-pagination");
+          if (paginationEl) setActiveDot(paginationEl, this.activeIndex, false);
+        },
+        slideChange: function () {
+          var paginationEl = document.getElementById("social-pagination");
+          if (paginationEl) setActiveDot(paginationEl, this.activeIndex, false);
+        }
+      }
     });
 
-    setActiveDot(paginationEl, 0, false);
+    // Wire dots to slideTo
+    var paginationEl = document.getElementById("social-pagination");
+    if (paginationEl) {
+      paginationEl.querySelectorAll(".dot").forEach(function (dot, i) {
+        dot.addEventListener("click", function () {
+          socialSwiperInstance.slideTo(i);
+        });
+      });
+    }
   }
 
   // ---------------------------------------------------------------------------
-  // Module: Gallery nav – cosmetic prev/next (no swiper needed here)
+  // Module: Publication Swiper (#pub-swiper) – fraction pagination
   // ---------------------------------------------------------------------------
-  function initGalleryNav() {
+  function updatePubFraction() {
+    // `this` is the Swiper instance
+    var currentEl = document.getElementById("pub-current");
+    var totalEl = document.getElementById("pub-total");
+    var counterEl = document.getElementById("pub-counter");
+    if (!currentEl || !totalEl || !this) return;
+
+    var current = (this.realIndex !== undefined ? this.realIndex : this.activeIndex) + 1;
+    var total = this.slides ? this.slides.length : 0;
+
+    currentEl.textContent = current;
+    totalEl.textContent = " / " + total;
+
+    if (counterEl) {
+      counterEl.setAttribute("aria-label", "Trang " + current + " trên " + total);
+    }
+  }
+
+  function initPubSwiper() {
+    var el = document.getElementById("pub-swiper");
+    if (!el) return;
+
+    if (pubSwiperInstance && !pubSwiperInstance.destroyed) {
+      pubSwiperInstance.destroy(true, true);
+      pubSwiperInstance = null;
+    }
+
+    pubSwiperInstance = new Swiper(el, {
+      slidesPerView: 1,
+      loop: false,
+      effect: "cube",
+      speed: 400,
+      grabCursor: true,
+      a11y: {
+        enabled: true,
+        prevSlideMessage: "Ấn phẩm trước",
+        nextSlideMessage: "Ấn phẩm tiếp theo"
+      },
+      on: {
+        afterInit: function () {
+          updatePubFraction.call(this);
+        },
+        slideChange: function () {
+          updatePubFraction.call(this);
+        }
+      }
+    });
+
+    // Wire custom prev/next buttons
+    var prevBtn = document.getElementById("pub-prev");
+    var nextBtn = document.getElementById("pub-next");
+
+    if (prevBtn) {
+      var prevClone = prevBtn.cloneNode(true);
+      prevBtn.parentNode.replaceChild(prevClone, prevBtn);
+      prevClone.addEventListener("click", function () {
+        pubSwiperInstance.slidePrev();
+      });
+    }
+
+    if (nextBtn) {
+      var nextClone = nextBtn.cloneNode(true);
+      nextBtn.parentNode.replaceChild(nextClone, nextBtn);
+      nextClone.addEventListener("click", function () {
+        pubSwiperInstance.slideNext();
+      });
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Module: Video Swiper (#video-swiper) – dots pagination (white variant)
+  // ---------------------------------------------------------------------------
+  var videoSwiperInstance = null;
+
+  function initVideoSwiper() {
+    var el = document.getElementById("video-swiper");
+    if (!el) return;
+
+    if (videoSwiperInstance && !videoSwiperInstance.destroyed) {
+      videoSwiperInstance.destroy(true, true);
+      videoSwiperInstance = null;
+    }
+
+    videoSwiperInstance = new Swiper(el, {
+      slidesPerView: 1,
+      loop: false,
+      speed: 600,
+      grabCursor: true,
+      autoplay: { delay: 5000, disableOnInteraction: true },
+      a11y: {
+        enabled: true,
+        prevSlideMessage: "Video tr\u01b0\u1edbc",
+        nextSlideMessage: "Video ti\u1ebfp theo"
+      },
+      on: {
+        afterInit: function () {
+          var paginationEl = document.getElementById("video-pagination");
+          if (paginationEl) setActiveDot(paginationEl, this.activeIndex, true);
+        },
+        slideChange: function () {
+          var paginationEl = document.getElementById("video-pagination");
+          if (paginationEl) setActiveDot(paginationEl, this.activeIndex, true);
+        }
+      }
+    });
+
+    // Wire dots to slideTo
+    var paginationEl = document.getElementById("video-pagination");
+    if (paginationEl) {
+      paginationEl.querySelectorAll(".dot").forEach(function (dot, i) {
+        dot.addEventListener("click", function () {
+          videoSwiperInstance.slideTo(i);
+        });
+      });
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Module: Gallery Swiper (#gallery-swiper)
+  // ---------------------------------------------------------------------------
+  var gallerySwiperInstance = null;
+
+  function initGallerySwiper() {
+    var el = document.getElementById("gallery-swiper");
+    if (!el) return;
+
+    if (gallerySwiperInstance && !gallerySwiperInstance.destroyed) {
+      gallerySwiperInstance.destroy(true, true);
+      gallerySwiperInstance = null;
+    }
+
+    var isMobile = window.innerWidth < MOBILE_BP;
+
+    gallerySwiperInstance = new Swiper(el, {
+      slidesPerView: isMobile ? 1.2 : 3,
+      spaceBetween: 20,
+      loop: false,
+      grabCursor: true,
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+      a11y: {
+        enabled: true,
+        prevSlideMessage: "Ch\u00f9m \u1ea3nh tr\u01b0\u1edbc",
+        nextSlideMessage: "Ch\u00f9m \u1ea3nh ti\u1ebfp theo"
+      }
+    });
+
+    // Wire custom prev/next buttons
     var prevBtn = document.getElementById("gallery-prev");
     var nextBtn = document.getElementById("gallery-next");
-    // Gallery is a static 3-up row; buttons are decorative for now.
-    // Wire to a Swiper instance here if the gallery is later converted.
+
+    if (prevBtn) {
+      var prevClone = prevBtn.cloneNode(true);
+      prevBtn.parentNode.replaceChild(prevClone, prevBtn);
+      prevClone.addEventListener("click", function () {
+        gallerySwiperInstance.slidePrev();
+      });
+    }
+
+    if (nextBtn) {
+      var nextClone = nextBtn.cloneNode(true);
+      nextBtn.parentNode.replaceChild(nextClone, nextBtn);
+      nextClone.addEventListener("click", function () {
+        gallerySwiperInstance.slideNext();
+      });
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -294,6 +565,7 @@
         // Re-create on breakpoint crossing
         initHeroSwiper();
         initPolicySwiper();
+        initGallerySwiper();
       } else {
         // Same breakpoint – just update existing instances
         if (heroSwiperInstance && !heroSwiperInstance.destroyed) {
@@ -312,9 +584,10 @@
   document.addEventListener("DOMContentLoaded", function () {
     initHeroSwiper();
     initPolicySwiper();
-    initVideoPagination();
-    initSocialPagination();
-    initGalleryNav();
+    initPubSwiper();
+    initVideoSwiper();
+    initSocialSwiper();
+    initGallerySwiper();
 
     window.addEventListener("resize", onWindowResize);
   });
