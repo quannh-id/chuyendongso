@@ -45,33 +45,15 @@
         }
     }
 
-    .multimedia-section__gallery-pagination {
-        .nav-btn {
-            background-color: var(--color-white-100);
-            border-color: var(--color-black-10);
-
-            img {
-                filter: invert(0.5);
-            }
-
-            &:hover {
-                background-color: var(--color-white-100);
-                border-color: var(--color-black-10);
-                box-shadow: 0 5px 10px var(--color-black-15);
-            }
-        }
-
-        .pag-label {
-            background-color: var(--color-white-100);
-        }
-    }
-
     .social-section {
         .pagination-dots {
             .dot {
                 background-color: var(--color-black-10);
 
-
+                &--active {
+                    width: 24px;
+                    background-color: var(--cds-color-light-blue);
+                }
             }
         }
     }
