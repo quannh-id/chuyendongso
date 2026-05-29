@@ -27,8 +27,7 @@
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
     font-size: var(--fs-4xl);
-    line-height: 1;
-    letter-spacing: -0.28px;
+    line-height: 1;    
     color: var(--text-primary-color);
     white-space: nowrap;
   }
@@ -51,8 +50,7 @@
   color: var(--text-primary-color);
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--fs-base);
-  letter-spacing: -0.15px;
+  font-size: var(--fs-base);  
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
@@ -286,8 +284,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: var(--fs-5xl);
-      color: var(--color-white-100);
-      letter-spacing: -1.04px;
+      color: var(--color-white-100);      
       line-height: 1.2;
     }
 
@@ -295,8 +292,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-regular);
       font-size: var(--fs-lg);
-      color: rgba(255, 255, 255, 0.8);
-      letter-spacing: -0.18px;
+      color: rgba(255, 255, 255, 0.8);      
       line-height: 1.7;
     }
   }
@@ -417,8 +413,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: var(--fs-lg);
-      color: var(--text-primary-color);
-      letter-spacing: -0.18px;
+      color: var(--text-primary-color);      
       line-height: 1.45;
       display: -webkit-box;
       -webkit-line-clamp: 4;
@@ -509,8 +504,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: var(--fs-xl);
-      color: var(--color-white-100);
-      letter-spacing: -0.68px;
+      color: var(--color-white-100);      
       line-height: 1.5;
       transition: opacity var(--transition-fast);
     }
@@ -706,8 +700,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: var(--fs-xl);
-      color: var(--text-primary-color);
-      letter-spacing: -1.04px;
+      color: var(--text-primary-color);      
       line-height: 1.4;
       text-decoration: none;
       cursor: pointer;
@@ -761,8 +754,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: var(--fs-2xl);
-      color: var(--text-primary-color);
-      letter-spacing: -1.04px;
+      color: var(--text-primary-color);      
       line-height: 1.4;
       text-decoration: none;
       cursor: pointer;
@@ -938,8 +930,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: var(--fs-2xl);
-      color: var(--text-primary-color);
-      letter-spacing: -0.28px;
+      color: var(--text-primary-color);      
       text-transform: uppercase;
       line-height: 1.33;
     }
@@ -1007,8 +998,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: 23px;
-      color: var(--text-primary-color);
-      letter-spacing: -1.04px;
+      color: var(--text-primary-color);      
       line-height: 1.5;
       text-decoration: none;
       cursor: pointer;
@@ -1047,8 +1037,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-semibold);
       font-size: var(--fs-lg);
-      color: var(--text-primary-color);
-      letter-spacing: -0.72px;
+      color: var(--text-primary-color);      
       line-height: 1.4;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -1100,8 +1089,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: var(--fs-4xl);
-      color: var(--text-primary-color);
-      letter-spacing: -1.04px;
+      color: var(--text-primary-color);      
       line-height: 1.4;
 
       &:hover {
@@ -1159,8 +1147,7 @@
       font-weight: var(--font-weight-semibold);
       font-size: var(--fs-md);
       color: var(--text-primary-color);
-      opacity: 0.9;
-      letter-spacing: -0.31px;
+      opacity: 0.9;      
       line-height: 1.5;
       text-decoration: none;
       cursor: pointer;
@@ -1217,8 +1204,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-bold);
       font-size: var(--fs-6xl);
-      color: var(--color-white-100);
-      letter-spacing: -0.28px;
+      color: var(--color-white-100);      
       line-height: 1;
       white-space: nowrap;
     }
@@ -1353,8 +1339,7 @@
         font-family: var(--font-primary);
         font-weight: var(--font-weight-bold);
         font-size: var(--fs-3xl);
-        color: var(--color-white-100);
-        letter-spacing: -0.4px;
+        color: var(--color-white-100);        
         line-height: 1.3;
       }
     }
@@ -1444,8 +1429,7 @@
         font-family: var(--font-primary);
         font-weight: var(--font-weight-bold);
         font-size: 20.16px;
-        color: var(--color-white-100);
-        letter-spacing: -0.4px;
+        color: var(--color-white-100);        
         line-height: 1.5;
       }
     }
@@ -1513,8 +1497,7 @@
           font-family: var(--font-primary);
           font-weight: var(--font-weight-bold);
           font-size: 20.16px;
-          color: var(--color-white-100);
-          letter-spacing: -0.4px;
+          color: var(--color-white-100);          
           line-height: 1.5;
         }
       }

@@ -239,7 +239,6 @@ img {
         font-family: var(--font-secondary);
         font-weight: var(--font-weight-semibold);
         font-size: var(--fs-md);
-        letter-spacing: -0.15px;
         cursor: pointer;
         transition: opacity var(--transition-fast);
 
@@ -584,7 +583,6 @@ img {
       font-weight: var(--font-weight-semibold);
       font-size: var(--fs-md);
       color: var(--color-white-100);
-      letter-spacing: -0.15px;
       line-height: 24px;
       transition: color var(--transition-fast);
     }
@@ -659,7 +657,6 @@ img {
       font-weight: var(--font-weight-semibold);
       font-size: 14px;
       color: #1d1d1f;
-      letter-spacing: -0.1525px;
       line-height: 24px;
       white-space: nowrap;
       transition: color var(--transition-fast);
