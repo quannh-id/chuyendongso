@@ -1201,6 +1201,8 @@
 
 .multimedia-section {
   padding: var(--space-5xl) 0;
+  position: relative;
+  z-index: 0;
 
   .container {
     max-width: var(--container-width);
@@ -1569,6 +1571,18 @@
       text-transform: uppercase;
       white-space: nowrap;
       height: 36px;
+    }
+  }
+
+  .multimedia-video-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }

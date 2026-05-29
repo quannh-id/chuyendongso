@@ -1997,6 +1997,8 @@ img {
 
 .multimedia-section {
   padding: var(--space-5xl) 0;
+  position: relative;
+  z-index: 0;
 }
 .multimedia-section .container {
   max-width: var(--container-width);
@@ -2307,6 +2309,16 @@ img {
   text-transform: uppercase;
   white-space: nowrap;
   height: 36px;
+}
+.multimedia-section .multimedia-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.multimedia-section .multimedia-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .social-section {
