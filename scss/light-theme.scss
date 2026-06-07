@@ -1,58 +1,56 @@
 .light-theme {
+  .top-featured__recent-border,
+  .spotlight-section__divider,
+  .category-section__col-divider {
+    border-color: var(--color-black-15);
+  }
 
-    .top-featured__recent-border,
-    .spotlight-section__divider,
-    .category-section__col-divider {
-        border-color: var(--color-black-15);
+  .btn-see-all {
+    background-color: var(--color-white-100);
+    border-color: var(--color-black-10);
+
+    svg path {
+      filter: invert(0.5);
+    }
+  }
+
+  .policy-section {
+    .policy-scrollbar {
+      background-color: var(--color-black-10);
     }
 
-    .btn-see-all {
+    .policy-scrollbar__thumb {
+      background-color: var(--cds-color-light-blue);
+    }
+  }
+
+  .spotlight-section__pub-nav {
+    .nav-btn {
+      background-color: var(--color-white-100);
+      border-color: var(--color-black-10);
+
+      img {
+        filter: invert(0.5);
+      }
+
+      &:hover {
         background-color: var(--color-white-100);
         border-color: var(--color-black-10);
-
-        svg path {
-            filter: invert(0.5);
-        }
+        box-shadow: 0 5px 10px var(--color-black-15);
+      }
     }
 
-    .policy-section {
-        .policy-scrollbar {
-            background-color: var(--color-black-10);
-        }
-
-        .policy-scrollbar__thumb {
-            background-color: var(--cds-color-light-blue);
-        }
+    .pub-counter {
+      border-color: var(--color-black-10);
     }
+  }
 
-    .spotlight-section__pub-nav {
-        .nav-btn {
-            background-color: var(--color-white-100);
-            border-color: var(--color-black-10);
-
-            img {
-                filter: invert(0.5);
-            }
-
-            &:hover {
-                background-color: var(--color-white-100);
-                border-color: var(--color-black-10);
-                box-shadow: 0 5px 10px var(--color-black-15);
-            }
-        }
-
-        .pub-counter {
-            border-color: var(--color-black-10);
-        }
+  .social-section,
+  .home-section {
+    .pagination-dots {
+      .dot {
+        background-color: var(--color-black-10);
+      }
     }
-
-    .social-section {
-        .pagination-dots {
-            .dot {
-                background-color: var(--color-black-10);
-
-
-            }
-        }
-    }
+  }
 }

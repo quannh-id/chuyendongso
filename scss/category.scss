@@ -1,0 +1,611 @@
+// =============================================================================
+//  category.scss – Styles for the CDS Category page (category-default.html)
+//  All values reference variables defined in theme.scss
+//  Naming: BEM, prefixed per section so each block can be cloned/customised
+//  independently for other category pages (e.g. category-tech, category-policy).
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// 1. CATEGORY TOP FEATURED SECTION
+//    Background tinted, category title + sub-nav tabs, then a 4-col article grid
+// ---------------------------------------------------------------------------
+
+.cat-featured {
+  background: var(--bg-secondary-color);
+  padding: var(--space-3xl) 0;
+
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  // ── Header row: category title + sub-menu tabs ──
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  &__title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-4xl);
+    color: var(--text-primary-color);
+    line-height: 1;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  // Thin vertical divider between title and sub-menu items
+  &__header-sep {
+    width: 1px;
+    height: 25px;
+    background: var(--color-white-10);
+    flex-shrink: 0;
+  }
+
+  // Sub-menu navigation item (clickable tab)
+  &__sub-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+
+    span {
+      font-family: var(--font-secondary);
+      font-weight: var(--font-weight-regular);
+      font-size: var(--fs-md);
+      color: var(--text-tertiary-color);
+      white-space: nowrap;
+      line-height: 1.5;
+    }
+
+    &:hover span {
+      color: var(--text-primary-color);
+    }
+
+    &--active span {
+      color: var(--text-primary-color);
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+
+  // Full-width hairline separator under header
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-white-10);
+    flex-shrink: 0;
+  }
+
+  // ── Article grid: 4 columns separated by dashed dividers ──
+  &__grid {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  // Dashed vertical separator between grid columns
+  &__grid-sep {
+    width: 1px;
+    align-self: stretch;
+    border-left: var(--border-subtle-dashed);
+    flex-shrink: 0;
+  }
+
+  // ── Col 1: Large featured card (image + title + excerpt) ──
+  &__col-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__main-img {
+    aspect-ratio: 160 / 100;
+    width: 100%;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__main-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  &__main-title {
+    a {
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--fs-2xl);
+      color: var(--text-primary-color);
+      line-height: 1.4;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity var(--transition-fast);
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &__main-excerpt {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-md);
+    color: var(--text-secondary-color);
+    line-height: 1.45;
+  }
+
+  // ── Col 2: Medium card (portrait image + title + excerpt) ──
+  &__col-mid {
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  &__mid-img {
+    aspect-ratio: 160 / 100;
+    width: 100%;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__mid-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__mid-title {
+    a {
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--fs-lg);
+      color: var(--text-primary-color);
+      line-height: 1.5;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity var(--transition-fast);
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &__mid-excerpt {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-md);
+    color: var(--text-secondary-color);
+    line-height: 1.5;
+  }
+
+  // ── Col 3 & 4: Narrow columns with stacked news items ──
+  &__col-narrow {
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  // Reusable news item within narrow columns
+  &__news-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  // Thin horizontal rule between news items in same column
+  &__news-item-sep {
+    width: 100%;
+    height: 1px;
+    background: var(--color-white-10);
+  }
+
+  &__news-img {
+    aspect-ratio: 160 / 100;
+    width: 100%;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__news-title {
+    a {
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--fs-lg);
+      color: var(--text-primary-color);
+      line-height: 1.5;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity var(--transition-fast);
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 2. CATEGORY BODY SECTION
+//    Left: article list + "Xem thêm" | Right: sub-category sidebar cards
+// ---------------------------------------------------------------------------
+
+.cat-body {
+  padding: var(--space-3xl) 0;
+
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  // ── Left column: news list ──
+  &__left {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  // Dashed vertical separator between left / right cols
+  &__sep {
+    width: 1px;
+    align-self: stretch;
+    border-left: var(--border-subtle-dashed);
+    flex-shrink: 0;
+  }
+
+  // ── Right column: sidebar ──
+  &__right {
+    width: 661px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  // ── News list: repeating news-item rows ──
+  &__news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  // One row: title (top) + [thumb | excerpt] (bottom) + horizontal rule
+  &__news-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding-bottom: var(--space-xl);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-white-10);
+      margin-bottom: var(--space-xl);
+    }
+  }
+
+  &__news-title {
+    a {
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--fs-xl);
+      color: var(--text-primary-color);
+      line-height: 1.4;
+      letter-spacing: -0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity var(--transition-fast);
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  // Inner row: thumbnail left + excerpt right
+  &__news-row {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  &__news-thumb {
+    width: 200px;
+    height: 125px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__news-excerpt {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-base);
+    color: var(--text-tertiary-color);
+    line-height: 1.5;
+  }
+
+  // "Xem thêm" pill button (reuses shared .btn-see-all concept but scoped here)
+  &__load-more {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 10px 18px;
+    background: var(--color-white-10);
+    border: var(--border-subtle);
+    border-radius: var(--radius-pill);
+    color: var(--text-primary-color);
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--fs-base);
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--transition-fast);
+    flex-shrink: 0;
+
+    &:hover {
+      background: var(--color-white-15);
+    }
+
+    .chevron-down {
+      display: inline-block;
+      width: 10px;
+      height: 6px;
+      flex-shrink: 0;
+
+      // CSS-only chevron; swap for SVG if preferred
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 3. SUBCATEGORY SIDEBAR CARD
+//    Reusable card component for the right-column sidebar on category pages.
+//    Clone & customise: change the title and news items per sub-category.
+// ---------------------------------------------------------------------------
+
+.cat-sidebar-card {
+  background: var(--bg-secondary-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg) var(--space-xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  width: 100%;
+
+  // ── Card header: sub-category title + arrow icon ──
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  &__heading {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--fs-xl);
+    color: var(--text-primary-color);
+    line-height: 1.5;
+    white-space: nowrap;
+    flex: 1;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__arrow {
+    width: 8px;
+    height: 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    img,
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-white-10);
+  }
+
+  // ── Main body: featured news (left) + bullet list (right) ──
+  &__body {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  // Featured news item with thumbnail
+  &__featured {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__featured-inner {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  &__featured-thumb {
+    width: 170px;
+    height: 106px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__featured-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__featured-title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: 15px;
+    color: var(--text-primary-color);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__featured-excerpt {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-base);
+    color: var(--text-secondary-color);
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  // Dashed divider between featured news and bullet list
+  &__body-sep {
+    width: 1px;
+    align-self: stretch;
+    border-left: var(--border-subtle-dashed);
+    flex-shrink: 0;
+  }
+
+  // Bullet link list (right side of card body)
+  &__list {
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  &__bullet {
+    width: 5px;
+    height: 7px;
+    flex-shrink: 0;
+    margin-top: 7px; // vertically align with cap height of first text line
+
+    img,
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__list-title {
+    flex: 1;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: 15px;
+    color: var(--text-primary-color);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}

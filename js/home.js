@@ -4,6 +4,13 @@
  * Swiper instances:
  *  1. #hero-swiper      – Hero featured news (loop, autoplay, fade)
  *  2. #policy-swiper    – Policy story cards (free-mode horizontal scroll)
+ *  3. #pub-swiper       – Publication book carousel (fraction pagination)
+ *  4. #video-swiper     – Multimedia video hero (bullet pagination, white)
+ *  5. #social-swiper    – Social / YouTube grid cards (bullet pagination)
+ *  6. #gallery-swiper   – Gallery image strip
+ *
+ * Pagination for hero, video, and social swipers now uses Swiper's native
+ * `pagination` module — no custom dot HTML or click wiring needed.
  *
  * All instances are initialised after DOMContentLoaded.
  * Destroyed and re-created on window resize breakpoint crossings to ensure
@@ -17,7 +24,9 @@
   // Guard: abort if Swiper is not loaded
   // ---------------------------------------------------------------------------
   if (typeof Swiper === "undefined") {
-    console.warn("[home.js] Swiper is not loaded. Slider functionality disabled.");
+    console.warn(
+      "[home.js] Swiper is not loaded. Slider functionality disabled.",
+    );
     return;
   }
 
@@ -27,34 +36,10 @@
   var MOBILE_BP = 900; // px – matches the responsive breakpoint in home.scss
 
   // ---------------------------------------------------------------------------
-  // Utility: set the active dot in a custom pagination container.
-  //
-  // `whiteVariant` – when true the active class is `dot--active-white`
-  //                  (used in the dark video overlay pagination).
-  // ---------------------------------------------------------------------------
-  function setActiveDot(dotsEl, activeIndex, whiteVariant) {
-    if (!dotsEl) return;
-    var dots = dotsEl.querySelectorAll(".dot");
-    var activeClass = whiteVariant ? "dot--active-white" : "dot--active";
-    var inactiveClass = whiteVariant ? "dot--active" : "dot--active-white";
-
-    dots.forEach(function (dot, i) {
-      dot.classList.remove("dot--active", "dot--active-white");
-      dot.setAttribute("aria-selected", "false");
-      if (i === activeIndex) {
-        dot.classList.add(activeClass);
-        dot.setAttribute("aria-selected", "true");
-      }
-    });
-  }
-
-  // ---------------------------------------------------------------------------
   // Module: Hero Swiper  (#hero-swiper)
   //
   // Layout: fixed-width container (750px desktop → 100% mobile).
   // The slide height is driven by aspect-ratio on the .top-featured__slide.
-  // Swiper needs autoHeight OR a concrete height on the container itself –
-  // we use autoHeight so any amount of text wrapping is handled gracefully.
   // ---------------------------------------------------------------------------
   var heroSwiperInstance = null;
 
@@ -68,15 +53,10 @@
       heroSwiperInstance = null;
     }
 
-    var paginationEl = document.getElementById("hero-pagination");
-
     heroSwiperInstance = new Swiper(el, {
       // Layout
       slidesPerView: 1,
       spaceBetween: 0,
-      // Note: height is driven by aspect-ratio on .top-featured__slide-wrapper
-      // in CSS – do NOT use autoHeight as it creates a circular reference
-      // (slides are height:100% of the container they also try to size).
 
       // Loop – safe with 3 slides (Swiper dupes them internally)
       loop: true,
@@ -84,12 +64,18 @@
       // Autoplay
       autoplay: {
         delay: 5000,
-        disableOnInteraction: false, // resume after manual swipe
-        pauseOnMouseEnter: true // pause when user hovers
+        disableOnInteraction: true, // resume after manual swipe
+        pauseOnMouseEnter: true, // pause when user hovers
+      },
+
+      // Native pagination (Swiper generates and manages the bullets)
+      pagination: {
+        el: "#hero-swiper-pagination",
+        type: "bullets",
+        clickable: true,
       },
 
       // Touch / drag
-      grabCursor: true,
       touchRatio: 1,
       touchAngle: 45,
       simulateTouch: true,
@@ -102,34 +88,14 @@
       a11y: {
         enabled: true,
         prevSlideMessage: "Slide trước",
-        nextSlideMessage: "Slide tiếp theo"
+        nextSlideMessage: "Slide tiếp theo",
       },
 
       // Performance
       observer: true, // re-init if DOM changes inside
       observeParents: true, // re-init if parent changes
       resizeObserver: true, // use ResizeObserver instead of window.resize
-
-      on: {
-        // `this` = the Swiper instance; safe even during construction
-        slideChange: function () {
-          setActiveDot(paginationEl, this.realIndex, false);
-        },
-        afterInit: function () {
-          setActiveDot(paginationEl, this.realIndex, false);
-        }
-      }
     });
-
-    // Wire custom pagination dots → swiper
-    if (paginationEl) {
-      paginationEl.querySelectorAll(".dot").forEach(function (dot, i) {
-        dot.addEventListener("click", function () {
-          // slideToLoop maps real index to the looped slide
-          heroSwiperInstance.slideToLoop(i);
-        });
-      });
-    }
   }
 
   // ---------------------------------------------------------------------------
@@ -166,7 +132,7 @@
       a11y: {
         enabled: true,
         prevSlideMessage: "Card trước",
-        nextSlideMessage: "Card tiếp theo"
+        nextSlideMessage: "Card tiếp theo",
       },
 
       observer: true,
@@ -189,8 +155,8 @@
         },
         reachBeginning: updatePolicyNav,
         reachEnd: updatePolicyNav,
-        fromEdge: updatePolicyNav
-      }
+        fromEdge: updatePolicyNav,
+      },
     };
   }
 
@@ -198,7 +164,8 @@
     // `this` is the Swiper instance when called as a Swiper event handler
     var thumb = document.getElementById("policy-scrollbar-thumb");
     var track = document.getElementById("policy-pagination");
-    if (!thumb || !track || !this || typeof this.progress === "undefined") return;
+    if (!thumb || !track || !this || typeof this.progress === "undefined")
+      return;
 
     var total = this.slides ? this.slides.length : 0;
     if (total <= 0) return;
@@ -214,7 +181,7 @@
         : 1;
     var thumbWidth = Math.max(
       Math.round((visibleCount / total) * trackWidth),
-      20 // minimum thumb size so it's always visible
+      20, // minimum thumb size so it's always visible
     );
 
     // this.progress goes from 0.0 (beginning) to 1.0 (end) — correct regardless
@@ -292,109 +259,11 @@
         policySwiperInstance.slideNext();
       });
     }
-
-    // Wire custom pagination dots
-    var paginationEl = document.getElementById("policy-pagination");
-    if (paginationEl) {
-      paginationEl.querySelectorAll(".dot").forEach(function (dot, i) {
-        dot.addEventListener("click", function () {
-          policySwiperInstance.slideTo(i);
-        });
-      });
-    }
   }
 
   // ---------------------------------------------------------------------------
-  // Module: Video section – cosmetic pagination only
-  // (The video hero is a single static item; dots are decorative)
+  // Module: Publication Swiper (#pub-swiper) – native bullet pagination
   // ---------------------------------------------------------------------------
-  function initVideoPagination() {
-    var paginationEl = document.getElementById("video-pagination");
-    if (!paginationEl) return;
-
-    paginationEl.querySelectorAll(".dot").forEach(function (dot, i) {
-      dot.addEventListener("click", function () {
-        setActiveDot(paginationEl, i, true); // white variant
-      });
-    });
-
-    // Ensure initial state
-    setActiveDot(paginationEl, 0, true);
-  }
-
-  // ---------------------------------------------------------------------------
-  // Module: Social Swiper (#social-swiper) – dots pagination
-  // ---------------------------------------------------------------------------
-  var socialSwiperInstance = null;
-
-  function initSocialSwiper() {
-    var el = document.getElementById("social-swiper");
-    if (!el) return;
-
-    if (socialSwiperInstance && !socialSwiperInstance.destroyed) {
-      socialSwiperInstance.destroy(true, true);
-      socialSwiperInstance = null;
-    }
-
-    var isMobile = window.innerWidth < MOBILE_BP;
-
-    socialSwiperInstance = new Swiper(el, {
-      slidesPerView: isMobile ? 1.15 : 4,
-      spaceBetween: 16,
-      loop: false,
-      grabCursor: true,
-      observer: true,
-      observeParents: true,
-      resizeObserver: true,
-      a11y: {
-        enabled: true,
-        prevSlideMessage: "Video tr\u01b0\u1edbc",
-        nextSlideMessage: "Video ti\u1ebfp theo"
-      },
-      on: {
-        afterInit: function () {
-          var paginationEl = document.getElementById("social-pagination");
-          if (paginationEl) setActiveDot(paginationEl, this.activeIndex, false);
-        },
-        slideChange: function () {
-          var paginationEl = document.getElementById("social-pagination");
-          if (paginationEl) setActiveDot(paginationEl, this.activeIndex, false);
-        }
-      }
-    });
-
-    // Wire dots to slideTo
-    var paginationEl = document.getElementById("social-pagination");
-    if (paginationEl) {
-      paginationEl.querySelectorAll(".dot").forEach(function (dot, i) {
-        dot.addEventListener("click", function () {
-          socialSwiperInstance.slideTo(i);
-        });
-      });
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // Module: Publication Swiper (#pub-swiper) – fraction pagination
-  // ---------------------------------------------------------------------------
-  function updatePubFraction() {
-    // `this` is the Swiper instance
-    var currentEl = document.getElementById("pub-current");
-    var totalEl = document.getElementById("pub-total");
-    var counterEl = document.getElementById("pub-counter");
-    if (!currentEl || !totalEl || !this) return;
-
-    var current = (this.realIndex !== undefined ? this.realIndex : this.activeIndex) + 1;
-    var total = this.slides ? this.slides.length : 0;
-
-    currentEl.textContent = current;
-    totalEl.textContent = " / " + total;
-
-    if (counterEl) {
-      counterEl.setAttribute("aria-label", "Trang " + current + " trên " + total);
-    }
-  }
-
   function initPubSwiper() {
     var el = document.getElementById("pub-swiper");
     if (!el) return;
@@ -409,20 +278,18 @@
       loop: false,
       effect: "cube",
       speed: 400,
-      grabCursor: true,
+
+      // Native pagination – fraction counter between prev/next buttons
+      pagination: {
+        el: "#pub-swiper-pagination",
+        type: "fraction",
+      },
+
       a11y: {
         enabled: true,
         prevSlideMessage: "Ấn phẩm trước",
-        nextSlideMessage: "Ấn phẩm tiếp theo"
+        nextSlideMessage: "Ấn phẩm tiếp theo",
       },
-      on: {
-        afterInit: function () {
-          updatePubFraction.call(this);
-        },
-        slideChange: function () {
-          updatePubFraction.call(this);
-        }
-      }
     });
 
     // Wire custom prev/next buttons
@@ -447,7 +314,7 @@
   }
 
   // ---------------------------------------------------------------------------
-  // Module: Video Swiper (#video-swiper) – dots pagination (white variant)
+  // Module: Video Swiper (#video-swiper) – native bullet pagination (white)
   // ---------------------------------------------------------------------------
   var videoSwiperInstance = null;
 
@@ -466,32 +333,60 @@
       speed: 600,
       grabCursor: true,
       autoplay: { delay: 5000, disableOnInteraction: true },
+
+      // Native pagination – white variant styled via .swiper-pagination--white
+      pagination: {
+        el: "#video-swiper-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+
       a11y: {
         enabled: true,
-        prevSlideMessage: "Video tr\u01b0\u1edbc",
-        nextSlideMessage: "Video ti\u1ebfp theo"
+        prevSlideMessage: "Video trước",
+        nextSlideMessage: "Video tiếp theo",
       },
-      on: {
-        afterInit: function () {
-          var paginationEl = document.getElementById("video-pagination");
-          if (paginationEl) setActiveDot(paginationEl, this.activeIndex, true);
-        },
-        slideChange: function () {
-          var paginationEl = document.getElementById("video-pagination");
-          if (paginationEl) setActiveDot(paginationEl, this.activeIndex, true);
-        }
-      }
     });
+  }
 
-    // Wire dots to slideTo
-    var paginationEl = document.getElementById("video-pagination");
-    if (paginationEl) {
-      paginationEl.querySelectorAll(".dot").forEach(function (dot, i) {
-        dot.addEventListener("click", function () {
-          videoSwiperInstance.slideTo(i);
-        });
-      });
+  // ---------------------------------------------------------------------------
+  // Module: Social Swiper (#social-swiper) – native bullet pagination
+  // ---------------------------------------------------------------------------
+  var socialSwiperInstance = null;
+
+  function initSocialSwiper() {
+    var el = document.getElementById("social-swiper");
+    if (!el) return;
+
+    if (socialSwiperInstance && !socialSwiperInstance.destroyed) {
+      socialSwiperInstance.destroy(true, true);
+      socialSwiperInstance = null;
     }
+
+    var isMobile = window.innerWidth < MOBILE_BP;
+
+    socialSwiperInstance = new Swiper(el, {
+      slidesPerView: isMobile ? 1.15 : 4,
+      spaceBetween: 16,
+      loop: false,
+      observer: true,
+      observeParents: true,
+      resizeObserver: true,
+
+      // Native pagination – bullets auto-generated from slide count
+      pagination: {
+        el: "#social-swiper-pagination",
+        type: "bullets",
+        clickable: true,
+        dynamicBullets: true,
+      },
+
+      a11y: {
+        enabled: true,
+        prevSlideMessage: "Video trước",
+        nextSlideMessage: "Video tiếp theo",
+      },
+    });
   }
 
   // ---------------------------------------------------------------------------
@@ -520,9 +415,9 @@
       resizeObserver: true,
       a11y: {
         enabled: true,
-        prevSlideMessage: "Ch\u00f9m \u1ea3nh tr\u01b0\u1edbc",
-        nextSlideMessage: "Ch\u00f9m \u1ea3nh ti\u1ebfp theo"
-      }
+        prevSlideMessage: "Chùm ảnh trước",
+        nextSlideMessage: "Chùm ảnh tiếp theo",
+      },
     });
 
     // Wire custom prev/next buttons
@@ -565,6 +460,7 @@
         // Re-create on breakpoint crossing
         initHeroSwiper();
         initPolicySwiper();
+        initSocialSwiper();
         initGallerySwiper();
       } else {
         // Same breakpoint – just update existing instances

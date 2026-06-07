@@ -96,7 +96,7 @@
   flex-shrink: 0;
 }
 
-// Swiper-style pagination dots
+// Swiper-style pagination dots (legacy custom markup – kept for reference)
 .pagination-dots {
   display: flex;
   align-items: center;
@@ -122,6 +122,39 @@
     &--active-white {
       width: 24px;
       background: var(--color-white-100);
+    }
+  }
+}
+
+// Override Swiper native pagination bullets to match the CDS pill design
+// These replace the old custom .pagination-dots / .dot markup.
+.swiper-pagination {
+  // Each bullet
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 6px;
+    border-radius: 4px;
+    background: var(--color-white-50);
+    opacity: 1; // Swiper sets opacity:0.2 on inactive by default – override
+    transition:
+      width var(--transition-base),
+      background var(--transition-base);
+
+    // Active bullet → blue pill
+    &.swiper-pagination-bullet-active {
+      width: 24px;
+      background: var(--cds-color-light-blue);
+    }
+  }
+
+  // White variant – used on dark overlay (video hero)
+  &.swiper-pagination--white {
+    .swiper-pagination-bullet {
+      background: var(--color-white-50);
+
+      &.swiper-pagination-bullet-active {
+        background: var(--color-white-100);
+      }
     }
   }
 }
@@ -201,7 +234,8 @@
 }
 
 // Body offset for fixed header
-.page-body {}
+.page-body {
+}
 
 // ---------------------------------------------------------------------------
 // 3. TOP FEATURED SECTION – Hero swiper + Recent news
@@ -225,6 +259,10 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    .swiper-pagination {
+      position: relative;
+      margin-top: 15px;
+    }
   }
 
   &__slide-wrapper {
@@ -286,11 +324,13 @@
     }
 
     .slide-title {
-      font-family: var(--font-primary);
-      font-weight: var(--font-weight-bold);
-      font-size: var(--fs-5xl);
-      color: var(--color-white-100);
-      line-height: 1.2;
+      a {
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-bold);
+        font-size: var(--fs-5xl);
+        color: var(--color-white-100);
+        line-height: 1.2;
+      }
     }
 
     .slide-desc {
@@ -415,21 +455,23 @@
     .news-title {
       flex: 1;
       min-width: 0;
-      font-family: var(--font-primary);
-      font-weight: var(--font-weight-bold);
-      font-size: var(--fs-lg);
-      color: var(--text-primary-color);
-      line-height: 1.45;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      cursor: pointer;
-      transition: color var(--transition-fast);
-      text-decoration: none;
 
-      &:hover {
-        opacity: 0.9;
+      a {
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-bold);
+        font-size: var(--fs-lg);
+        color: var(--text-primary-color);
+        line-height: 1.45;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        cursor: pointer;
+        transition: color var(--transition-fast);
+        text-decoration: none;
+        &:hover {
+          opacity: 0.9;
+        }
       }
     }
 
@@ -624,7 +666,9 @@
       height: 100%;
       background: #d9d9d9;
       border-radius: 100px;
-      transition: transform var(--transition-base), width var(--transition-base);
+      transition:
+        transform var(--transition-base),
+        width var(--transition-base);
       will-change: transform;
     }
   }
@@ -702,17 +746,19 @@
     }
 
     .card-title {
-      font-family: var(--font-primary);
-      font-weight: var(--font-weight-bold);
-      font-size: var(--fs-xl);
-      color: var(--text-primary-color);
-      line-height: 1.4;
-      text-decoration: none;
-      cursor: pointer;
-      transition: color var(--transition-fast);
+      a {
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-bold);
+        font-size: var(--fs-xl);
+        color: var(--text-primary-color);
+        line-height: 1.4;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color var(--transition-fast);
 
-      &:hover {
-        opacity: 0.9;
+        &:hover {
+          opacity: 0.9;
+        }
       }
     }
 
@@ -756,17 +802,19 @@
     }
 
     .card-title {
-      font-family: var(--font-primary);
-      font-weight: var(--font-weight-bold);
-      font-size: var(--fs-2xl);
-      color: var(--text-primary-color);
-      line-height: 1.4;
-      text-decoration: none;
-      cursor: pointer;
-      transition: color var(--transition-fast);
+      a {
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-bold);
+        font-size: var(--fs-2xl);
+        color: var(--text-primary-color);
+        line-height: 1.4;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color var(--transition-fast);
 
-      &:hover {
-        opacity: 0.9;
+        &:hover {
+          opacity: 0.9;
+        }
       }
     }
 
@@ -867,7 +915,12 @@
       }
     }
 
-    .pub-counter {
+    // Fraction pagination (Swiper native type:'fraction') between prev/next.
+    // Swiper renders: <span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">3</span>
+    // Override global .swiper-pagination so it renders as a styled pill inline.
+    .swiper-pagination.pub-fraction {
+      margin-top: 0; // reset global margin-top
+      // Pill container – matches Figma node 151:646
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -880,13 +933,23 @@
       font-size: var(--fs-sm);
       color: var(--text-primary-color);
       white-space: nowrap;
+      width: auto !important; // reset Swiper's 100% width for fraction type
+      bottom: auto !important;
+      left: auto !important;
+      position: static !important;
 
-      .counter-current {
+      // Current slide number – semibold white
+      .swiper-pagination-current {
         font-weight: var(--font-weight-semibold);
       }
 
-      .counter-total {
+      // Total count – 50% opacity
+      .swiper-pagination-total {
         color: var(--text-secondary-color);
+        font-weight: var(--font-weight-regular);
+
+        // Swiper renders " / N" as plain text after the current span;
+        // the separator " / " is part of the element text, not a pseudo-element.
       }
     }
   }
@@ -1000,17 +1063,19 @@
     }
 
     .top-news-title {
-      font-family: var(--font-primary);
-      font-weight: var(--font-weight-bold);
-      font-size: 23px;
-      color: var(--text-primary-color);
-      line-height: 1.5;
-      text-decoration: none;
-      cursor: pointer;
-      transition: color var(--transition-fast);
+      a {
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-bold);
+        font-size: 23px;
+        color: var(--text-primary-color);
+        line-height: 1.5;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color var(--transition-fast);
 
-      &:hover {
-        opacity: 0.9;
+        &:hover {
+          opacity: 0.9;
+        }
       }
     }
 
@@ -1255,6 +1320,10 @@
       height: auto;
     }
 
+    .swiper-pagination {
+      bottom: 20px;
+    }
+
     .video-item {
       position: relative;
       border-radius: var(--radius-xl);
@@ -1288,7 +1357,6 @@
         background: var(--gradient-media);
       }
     }
-
 
     .video-labels {
       position: absolute;
@@ -1339,7 +1407,6 @@
     }
 
     .video-title {
-
       a {
         font-family: var(--font-primary);
         font-weight: var(--font-weight-bold);
@@ -1526,7 +1593,9 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background-color var(--transition-fast), border-color var(--transition-fast);
+      transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
 
       &:hover {
         background-color: var(--color-white-20);
@@ -1702,9 +1771,10 @@
       }
     }
   }
+  .swiper-pagination {
+    position: relative;
+  }
 }
-
-
 
 // ---------------------------------------------------------------------------
 // 12. RESPONSIVE STYLES
