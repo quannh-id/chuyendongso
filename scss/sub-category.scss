@@ -1,0 +1,265 @@
+// =============================================================================
+//  sub-category.scss – Styles for the CDS Sub-Category page
+//  Scoped inside .cds-subcategory-page to avoid conflicts with category.scss
+//  All values reference variables defined in theme.scss
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// 1. SUB-CATEGORY LAYOUT OVERRIDES
+//    Override cat-body column widths for the sub-category layout:
+//    Left col: flex 1 (article list) | Right col: 300px sticky sidebar
+// ---------------------------------------------------------------------------
+
+.cds-subcategory-page {
+  // Override right column width (category-default has 661px, sub-cat has 300px)
+  .cat-body__right {
+    width: 300px;
+    flex-shrink: 0;
+    position: sticky;
+    top: var(--space-4xl);
+    align-self: flex-start;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 2. HIGHLIGHT ARTICLE (Top featured item in the sub-category list)
+//    Horizontal layout: large image left (flexible) + text right
+// ---------------------------------------------------------------------------
+
+.subcat-highlight {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-white-10);
+  margin-bottom: var(--space-xl);
+
+  &__thumb {
+    width: 550px;
+    flex-shrink: 0;
+    aspect-ratio: 160 / 100;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    display: block;
+    position: relative;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    &:hover img {
+      transform: scale(1.04);
+    }
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  &__title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-4xl);
+    color: var(--text-primary-color);
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity var(--transition-fast);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__excerpt {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-md);
+    color: var(--text-secondary-color);
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 3. SUB-CATEGORY NEWS ITEM
+//    Figma layout: image left (300px) | (title + excerpt) right — all in one row
+//    Divider between items via border-bottom on :not(:last-child)
+// ---------------------------------------------------------------------------
+
+.subcat-news-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-white-10);
+  margin-bottom: var(--space-xl);
+
+  // ── Inner flex row: thumb left + text right ──
+  &__inner {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  // ── Thumbnail link (300px fixed) ──
+  &__thumb {
+    width: 300px;
+    flex-shrink: 0;
+    aspect-ratio: 160 / 100;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: block;
+    position: relative;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    &:hover img {
+      transform: scale(1.04);
+    }
+  }
+
+  // ── Text column (title + excerpt stacked) ──
+  &__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  &__title {
+    margin: 0;
+
+    a {
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--fs-2xl);
+      color: var(--text-primary-color);
+      line-height: 1.4;
+      letter-spacing: -0.04em;
+      text-decoration: none;
+      transition: opacity var(--transition-fast);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__excerpt {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-base);
+    color: var(--text-tertiary-color);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  // ── Border divider between items (no extra DOM elements) ──
+}
+
+// ---------------------------------------------------------------------------
+// 4. TOP NEWS SIDEBAR ("Đọc nhiều")
+//    Reusable sticky sidebar for category, sub-category, and article pages.
+//    BEM block: .top-news-sidebar
+// ---------------------------------------------------------------------------
+
+.top-news-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding-top: var(--space-lg);
+
+  // ── Section heading "ĐỌC NHIỀU" ──
+  &__heading {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--fs-base);
+    color: var(--cds-color-light-blue);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.5;
+    text-align: left;
+    padding: 0 35px;
+  }
+
+  // ── One ranked news item ──
+  &__item {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  // ── Rank number (1, 2, 3…) ──
+  &__rank {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-3xl);
+    color: var(--cds-color-light-blue);
+    line-height: 1.3;
+    flex-shrink: 0;
+    // Align cap height with text
+    margin-top: -2px;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  // ── Article title link ──
+  &__title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: 15px;
+    color: var(--text-primary-color);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    display: block;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  // ── Thin divider line below title (inside content) ──
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-white-10);
+    flex-shrink: 0;
+  }
+
+  // Last item: no divider
+  &__item:last-child &__divider {
+    display: none;
+  }
+}

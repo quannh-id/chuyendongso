@@ -1,9 +1,4 @@
-// =============================================================================
-//  category.scss – Styles for the CDS Category page (category-default.html)
-//  All values reference variables defined in theme.scss
-//  Naming: BEM, prefixed per section so each block can be cloned/customised
-//  independently for other category pages (e.g. category-tech, category-policy).
-// =============================================================================
+@import "sub-category";
 
 // ---------------------------------------------------------------------------
 // 1. CATEGORY TOP FEATURED SECTION
@@ -279,6 +274,12 @@
     max-width: var(--container-width);
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  &__grid {
+    display: flex;
     gap: var(--space-xl);
     align-items: flex-start;
   }
@@ -324,11 +325,8 @@
     flex-direction: column;
     gap: var(--space-md);
     padding-bottom: var(--space-xl);
-
-    &:not(:last-child) {
-      border-bottom: 1px solid var(--color-white-10);
-      margin-bottom: var(--space-xl);
-    }
+    border-bottom: 1px solid var(--color-white-10);
+    margin-bottom: var(--space-xl);
   }
 
   &__news-title {
