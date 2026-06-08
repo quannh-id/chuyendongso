@@ -129,6 +129,7 @@
 // Override Swiper native pagination bullets to match the CDS pill design
 // These replace the old custom .pagination-dots / .dot markup.
 .swiper-pagination {
+
   // Each bullet
   .swiper-pagination-bullet {
     width: 8px;
@@ -234,8 +235,7 @@
 }
 
 // Body offset for fixed header
-.page-body {
-}
+.page-body {}
 
 // ---------------------------------------------------------------------------
 // 3. TOP FEATURED SECTION – Hero swiper + Recent news
@@ -259,6 +259,7 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+
     .swiper-pagination {
       position: relative;
       margin-top: 15px;
@@ -283,18 +284,23 @@
     width: 100%;
     height: 100%; // fills the Swiper container (aspect-ratio set on wrapper)
 
+    .slide-bg-wrap {
+      position: relative;
+      display: block;
+      height: 100%;
+
+      &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-hero-overlay);
+      }
+    }
+
     .slide-bg {
-      position: absolute;
-      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .slide-overlay {
-      position: absolute;
-      inset: 0;
-      background: var(--gradient-hero-overlay);
     }
 
     .slide-content {
@@ -469,6 +475,7 @@
         cursor: pointer;
         transition: color var(--transition-fast);
         text-decoration: none;
+
         &:hover {
           opacity: 0.9;
         }
@@ -859,7 +866,7 @@
 
   &__pub-book {
     width: 300px;
-    height: 430px;
+    aspect-ratio: 300 / 430;
     position: relative;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-stack-1);
@@ -1231,11 +1238,17 @@
 
   &__photo {
     width: 820px;
-    height: 512px;
+    aspect-ratio: 820 / 512;
     flex-shrink: 0;
     border-radius: var(--radius-xl);
     overflow: hidden;
     position: relative;
+
+    .profile-photo-wrap {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
 
     img {
       position: absolute;
@@ -1771,6 +1784,7 @@
       }
     }
   }
+
   .swiper-pagination {
     position: relative;
   }

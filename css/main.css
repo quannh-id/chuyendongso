@@ -964,6 +964,18 @@ img {
   cursor: default;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .light-theme .top-featured__recent-border,
 .light-theme .spotlight-section__divider,
 .light-theme .category-section__col-divider {
@@ -1222,17 +1234,21 @@ img {
   width: 100%;
   height: 100%;
 }
-.top-featured__slide .slide-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
+.top-featured__slide .slide-bg-wrap {
+  position: relative;
+  display: block;
   height: 100%;
-  object-fit: cover;
 }
-.top-featured__slide .slide-overlay {
+.top-featured__slide .slide-bg-wrap:before {
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--gradient-hero-overlay);
+}
+.top-featured__slide .slide-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .top-featured__slide .slide-content {
   position: absolute;
@@ -1681,7 +1697,7 @@ img {
 }
 .spotlight-section__pub-book {
   width: 300px;
-  height: 430px;
+  aspect-ratio: 300/430;
   position: relative;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-stack-1);
@@ -1983,11 +1999,16 @@ img {
 }
 .profile-section__photo {
   width: 820px;
-  height: 512px;
+  aspect-ratio: 820/512;
   flex-shrink: 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
   position: relative;
+}
+.profile-section__photo .profile-photo-wrap {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .profile-section__photo img {
   position: absolute;
@@ -3049,6 +3070,13 @@ img {
 }
 .cat-sidebar-card__list-title:hover {
   opacity: 0.85;
+}
+
+.cat-sidebar-card__featured-title-wrap {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  line-height: inherit;
 }
 
 /*# sourceMappingURL=main.css.map */
