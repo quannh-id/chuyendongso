@@ -11,12 +11,13 @@
 // ---------------------------------------------------------------------------
 
 .cds-subcategory-page {
+
   // Override right column width (category-default has 661px, sub-cat has 300px)
   .cat-body__right {
     width: 300px;
     flex-shrink: 0;
     position: sticky;
-    top: var(--space-4xl);
+    top: var(--space-5xl);
     align-self: flex-start;
   }
 }

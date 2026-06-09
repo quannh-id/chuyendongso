@@ -39,70 +39,97 @@
     <!-- =====================================================================
        PAGE BODY
   ====================================================================== -->
-    <div class="page-body cds-category-page cds-subcategory-page">
+    <div class="page-body cds-category-page cds-category-spotlight">
+      <!-- ================================================================
+           SECTION 1 · CAT-FEATURED – Category header + top article grid
+      ================================================================= -->
+      <section class="cat-featured">
+        <div class="container">
+          <!-- Header: category title + sub-menu tabs -->
+          <div class="cat-featured__header">
+            <h1 class="cat-featured__title">Tiêu điểm</h1>
+          </div>
+
+          <!-- Full-width divider under header -->
+          <div class="cat-featured__divider"></div>
+
+          <!-- 4-column article grid -->
+          <div class="cat-featured__grid">
+            <!-- ── Col 1 · Hero featured article ── -->
+            <article class="cat-featured__col-spotlight-main">
+              <a href="#" class="cat-featured__spotlight-img">
+                <img
+                  src="img/spotlight-main.png"
+                  alt="Gốm Bát Tràng: Thủ công độc bản hay công nghệ 'nhân bản'?"
+                  loading="lazy"
+                  width="800"
+                  height="500"
+                />
+              </a>
+              <div class="cat-featured__spotlight-text">
+                <h2 class="cat-featured__spotlight-title">
+                  <a href="#">Gốm Bát Tràng: Thủ công độc bản hay công nghệ 'nhân bản'?</a>
+                </h2>
+                <p class="cat-featured__spotlight-excerpt">
+                  Khi AI tham gia vào quy trình sản xuất gốm Bát Tràng, cuộc chạm trán giữa công
+                  nghệ hiện đại và tinh hoa thủ công đặt ra bài toán: Liệu bản sắc độc bản có dần
+                  biến mất?
+                </p>
+              </div>
+            </article>
+
+            <!-- Dashed vertical separator -->
+            <div class="cat-featured__grid-sep"></div>
+
+            <!-- ── Col 2 · Two stacked secondary articles ── -->
+            <div class="cat-featured__col-spotlight-secondary">
+              <!-- Secondary Article 1 -->
+              <article class="cat-featured__spotlight-secondary-item">
+                <a href="#" class="cat-featured__spotlight-secondary-img">
+                  <img
+                    src="img/news-thumb-2.png"
+                    alt="Việt Nam đứng trước cơ hội 'nghìn năm có một' với AI"
+                    loading="lazy"
+                    width="399"
+                    height="249"
+                  />
+                </a>
+                <h2 class="cat-featured__spotlight-secondary-title">
+                  <a href="#">Việt Nam đứng trước cơ hội 'nghìn năm có một' với AI</a>
+                </h2>
+              </article>
+
+              <!-- Secondary Article 2 -->
+              <article class="cat-featured__spotlight-secondary-item">
+                <a href="#" class="cat-featured__spotlight-secondary-img">
+                  <img
+                    src="img/cat-innovation.png"
+                    alt="Tại sao Hà Nội 'mắc kẹt' trong vòng xoáy ô nhiễm không khí?"
+                    loading="lazy"
+                    width="399"
+                    height="249"
+                  />
+                </a>
+                <h2 class="cat-featured__spotlight-secondary-title">
+                  <a href="#">Tại sao Hà Nội 'mắc kẹt' trong vòng xoáy ô nhiễm không khí?</a>
+                </h2>
+              </article>
+            </div>
+          </div>
+          <!-- /.cat-featured__grid -->
+        </div>
+      </section>
+      <!-- /.cat-featured -->
+
       <!-- ================================================================
            SECTION 2 · CAT-BODY – Article list (left) + Sidebar (right)
       ================================================================= -->
       <section class="cat-body">
         <div class="container">
-          <div class="cat-featured__header">
-            <h1 class="cat-featured__title">Chính sách</h1>
-
-            <div class="cat-featured__header-sep"></div>
-
-            <a href="#" class="cat-featured__sub-menu cat-featured__sub-menu--active">
-              <span>Chiến lược, Nghị quyết</span>
-            </a>
-
-            <div class="cat-featured__header-sep"></div>
-
-            <a href="#" class="cat-featured__sub-menu">
-              <span>Chính quyền số</span>
-            </a>
-
-            <div class="cat-featured__header-sep"></div>
-
-            <a href="#" class="cat-featured__sub-menu">
-              <span>Kinh tế &amp; Xã hội số</span>
-            </a>
-
-            <div class="cat-featured__header-sep"></div>
-
-            <a href="#" class="cat-featured__sub-menu">
-              <span>Phân tích &amp; Phản hồi</span>
-            </a>
-          </div>
-
-          <!-- Full-width divider under header -->
-          <div class="cat-featured__divider"></div>
           <div class="cat-body__grid">
             <!-- ── Left column: article list ── -->
             <div class="cat-body__left">
               <div class="cat-body__news-list">
-                <!-- Highlight Article -->
-                <div class="subcat-highlight">
-                  <a href="#" class="subcat-highlight__thumb">
-                    <img
-                      src="img/news-thumb-1.png"
-                      alt="Nguyễn Minh Tuấn: Người định hình tương lai công nghệ Việt Nam"
-                      loading="lazy"
-                      width="550"
-                      height="344"
-                    />
-                  </a>
-                  <div class="subcat-highlight__text">
-                    <h2 class="subcat-highlight__title">
-                      <a href="#">Nguyễn Minh Tuấn: Người định hình tương lai công nghệ Việt Nam</a>
-                    </h2>
-                    <p class="subcat-highlight__excerpt">
-                      Ở tuổi 38, CEO của Tech Viet Group đã khẳng định vị thế là một trong những nhà
-                      lãnh đạo công nghệ có tầm ảnh hưởng nhất tại Việt Nam. Với tầm nhìn về chuyển
-                      đổi số và AI, ông đang dẫn dắt cuộc cách mạng trong cách người Việt tiếp cận
-                      giáo dục và công nghệ.
-                    </p>
-                  </div>
-                </div>
-
                 <!-- News Item 1 -->
                 <article class="subcat-news-item">
                   <div class="subcat-news-item__inner">
@@ -277,72 +304,63 @@
             <!-- Dashed vertical separator -->
             <div class="cat-body__sep"></div>
 
-            <!-- ── Right column: Top News Sidebar ── -->
-            <aside class="cat-body__right" aria-label="Đọc nhiều">
-              <!-- ================================================================
-                   TOP NEWS SIDEBAR
-                   Reusable component – copy this <aside> block to other pages.
-                   Class: .top-news-sidebar | Defined in: sub-category.scss
-              ================================================================= -->
-              <nav class="top-news-sidebar" aria-label="Tin đọc nhiều">
-                <p class="top-news-sidebar__heading">Đọc nhiều</p>
+            <!-- ── Right column: sub-category sidebar cards ── -->
+            <div class="cat-body__right">
+              <!-- ── Right: Ấn phẩm ── -->
+              <aside class="spotlight-section__publication" aria-label="Ấn phẩm số">
+                <a href="" class="spotlight-section__pub-header">
+                  <h2 class="section-header__title">Ấn phẩm</h2>
+                  <span class="external-icon" aria-hidden="true">
+                    <svg
+                      width="13"
+                      height="13"
+                      viewBox="0 0 13 13"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.39451e-06 9.78808V3.97662C3.39451e-06 3.561 -0.00081937 3.20286 0.0231537 2.90947C0.0478682 2.60721 0.102838 2.30633 0.250176 2.01706C0.470085 1.5856 0.820894 1.23479 1.25236 1.01488C1.54163 0.86754 1.84251 0.812571 2.14476 0.787856C2.43816 0.763883 2.7963 0.764706 3.21192 0.764706H4.58824C5.01057 0.764706 5.35294 1.10708 5.35294 1.52941C5.35294 1.95175 5.01057 2.29412 4.58824 2.29412H3.21192C2.77106 2.29412 2.48614 2.29508 2.26948 2.31279C2.11401 2.3255 2.03165 2.3443 1.98421 2.36133L1.94687 2.37776C1.839 2.43276 1.74633 2.51223 1.67578 2.60926L1.61305 2.71157C1.59373 2.7495 1.56506 2.82658 1.54808 3.03418C1.53038 3.25084 1.52941 3.53577 1.52941 3.97662V9.78808C1.52941 10.2289 1.53038 10.5139 1.54808 10.7305C1.56506 10.9381 1.59373 11.0152 1.61305 11.0531L1.67578 11.1554C1.74633 11.2525 1.839 11.3319 1.94687 11.3869L1.94761 11.3877C1.98493 11.4067 2.06161 11.4357 2.26873 11.4527C2.48507 11.4704 2.76958 11.4706 3.20968 11.4706H9.02562C9.46556 11.4706 9.74974 11.4703 9.96582 11.4527C10.1727 11.4357 10.2495 11.4068 10.2869 11.3877L10.2877 11.3869C10.4318 11.3135 10.5487 11.1967 10.6222 11.0531C10.6416 11.0151 10.671 10.9377 10.688 10.7305C10.7056 10.5143 10.7059 10.2302 10.7059 9.79032V8.41176C10.7059 7.98943 11.0483 7.64706 11.4706 7.64706C11.8929 7.64706 12.2353 7.98943 12.2353 8.41176V9.79032C12.2353 10.2052 12.2361 10.5629 12.2121 10.856C12.1905 11.1203 12.1461 11.3833 12.0367 11.6386L11.9851 11.7476C11.765 12.1787 11.4135 12.529 10.9814 12.7491L10.9822 12.7498C10.6931 12.8973 10.3924 12.9521 10.0905 12.9768C9.79761 13.0008 9.4403 13 9.02562 13H3.20968C2.79483 13 2.43717 13.0008 2.14402 12.9768C1.87987 12.9552 1.61679 12.9102 1.36139 12.8006L1.25236 12.7498C0.820895 12.5299 0.470086 12.1791 0.250176 11.7476C0.102838 11.4584 0.0478682 11.1575 0.0231537 10.8552C-0.00081937 10.5618 3.39451e-06 10.2037 3.39451e-06 9.78808ZM13 4.58823C13 5.01057 12.6576 5.35294 12.2353 5.35294C11.813 5.35294 11.4706 5.01057 11.4706 4.58823V2.61075L7.42303 6.65832C7.12439 6.95695 6.64032 6.95695 6.34168 6.65832C6.04305 6.35968 6.04305 5.87561 6.34168 5.57697L10.3892 1.52941H8.41177C7.98943 1.52941 7.64706 1.18704 7.64706 0.764706C7.64706 0.34237 7.98943 0 8.41177 0H12.2353C12.6576 0 13 0.34237 13 0.764706V4.58823Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </span>
+                </a>
 
-                <!-- Rank 1 -->
-                <div class="top-news-sidebar__item">
-                  <span class="top-news-sidebar__rank" aria-label="Vị trí 1">1</span>
-                  <div class="top-news-sidebar__content">
-                    <a href="#" class="top-news-sidebar__title">
-                      Tàu quỹ đạo Sao Hỏa của NASA dừng hoạt động sau 11 năm
-                    </a>
-                    <div class="top-news-sidebar__divider" aria-hidden="true"></div>
+                <div>
+                  <div class="spotlight-section__pub-book swiper" id="pub-swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="#">
+                          <img src="img/publication.png" alt="Ấn phẩm số CDS" loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="#">
+                          <img src="img/publication.png" alt="Ấn phẩm số CDS" loading="lazy" />
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="#">
+                          <img src="img/publication.png" alt="Ấn phẩm số CDS" loading="lazy" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Book navigator -->
+                  <div class="spotlight-section__pub-nav">
+                    <button class="nav-btn pub-nav--prev" id="pub-prev" aria-label="Trang trước">
+                      <img class="nav-arrow" src="skin/white-arrow-left.svg" alt="Trang trước" />
+                    </button>
+                    <!-- Fraction pagination (rendered by Swiper) -->
+                    <div class="swiper-pagination pub-fraction" id="pub-swiper-pagination"></div>
+                    <button class="nav-btn pub-nav--next" id="pub-next" aria-label="Trang sau">
+                      <img class="nav-arrow" src="skin/white-arrow-right.svg" alt="Trang sau" />
+                    </button>
                   </div>
                 </div>
-
-                <!-- Rank 2 -->
-                <div class="top-news-sidebar__item">
-                  <span class="top-news-sidebar__rank" aria-label="Vị trí 2">2</span>
-                  <div class="top-news-sidebar__content">
-                    <a href="#" class="top-news-sidebar__title">
-                      Cần cẩu lớn nhất thế giới lắp đặt lò phản ứng hạt nhân
-                    </a>
-                    <div class="top-news-sidebar__divider" aria-hidden="true"></div>
-                  </div>
-                </div>
-
-                <!-- Rank 3 -->
-                <div class="top-news-sidebar__item">
-                  <span class="top-news-sidebar__rank" aria-label="Vị trí 3">3</span>
-                  <div class="top-news-sidebar__content">
-                    <a href="#" class="top-news-sidebar__title">
-                      Tham vọng xây trung tâm dữ liệu vũ trụ của Musk khó thành
-                    </a>
-                    <div class="top-news-sidebar__divider" aria-hidden="true"></div>
-                  </div>
-                </div>
-
-                <!-- Rank 4 -->
-                <div class="top-news-sidebar__item">
-                  <span class="top-news-sidebar__rank" aria-label="Vị trí 4">4</span>
-                  <div class="top-news-sidebar__content">
-                    <a href="#" class="top-news-sidebar__title">
-                      Microsoft ra chip lượng tử mới 'với sự trợ giúp của AI'
-                    </a>
-                    <div class="top-news-sidebar__divider" aria-hidden="true"></div>
-                  </div>
-                </div>
-
-                <!-- Rank 5 -->
-                <div class="top-news-sidebar__item">
-                  <span class="top-news-sidebar__rank" aria-label="Vị trí 5">5</span>
-                  <div class="top-news-sidebar__content">
-                    <a href="#" class="top-news-sidebar__title">
-                      Microsoft ra tác nhân tự chủ tương tự OpenClaw
-                    </a>
-                    <div class="top-news-sidebar__divider" aria-hidden="true"></div>
-                  </div>
-                </div>
-              </nav>
-            </aside>
+              </aside>
+            </div>
             <!-- /.cat-body__right -->
           </div>
         </div>
