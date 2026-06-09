@@ -1,0 +1,124 @@
+// ---------------------------------------------------------------------------
+// 1. PROFILE LIST GRID OVERRIDE
+//    .cat-body__grid is reused — override its defaults for the profile layout:
+//    a vertical flex column with 50px gaps between items
+// ---------------------------------------------------------------------------
+
+.cds-category-profile {
+
+    .cat-body__grid {
+        flex-direction: column;
+        gap: var(--space-3xl); // 50px between items
+        align-items: center;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// 2. PROFILE ITEM CARD
+//    Base block: horizontal flex row — image (820px) + text (flex: 1)
+//    Modifier --img-left: image first | --img-right: text first
+// ---------------------------------------------------------------------------
+
+.profile-item {
+    display: flex;
+    gap: var(--space-xl); // 30px gap between image and text columns
+    align-items: flex-start;
+    width: 100%;
+
+    &--img-left {
+        flex-direction: row;
+    }
+
+    &--img-right {
+        flex-direction: row; // text is placed first in HTML, image second
+    }
+}
+
+// ---------------------------------------------------------------------------
+// 3. PROFILE IMAGE LINK
+//    Fixed 820×512px, border-radius 10px, zoom on hover
+// ---------------------------------------------------------------------------
+
+.profile-item__img-link {
+    display: block;
+    width: 820px;
+    height: 512px;
+    flex-shrink: 0;
+    border-radius: var(--radius-xl); // 10px
+    overflow: hidden;
+    position: relative;
+
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        transition: transform var(--transition-slow);
+    }
+
+    &:hover img {
+        transform: scale(1.03);
+    }
+}
+
+// ---------------------------------------------------------------------------
+// 4. PROFILE TEXT BLOCK
+//    flex column, vertically centred, gap 12px between title & excerpt
+// ---------------------------------------------------------------------------
+
+.profile-item__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+// ---------------------------------------------------------------------------
+// 5. PROFILE TITLE  –  32px Bold, letter-spacing -0.032em
+// ---------------------------------------------------------------------------
+
+.profile-item__title {
+    margin: 0;
+
+    a {
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-bold);
+        font-size: var(--fs-4xl); // 32px
+        color: var(--text-primary-color);
+        line-height: 1.4;
+        letter-spacing: -0.032em;
+        text-decoration: none;
+        transition: opacity var(--transition-fast);
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// 6. PROFILE EXCERPT  –  16px Regular, text-secondary (rgba 0.5 dark)
+// ---------------------------------------------------------------------------
+
+.profile-item__excerpt {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-md); // 16px
+    color: var(--text-secondary-color);
+    line-height: 1.5;
+    margin: 0;
+}
+
+// ---------------------------------------------------------------------------
+// 7. DIVIDER between items  –  1px solid rgba(255,255,255,0.1)
+// ---------------------------------------------------------------------------
+
+.profile-item__divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-white-10);
+    flex-shrink: 0;
+}
