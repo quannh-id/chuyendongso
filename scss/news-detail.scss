@@ -1,0 +1,395 @@
+.news-detail {
+  padding: var(--space-3xl) 0;
+
+  .container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  // ── Two-column grid ──
+  &__grid {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  // ── Left column: article + related list ──
+  &__left {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  // ── Dashed vertical separator ──
+  &__sep {
+    width: 1px;
+    align-self: stretch;
+    border-left: var(--border-subtle-dashed);
+    flex-shrink: 0;
+  }
+
+  // ── Right column: sticky sidebar ──
+  &__right {
+    width: 300px;
+    flex-shrink: 0;
+    position: sticky;
+    top: var(--space-4xl);
+    align-self: flex-start;
+  }
+
+  // ── Full-width hairline divider ──
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-white-10);
+    flex-shrink: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 2. ARTICLE HEADER
+//    Breadcrumb · title · lead · meta row (author, date, time) + share button
+// ---------------------------------------------------------------------------
+
+.news-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+// ── Breadcrumb ──
+.news-detail__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.news-detail__breadcrumb-link {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fs-md);
+  color: var(--text-secondary-color);
+  text-decoration: none;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--text-primary-color);
+  }
+}
+
+.news-detail__breadcrumb-sep {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-secondary-color);
+  flex-shrink: 0;
+
+  svg {
+    display: block;
+  }
+}
+
+// ── Article title (h1) ──
+.news-detail__title {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fs-3xl);
+  color: var(--text-primary-color);
+  line-height: 1.3;
+  letter-spacing: -0.013em;
+  margin: 0;
+}
+
+// ── Lead / deck text ──
+.news-detail__lead {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fs-md);
+  color: var(--text-secondary-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+// ── Meta row ──
+.news-detail__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.news-detail__meta-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.news-detail__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+// Icon wrapper — inherits currentColor so it auto-responds to light/dark theme
+.news-detail__meta-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-secondary-color);
+  flex-shrink: 0;
+
+  svg {
+    display: block;
+  }
+}
+
+.news-detail__meta-text {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fs-base);
+  color: var(--text-secondary-color);
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+// ── Share button ──
+.news-detail__share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px var(--space-md);
+  background: var(--color-white-05);
+  border: var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-tertiary-color);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fs-base);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  flex-shrink: 0;
+
+  &:hover {
+    background: var(--color-white-10);
+  }
+}
+
+.news-detail__share-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  svg {
+    display: block;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 3. ARTICLE BODY TYPOGRAPHY
+// ---------------------------------------------------------------------------
+
+.news-detail__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  p {
+    font-family: var(--font-primary);
+    font-style: normal;
+    font-weight: var(--font-weight-regular);
+    font-size: 17px;
+    color: var(--text-tertiary-color);
+    line-height: 1.5;
+    margin: 0 0 1em;
+
+    strong,
+    b {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  h2 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-2xl);
+    color: var(--text-primary-color);
+    line-height: 1.5;
+    margin: 0 0 1em;
+  }
+
+  .image-figure {
+    width: 100%;
+    margin: 0 0 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+    }
+
+    figcaption {
+      font-family: var(--font-secondary);
+      font-weight: var(--font-weight-regular);
+      font-size: var(--fs-base);
+      color: var(--text-secondary-color);
+      line-height: 1.5;
+    }
+  }
+}
+
+
+// ---------------------------------------------------------------------------
+// 5. SOURCE + BOTTOM SHARE ROW
+// ---------------------------------------------------------------------------
+
+.news-detail__footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.news-detail__source {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-semibold);
+  font-size: 17px;
+  color: var(--text-secondary-color);
+  line-height: 1.5;
+}
+
+// ---------------------------------------------------------------------------
+// 6. RELATED ARTICLE BOX
+// ---------------------------------------------------------------------------
+
+.news-detail__related-box {
+  width: 100%;
+  background: var(--bg-secondary-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+}
+
+.news-detail__related-inner {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+
+.news-detail__related-thumb {
+  width: 200px;
+  height: 125px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: block;
+  position: relative;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.news-detail__related-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.news-detail__related-title {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  line-height: inherit;
+
+  a {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: 18px;
+    color: var(--text-primary-color);
+    line-height: 1.4;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+.news-detail__related-excerpt {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fs-base);
+  color: var(--text-tertiary-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+// ---------------------------------------------------------------------------
+// 7. TAGS
+// ---------------------------------------------------------------------------
+
+.news-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.news-detail__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px var(--space-md);
+  background: var(--color-white-10);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fs-base);
+  color: var(--text-tertiary-color);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--transition-fast);
+
+  &:hover {
+    background: var(--color-white-15);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 8. NEWS LIST OVERRIDE
+//    Adjusts subcat-news-item thumb size to match Figma (220 × 138)
+// ---------------------------------------------------------------------------
+
+.news-detail__news-list {
+
+  .subcat-news-item__thumb {
+    width: 220px;
+  }
+
+  .subcat-news-item__title a {
+    font-size: var(--fs-xl);
+  }
+}
