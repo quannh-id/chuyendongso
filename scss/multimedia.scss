@@ -1,0 +1,1095 @@
+// multimedia.scss
+// Styles for the Nghe & Xem multimedia page
+// All values use variables from theme.scss
+
+// ---------------------------------------------------------------------------
+// SHARED UTILITIES
+// ---------------------------------------------------------------------------
+
+// Shared container wrapper (max-width + centering)
+.cds-multimedia-page {
+  position: relative;
+
+  .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+
+    @media (min-width: 1300px) {
+      padding: 0;
+    }
+  }
+}
+
+// Hairline section separator (full-width)
+.mm-section-divider {
+  width: var(--container-width);
+  margin: 0 auto;
+  height: 1px;
+  background: var(--color-white-10);
+}
+
+// Shared section heading row (icon + title)
+.mm-section-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--text-primary-color);
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__text {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-5xl); // 40px – matches Figma
+    color: var(--text-primary-color);
+    line-height: 31.92px;
+    letter-spacing: -0.007em;
+    white-space: nowrap;
+    margin: 0;
+  }
+}
+
+// Shared "Xem thêm" pill link (used in Podcast, Infographic, Gallery)
+.mm-see-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 18px;
+  background: var(--color-white-10);
+  border: var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-primary-color);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fs-base);
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+  flex-shrink: 0;
+
+  &:hover {
+    background: var(--color-white-15);
+  }
+
+  &__chevron {
+    display: inline-flex;
+    align-items: center;
+    width: 10px;
+    height: 6px;
+    flex-shrink: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 1. MULTIMEDIA HEADER (page title + sub-nav tabs)
+// ---------------------------------------------------------------------------
+
+.mm-header {
+  padding: var(--space-3xl) 0 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-xl);
+  }
+
+  // Page h1 title
+  &__title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-5xl); // 40px
+    color: var(--text-primary-color);
+    line-height: 31.92px;
+    letter-spacing: -0.007em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  // Thin vertical divider between title and tab items
+  &__sep {
+    width: 1px;
+    height: 25px;
+    background: var(--color-white-10);
+    flex-shrink: 0;
+  }
+
+  // Individual tab link (e.g. Video, Podcast, …)
+  &__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    // Active state
+    &--active {
+      opacity: 1;
+    }
+
+    span {
+      font-family: var(--font-secondary);
+      font-weight: var(--font-weight-regular);
+      font-size: var(--fs-md);
+      color: var(--text-primary-color);
+      white-space: nowrap;
+      line-height: 1.5;
+    }
+  }
+
+  // Icon wrapper inside a tab
+  &__tab-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    // currentColor inherits from parent <a> so icons flip with theme
+    color: var(--text-primary-color);
+
+    svg {
+      display: block;
+    }
+  }
+
+  // Full-width hairline divider below the header row
+  &__divider {
+    width: var(--container-width);
+    margin: 0 auto;
+    height: 1px;
+    background: var(--color-white-10);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 2. VIDEO SECTION
+// ---------------------------------------------------------------------------
+
+.mm-video {
+  padding: var(--space-3xl) 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  // Two-column layout: feature player (left) + playlist sidebar (right)
+  &__layout {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  // ── Left: featured video ──
+  &__main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__main-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  // YouTube iframe wrapper (16:9 container)
+  &__feature {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: #000;
+  }
+
+  // The embedded YouTube iframe fills the wrapper
+  &__iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    border-radius: var(--radius-xl);
+  }
+
+  // Title + excerpt under the video
+  &__feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  &__feature-title {
+    margin: 0;
+
+    a {
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--fs-3xl); // 30px
+      color: var(--text-primary-color);
+      line-height: 1.3;
+      letter-spacing: -0.013em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity var(--transition-fast);
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &__feature-excerpt {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-md);
+    color: var(--text-secondary-color);
+    line-height: 1.5;
+  }
+
+  // ── Right: playlist sidebar ──
+  &__playlist {
+    width: 400px;
+    flex-shrink: 0;
+    background: var(--bg-secondary-color);
+    border-radius: var(--radius-xl);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    // Match Figma height – scrollable list inside
+    max-height: 467px;
+  }
+
+  &__playlist-header {
+    padding: var(--space-md) var(--space-lg);
+    flex-shrink: 0;
+
+    span {
+      font-family: var(--font-secondary);
+      font-weight: var(--font-weight-regular);
+      font-size: var(--fs-md);
+      color: var(--text-tertiary-color);
+      white-space: nowrap;
+    }
+  }
+
+  &__playlist-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1;
+
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-white-15);
+      border-radius: var(--radius-pill);
+    }
+  }
+
+  &__playlist-item {
+
+    // Active (currently playing) item has a tinted background
+    &--active {
+      background: var(--color-white-05);
+    }
+  }
+
+  // Playlist item button: reset default <button> appearance
+  &__playlist-link {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    padding: var(--space-md) var(--space-lg);
+    text-decoration: none;
+    transition: background var(--transition-fast);
+    cursor: pointer;
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+
+    &:hover {
+      background: var(--color-white-05);
+    }
+  }
+
+  // Playlist thumbnail
+  &__playlist-thumb {
+    width: 160px;
+    height: 90px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Dark overlay for active (playing) thumbnail
+  &__playlist-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: var(--radius-lg);
+  }
+
+  // "Đang phát" badge centred over the thumbnail
+  &__playlist-now-playing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fs-sm);
+    color: var(--color-white-100);
+    white-space: nowrap;
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+    }
+  }
+
+  &__playlist-title {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-secondary);
+    font-weight: 500; // medium
+    font-size: var(--fs-md);
+    color: var(--text-primary-color);
+    line-height: 1.3;
+    margin: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 3. PODCAST SECTION
+// ---------------------------------------------------------------------------
+
+.mm-podcast {
+  padding: var(--space-3xl) 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3xl);
+  }
+
+  // 4-column card grid
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+    width: 100%;
+  }
+
+  // Individual podcast card
+  &__item {
+    background: var(--bg-secondary-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: transform var(--transition-fast), background var(--transition-fast);
+
+    &:hover {
+      background: var(--color-white-10);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__item-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xl);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  // Square cover art
+  &__cover {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-lg); // 18px
+    color: var(--text-primary-color);
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  // Play button (uses podcast-play-icon.svg)
+  &__play {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--space-sm);
+    transition: transform var(--transition-fast);
+
+    .mm-podcast__item:hover & {
+      transform: scale(1.05);
+    }
+
+    img {
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 4. INFOGRAPHIC SECTION
+// ---------------------------------------------------------------------------
+
+.mm-infographic {
+  padding: var(--space-3xl) 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3xl);
+  }
+
+  // 3-column grid, 2 rows
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    width: 100%;
+  }
+
+  &__item {
+    height: 250px;
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+
+    &:hover .mm-infographic__thumb img {
+      transform: scale(1.04);
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  // Image + overlay container
+  &__thumb {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-base);
+    }
+  }
+
+  // Gradient overlay
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-media-overlay);
+    border-radius: var(--radius-2xl);
+  }
+
+  // Caption text pinned to bottom-left
+  &__caption {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-lg);
+    right: 40px;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: 20px;
+    color: var(--color-white-100);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    margin: 0;
+    z-index: var(--z-above);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 5. PHOTO GALLERY SECTION
+// ---------------------------------------------------------------------------
+
+.mm-gallery {
+  padding: var(--space-3xl) 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3xl);
+  }
+
+  // 2-column grid, 2 rows
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    width: 100%;
+  }
+
+  &__item {
+    aspect-ratio: 16 / 10;
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+
+    &:hover .mm-gallery__thumb img {
+      transform: scale(1.04);
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  // Image + overlay container
+  &__thumb {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-base);
+    }
+  }
+
+  // Gradient overlay (bottom fade)
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-media);
+    border-radius: var(--radius-2xl);
+  }
+
+  // Caption row: title + photo-count label
+  &__caption {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-lg);
+    right: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    z-index: var(--z-above);
+  }
+
+  &__caption-title {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: 20px;
+    color: var(--color-white-100);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  // Photo-count label badge (uses white-gallery-icon.svg + number)
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: var(--color-black-60);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: var(--radius-pill);
+    padding: 10px var(--space-md);
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      flex-shrink: 0;
+      position: relative;
+      width: 18px;
+      height: auto;
+    }
+
+    span {
+      font-family: var(--font-secondary);
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--fs-xs); // 12px
+      color: var(--color-white-100);
+      line-height: 15px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+}
+
+.mm-video-bg {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  .sticky-video-bg {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+
+    video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+}
+
+/* =====================================================================
+   PODCAST PLAYER OVERLAY (Fixed bottom-centre HUD)
+   ====================================================================== */
+.cds-podcast-player {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%); // slide down out of view
+  width: 100%;
+  max-width: var(--container-width);
+  background: rgba(1, 8, 28, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top-left-radius: var(--radius-2xl);
+  border-top-right-radius: var(--radius-2xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  padding: var(--space-xl);
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  z-index: 999;
+  transition: transform var(--transition-slow), opacity var(--transition-slow), visibility var(--transition-slow);
+  opacity: 0;
+  visibility: hidden;
+
+  // Active / Visible state
+  &.cds-podcast-player--visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Cover art container
+  &__cover {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  // Player body column
+  &__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-md);
+    align-self: stretch;
+  }
+
+  // Episode title (truncated if too long)
+  &__title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-xl);
+    color: #fff;
+    line-height: 1.3;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Row of control pills
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  // Rounded circular control buttons (Play/Pause)
+  &__btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+    flex-shrink: 0;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.05);
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  // Container pills with unified styling
+  &__pill {
+    height: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-md);
+    gap: var(--space-sm);
+    flex-shrink: 0;
+
+    &--seek {
+      flex: 1;
+      min-width: 250px;
+      gap: var(--space-md);
+    }
+
+    &--volume {
+      min-width: 150px;
+    }
+
+    &--speed {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 100px;
+      color: #fff;
+      height: 50px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 var(--space-md);
+      gap: var(--space-xs);
+      cursor: pointer;
+      font-family: var(--font-secondary);
+      font-size: var(--fs-sm);
+      transition: background var(--transition-fast);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+
+  &__speed-label {
+    opacity: 0.7;
+  }
+
+  &__speed-val {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  // Tua 10s buttons
+  &__skip-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 50%;
+    transition: background var(--transition-fast);
+    color: #fff;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  // Time stamp labels
+  &__time {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-sm);
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    min-width: 35px;
+    text-align: center;
+  }
+
+  // Custom seek slider wrapper (for custom progress bar overlay logic)
+  &__seek-wrap {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 12px;
+
+    &--vol {
+      width: 70px;
+      flex: none;
+    }
+  }
+
+  // Simulated visual track background for active fill
+  &__progress {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    background: var(--cds-color-light-blue);
+    border-radius: 100px;
+    pointer-events: none;
+    width: 0%;
+    z-index: 1;
+  }
+
+  // Range slider styling (hides default browser tracks for bespoke HUD style)
+  &__range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    outline: none;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+
+    &::-webkit-slider-runnable-track {
+      background: transparent;
+      height: 4px;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      margin-top: -4px;
+      transition: transform var(--transition-fast);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover::-webkit-slider-thumb {
+      transform: scale(1.35);
+    }
+
+    &::-moz-range-track {
+      background: transparent;
+      height: 4px;
+    }
+
+    &::-moz-range-thumb {
+      width: 12px;
+      height: 12px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      transition: transform var(--transition-fast);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover::-moz-range-thumb {
+      transform: scale(1.35);
+    }
+  }
+
+  &__icon-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  // Close HUD button
+  &__close {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    opacity: 0.5;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+// ── Responsive Layout (adaptive bottom panel HUD) ──
+@media (max-width: 991px) {
+  .cds-podcast-player {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-lg);
+    gap: var(--space-md);
+    border-radius: 0; // span full width on small viewports
+    max-width: 100%;
+
+    &__cover {
+      width: 80px;
+      height: 80px;
+      align-self: center;
+    }
+
+    &__body {
+      padding: 0;
+      gap: var(--space-sm);
+    }
+
+    &__title {
+      font-size: var(--fs-md);
+      text-align: center;
+    }
+
+    &__controls {
+      justify-content: center;
+      gap: var(--space-sm);
+    }
+
+    &__pill {
+      height: 44px;
+
+      &--seek {
+        width: 100%;
+        order: -1; // Seekbar takes priority on top of other control pills
+      }
+    }
+
+    &__btn {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}

@@ -6,10 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-    <title>Chính sách - Chuyển Động Số</title>
+    <title>Nghe &amp; Xem – Multimedia | Chuyển Động Số</title>
     <meta
       name="description"
-      content="Chuyên mục Chính sách của Chuyển Động Số – Cập nhật nhanh chóng, chính xác về chính sách số, đổi mới sáng tạo tại Việt Nam."
+      content="Khám phá nội dung multimedia của Chuyển Động Số: Video công nghệ, Podcast chuyên sâu, Infographic trực quan và Chùm ảnh thời sự. Cập nhật nhanh, chính xác, sinh động."
     />
 
     <link rel="icon" href="skin/cds-favicon.png" type="image/x-icon" />
@@ -40,7 +40,866 @@
        PAGE BODY
   ====================================================================== -->
     <div class="page-body cds-multimedia-page">
-      <!-- INSERT MULTIMEDIA BODY HTML HERE -->
+      <!-- ================================================================
+             SECTION 1 · MULTIMEDIA-HEADER – Page title + sub-nav tabs
+        ================================================================= -->
+      <section class="mm-header">
+        <div class="container">
+          <!-- Page heading -->
+          <h1 class="mm-header__title">Nghe &amp; Xem</h1>
+
+          <!-- Vertical separator -->
+          <div class="mm-header__sep" aria-hidden="true"></div>
+
+          <!-- Sub-nav: Video (active) -->
+          <a href="#mm-video" class="mm-header__tab" id="mm-tab-video" aria-current="true">
+            <span class="mm-header__tab-icon" aria-hidden="true">
+              <!-- Video play icon – inline SVG for theme-aware colour -->
+              <svg
+                width="12"
+                height="15"
+                viewBox="0 0 12 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M0.708374 0.708496L10.625 7.0835L0.708374 13.4585V0.708496Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1.41667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span>Video</span>
+          </a>
+
+          <!-- Vertical separator -->
+          <div class="mm-header__sep" aria-hidden="true"></div>
+
+          <!-- Sub-nav: Podcast -->
+          <a href="#mm-podcast" class="mm-header__tab" id="mm-tab-podcast">
+            <span class="mm-header__tab-icon" aria-hidden="true">
+              <!-- Podcast headphones icon – inline SVG for theme-aware colour -->
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M0.708252 8.50016H2.83325C3.20898 8.50016 3.56931 8.64942 3.83499 8.91509C4.10066 9.18077 4.24992 9.54111 4.24992 9.91683V12.0418C4.24992 12.4176 4.10066 12.7779 3.83499 13.0436C3.56931 13.3092 3.20898 13.4585 2.83325 13.4585H2.12492C1.7492 13.4585 1.38886 13.3092 1.12318 13.0436C0.857507 12.7779 0.708252 12.4176 0.708252 12.0418V7.0835C0.708252 5.39274 1.3799 3.77123 2.57545 2.57569C3.77099 1.38015 5.3925 0.708496 7.08325 0.708496C8.77401 0.708496 10.3955 1.38015 11.5911 2.57569C12.7866 3.77123 13.4583 5.39274 13.4583 7.0835V12.0418C13.4583 12.4176 13.309 12.7779 13.0433 13.0436C12.7776 13.3092 12.4173 13.4585 12.0416 13.4585H11.3333C10.9575 13.4585 10.5972 13.3092 10.3315 13.0436C10.0658 12.7779 9.91659 12.4176 9.91659 12.0418V9.91683C9.91659 9.54111 10.0658 9.18077 10.3315 8.91509C10.5972 8.64942 10.9575 8.50016 11.3333 8.50016H13.4583"
+                  stroke="currentColor"
+                  stroke-width="1.41667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span>Podcast</span>
+          </a>
+
+          <!-- Vertical separator -->
+          <div class="mm-header__sep" aria-hidden="true"></div>
+
+          <!-- Sub-nav: Infographic -->
+          <a href="#mm-infographic" class="mm-header__tab" id="mm-tab-infographic">
+            <span class="mm-header__tab-icon" aria-hidden="true">
+              <!-- Infographic file icon – inline SVG for theme-aware colour -->
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 17 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <g clip-path="url(#clip-infographic)">
+                  <path
+                    d="M10.6249 1.4165H4.24992C3.8742 1.4165 3.51386 1.56576 3.24818 1.83144C2.98251 2.09711 2.83325 2.45745 2.83325 2.83317V14.1665C2.83325 14.5422 2.98251 14.9026 3.24818 15.1682C3.51386 15.4339 3.8742 15.5832 4.24992 15.5832H12.7499C13.1256 15.5832 13.486 15.4339 13.7517 15.1682C14.0173 14.9026 14.1666 14.5422 14.1666 14.1665V4.95817L10.6249 1.4165Z"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.91675 1.4165V4.24984C9.91675 4.62556 10.066 4.9859 10.3317 5.25157C10.5974 5.51725 10.9577 5.6665 11.3334 5.6665H14.1667"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5.66675 12.7498V12.0415"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.5 12.75V8.5"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.3333 12.75V10.625"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip-infographic">
+                    <rect width="17" height="17" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <span>Infographic</span>
+          </a>
+
+          <!-- Vertical separator -->
+          <div class="mm-header__sep" aria-hidden="true"></div>
+
+          <!-- Sub-nav: Chùm ảnh -->
+          <a href="#mm-gallery" class="mm-header__tab" id="mm-tab-gallery">
+            <span class="mm-header__tab-icon" aria-hidden="true">
+              <!-- Gallery icon – inline SVG for theme-aware colour -->
+              <svg
+                width="18"
+                height="17"
+                viewBox="0 0 18 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 3C1.46957 3 0.960859 3.21071 0.585786 3.58579C0.210714 3.96086 0 4.46957 0 5V15C0 15.5304 0.210714 16.0391 0.585786 16.4142C0.960859 16.7893 1.46957 17 2 17H16C16.5304 17 17.0391 16.7893 17.4142 16.4142C17.7893 16.0391 18 15.5304 18 15V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H2ZM2 14L5.5 9.5L8 12.5L11.5 8L16 14H2ZM15 0C15.5304 0 16.0391 0.210714 16.4142 0.585786C16.7893 0.960859 17 1.46957 17 2H1C1 1.46957 1.21071 0.960859 1.58579 0.585786C1.96086 0.210714 2.46957 0 3 0H15Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>Chùm ảnh</span>
+          </a>
+        </div>
+        <!-- Hairline divider below header -->
+        <div class="mm-header__divider" aria-hidden="true"></div>
+      </section>
+      <!-- /.mm-header -->
+
+      <!-- ================================================================
+             SECTION 2 · VIDEO SECTION
+        ================================================================= -->
+      <section class="mm-video" id="mm-video" aria-labelledby="mm-video-heading">
+        <div class="container">
+          <div class="mm-video__layout">
+            <!-- Left: featured video player -->
+            <div class="mm-video__main">
+              <div class="mm-video__main-inner">
+                <!-- YouTube iframe embed player -->
+                <div class="mm-video__feature">
+                  <iframe
+                    id="mm-yt-player"
+                    class="mm-video__iframe"
+                    src="https://www.youtube.com/embed/JRhwXYfrlss?autoplay=0&rel=0"
+                    title="iPhone 2027 có thể trang bị màn hình cong bốn cạnh"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    allowfullscreen
+                  ></iframe>
+                </div>
+
+                <!-- Title + excerpt below video -->
+                <div class="mm-video__feature-text">
+                  <h2 class="mm-video__feature-title">
+                    <a href="#">iPhone 2027 có thể trang bị màn hình cong bốn cạnh</a>
+                  </h2>
+                  <p class="mm-video__feature-excerpt">
+                    Apple được cho là đang thử nghiệm nguyên mẫu iPhone 19 Pro với màn hình uốn cong
+                    ở cả bốn cạnh, đi kèm hệ thống Face ID ẩn dưới tấm nền.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- /.mm-video__main -->
+
+            <!-- Right: playlist sidebar -->
+            <aside class="mm-video__playlist" aria-label="Danh sách phát">
+              <div class="mm-video__playlist-header">
+                <span>Danh sách phát</span>
+              </div>
+
+              <ul class="mm-video__playlist-list">
+                <!-- Playlist item 1 – currently playing -->
+                <li
+                  class="mm-video__playlist-item mm-video__playlist-item--active"
+                  data-yt-url="https://www.youtube.com/embed/JRhwXYfrlss?autoplay=1&rel=0"
+                >
+                  <button type="button" class="mm-video__playlist-link" aria-current="true">
+                    <div class="mm-video__playlist-thumb">
+                      <img
+                        src="skin/multimedia-video-bg.jpg"
+                        alt="iPhone 2027 có thể trang bị màn hình cong bốn cạnh"
+                        loading="lazy"
+                      />
+                      <div class="mm-video__playlist-thumb-overlay" aria-hidden="true"></div>
+                      <span class="mm-video__playlist-now-playing" aria-label="Đang phát">
+                        <svg
+                          width="10"
+                          height="12"
+                          viewBox="0 0 10 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path d="M0.5 0.866025L9.5 6L0.5 11.1340V0.866025Z" fill="white" />
+                        </svg>
+                        Đang phát
+                      </span>
+                    </div>
+                    <p class="mm-video__playlist-title">
+                      iPhone 2027 có thể trang bị màn hình cong bốn cạnh
+                    </p>
+                  </button>
+                </li>
+
+                <!-- Playlist item 2 -->
+                <li
+                  class="mm-video__playlist-item"
+                  data-yt-url="https://www.youtube.com/embed/c6HGJJabr_4?autoplay=1&rel=0"
+                >
+                  <button type="button" class="mm-video__playlist-link">
+                    <div class="mm-video__playlist-thumb">
+                      <img
+                        src="img/news-thumb-1.png"
+                        alt="Tham vọng xây trung tâm dữ liệu vũ trụ của Musk khó thành"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p class="mm-video__playlist-title">
+                      Tham vọng xây trung tâm dữ liệu vũ trụ của Musk khó thành
+                    </p>
+                  </button>
+                </li>
+
+                <!-- Playlist item 3 -->
+                <li
+                  class="mm-video__playlist-item"
+                  data-yt-url="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&rel=0"
+                >
+                  <button type="button" class="mm-video__playlist-link">
+                    <div class="mm-video__playlist-thumb">
+                      <img
+                        src="img/news-thumb-2.png"
+                        alt="Xiaomi Việt Nam lên tiếng về án phạt 290 triệu đồng"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p class="mm-video__playlist-title">
+                      Xiaomi Việt Nam lên tiếng về án phạt 290 triệu đồng
+                    </p>
+                  </button>
+                </li>
+
+                <!-- Playlist item 4 -->
+                <li
+                  class="mm-video__playlist-item"
+                  data-yt-url="https://www.youtube.com/embed/ydAqOAL2Bec?autoplay=1&rel=0"
+                >
+                  <button type="button" class="mm-video__playlist-link">
+                    <div class="mm-video__playlist-thumb">
+                      <img
+                        src="img/news-thumb-3.png"
+                        alt="Loạt sản phẩm điểm nhấn tại Computex 2026"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p class="mm-video__playlist-title">
+                      Loạt sản phẩm điểm nhấn tại Computex 2026
+                    </p>
+                  </button>
+                </li>
+              </ul>
+            </aside>
+            <!-- /.mm-video__playlist -->
+          </div>
+          <!-- /.mm-video__layout -->
+        </div>
+      </section>
+      <!-- /.mm-video -->
+
+      <!-- Hairline separator -->
+      <div class="mm-section-divider" aria-hidden="true"></div>
+
+      <!-- ================================================================
+             SECTION 3 · PODCAST SECTION
+        ================================================================= -->
+      <section class="mm-podcast" id="mm-podcast" aria-labelledby="mm-podcast-heading">
+        <div class="container">
+          <!-- Section heading with inline SVG podcast icon -->
+          <div class="mm-section-heading">
+            <span class="mm-section-heading__icon" aria-hidden="true">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.708252 8.50016H2.83325C3.20898 8.50016 3.56931 8.64942 3.83499 8.91509C4.10066 9.18077 4.24992 9.54111 4.24992 9.91683V12.0418C4.24992 12.4176 4.10066 12.7779 3.83499 13.0436C3.56931 13.3092 3.20898 13.4585 2.83325 13.4585H2.12492C1.7492 13.4585 1.38886 13.3092 1.12318 13.0436C0.857507 12.7779 0.708252 12.4176 0.708252 12.0418V7.0835C0.708252 5.39274 1.3799 3.77123 2.57545 2.57569C3.77099 1.38015 5.3925 0.708496 7.08325 0.708496C8.77401 0.708496 10.3955 1.38015 11.5911 2.57569C12.7866 3.77123 13.4583 5.39274 13.4583 7.0835V12.0418C13.4583 12.4176 13.309 12.7779 13.0433 13.0436C12.7776 13.3092 12.4173 13.4585 12.0416 13.4585H11.3333C10.9575 13.4585 10.5972 13.3092 10.3315 13.0436C10.0658 12.7779 9.91659 12.4176 9.91659 12.0418V9.91683C9.91659 9.54111 10.0658 9.18077 10.3315 8.91509C10.5972 8.64942 10.9575 8.50016 11.3333 8.50016H13.4583"
+                  stroke="currentColor"
+                  stroke-width="1.41667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <h2 class="mm-section-heading__text" id="mm-podcast-heading">Podcast</h2>
+          </div>
+
+          <!-- Podcast items grid -->
+          <div class="mm-podcast__grid">
+            <!-- Podcast Item 1 -->
+            <article
+              class="mm-podcast__item"
+              data-podcast-url="examples/example1.mp3"
+              data-podcast-title="Tech Talks: Web3 có phải là tương lai?"
+              data-podcast-cover="img/media-podcast-1.png"
+            >
+              <a
+                href="#"
+                class="mm-podcast__item-link"
+                aria-label="Nghe Podcast: Tech Talks: Web3 có phải là tương lai?"
+              >
+                <div class="mm-podcast__cover">
+                  <img
+                    src="img/media-podcast-1.png"
+                    alt="Tech Talks: Web3 có phải là tương lai?"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="mm-podcast__title">Tech Talks: Web3 có phải là tương lai?</h3>
+                <div class="mm-podcast__play" aria-hidden="true">
+                  <img src="skin/podcast-play-icon.svg" alt="" width="50" height="50" />
+                </div>
+              </a>
+            </article>
+
+            <!-- Podcast Item 2 -->
+            <article
+              class="mm-podcast__item"
+              data-podcast-url="examples/example2.mp3"
+              data-podcast-title="Joanna Stern chắc chắn không phải là Robot"
+              data-podcast-cover="img/media-podcast-2.png"
+            >
+              <a
+                href="#"
+                class="mm-podcast__item-link"
+                aria-label="Nghe Podcast: Joanna Stern chắc chắn không phải là Robot"
+              >
+                <div class="mm-podcast__cover">
+                  <img
+                    src="img/media-podcast-2.png"
+                    alt="Joanna Stern chắc chắn không phải là Robot"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="mm-podcast__title">Joanna Stern chắc chắn không phải là Robot</h3>
+                <div class="mm-podcast__play" aria-hidden="true">
+                  <img src="skin/podcast-play-icon.svg" alt="" width="50" height="50" />
+                </div>
+              </a>
+            </article>
+
+            <!-- Podcast Item 3 -->
+            <article
+              class="mm-podcast__item"
+              data-podcast-url="examples/example3.mp3"
+              data-podcast-title="Silicon Valley Girl: AI, Tech and Career Growth"
+              data-podcast-cover="img/news-thumb-1.png"
+            >
+              <a
+                href="#"
+                class="mm-podcast__item-link"
+                aria-label="Nghe Podcast: Silicon Valley Girl: AI, Tech and Career Growth"
+              >
+                <div class="mm-podcast__cover">
+                  <img
+                    src="img/news-thumb-1.png"
+                    alt="Silicon Valley Girl: AI, Tech and Career Growth"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="mm-podcast__title">Silicon Valley Girl: AI, Tech and Career Growth</h3>
+                <div class="mm-podcast__play" aria-hidden="true">
+                  <img src="skin/podcast-play-icon.svg" alt="" width="50" height="50" />
+                </div>
+              </a>
+            </article>
+
+            <!-- Podcast Item 4 -->
+            <article
+              class="mm-podcast__item"
+              data-podcast-url="examples/example4.mp3"
+              data-podcast-title="Latent Space: The AI Engineer Podcast"
+              data-podcast-cover="img/news-thumb-2.png"
+            >
+              <a
+                href="#"
+                class="mm-podcast__item-link"
+                aria-label="Nghe Podcast: Latent Space: The AI Engineer Podcast"
+              >
+                <div class="mm-podcast__cover">
+                  <img
+                    src="img/news-thumb-2.png"
+                    alt="Latent Space: The AI Engineer Podcast"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="mm-podcast__title">Latent Space: The AI Engineer Podcast</h3>
+                <div class="mm-podcast__play" aria-hidden="true">
+                  <img src="skin/podcast-play-icon.svg" alt="" width="50" height="50" />
+                </div>
+              </a>
+            </article>
+          </div>
+          <!-- /.mm-podcast__grid -->
+
+          <!-- See more link -->
+          <a href="#" class="mm-see-more" id="mm-podcast-see-more">
+            <span>Xem thêm</span>
+            <span class="mm-see-more__chevron" aria-hidden="true">
+              <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 1L5 5L9 1"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
+      <!-- /.mm-podcast -->
+
+      <!-- Hairline separator -->
+      <div class="mm-section-divider" aria-hidden="true"></div>
+
+      <!-- ================================================================
+             SECTION 4 · INFOGRAPHIC SECTION
+        ================================================================= -->
+      <section class="mm-infographic" id="mm-infographic" aria-labelledby="mm-infographic-heading">
+        <div class="container">
+          <!-- Section heading with inline SVG infographic icon -->
+          <div class="mm-section-heading">
+            <span class="mm-section-heading__icon" aria-hidden="true">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 17 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip-infographic-sec)">
+                  <path
+                    d="M10.6249 1.4165H4.24992C3.8742 1.4165 3.51386 1.56576 3.24818 1.83144C2.98251 2.09711 2.83325 2.45745 2.83325 2.83317V14.1665C2.83325 14.5422 2.98251 14.9026 3.24818 15.1682C3.51386 15.4339 3.8742 15.5832 4.24992 15.5832H12.7499C13.1256 15.5832 13.486 15.4339 13.7517 15.1682C14.0173 14.9026 14.1666 14.5422 14.1666 14.1665V4.95817L10.6249 1.4165Z"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.91675 1.4165V4.24984C9.91675 4.62556 10.066 4.9859 10.3317 5.25157C10.5974 5.51725 10.9577 5.6665 11.3334 5.6665H14.1667"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5.66675 12.7498V12.0415"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.5 12.75V8.5"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.3333 12.75V10.625"
+                    stroke="currentColor"
+                    stroke-width="1.41667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip-infographic-sec">
+                    <rect width="17" height="17" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <h2 class="mm-section-heading__text" id="mm-infographic-heading">Infographic</h2>
+          </div>
+
+          <!-- Infographic 3-column grid (2 rows) -->
+          <div class="mm-infographic__grid">
+            <!-- Item 1 -->
+            <article class="mm-infographic__item">
+              <a
+                href="#"
+                class="mm-infographic__link"
+                aria-label="Xem infographic: Phân tích chi tiết hệ sinh thái startup và đầu tư công nghệ"
+              >
+                <div class="mm-infographic__thumb">
+                  <img
+                    src="img/news-thumb-1.png"
+                    alt="Phân tích chi tiết hệ sinh thái startup và đầu tư công nghệ"
+                    loading="lazy"
+                  />
+                  <div class="mm-infographic__overlay" aria-hidden="true"></div>
+                  <h3 class="mm-infographic__caption">
+                    Phân tích chi tiết hệ sinh thái startup và đầu tư công nghệ
+                  </h3>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 2 -->
+            <article class="mm-infographic__item">
+              <a
+                href="#"
+                class="mm-infographic__link"
+                aria-label="Xem infographic: Xiaomi 17T Pro đọ cấu hình Galaxy S26 Ultra, iPhone 17 Pro"
+              >
+                <div class="mm-infographic__thumb">
+                  <img
+                    src="img/news-thumb-2.png"
+                    alt="Xiaomi 17T Pro đọ cấu hình Galaxy S26 Ultra, iPhone 17 Pro"
+                    loading="lazy"
+                  />
+                  <div class="mm-infographic__overlay" aria-hidden="true"></div>
+                  <h3 class="mm-infographic__caption">
+                    Xiaomi 17T Pro đọ cấu hình Galaxy S26 Ultra, iPhone 17 Pro
+                  </h3>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 3 -->
+            <article class="mm-infographic__item">
+              <a
+                href="#"
+                class="mm-infographic__link"
+                aria-label="Xem infographic: Bốn nhóm dự án trục đại lộ cảnh quan sông Hồng"
+              >
+                <div class="mm-infographic__thumb">
+                  <img
+                    src="img/news-thumb-3.png"
+                    alt="Bốn nhóm dự án trục đại lộ cảnh quan sông Hồng"
+                    loading="lazy"
+                  />
+                  <div class="mm-infographic__overlay" aria-hidden="true"></div>
+                  <h3 class="mm-infographic__caption">
+                    Bốn nhóm dự án trục đại lộ cảnh quan sông Hồng
+                  </h3>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 4 -->
+            <article class="mm-infographic__item">
+              <a
+                href="#"
+                class="mm-infographic__link"
+                aria-label="Xem infographic: Quy mô 4 tỉnh được định hướng là thành phố trực thuộc Trung ương trước 2030"
+              >
+                <div class="mm-infographic__thumb">
+                  <img
+                    src="img/policy-1.png"
+                    alt="Quy mô 4 tỉnh được định hướng là thành phố trực thuộc Trung ương trước 2030"
+                    loading="lazy"
+                  />
+                  <div class="mm-infographic__overlay" aria-hidden="true"></div>
+                  <h3 class="mm-infographic__caption">
+                    Quy mô 4 tỉnh được định hướng là thành phố trực thuộc Trung ương trước 2030
+                  </h3>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 5 -->
+            <article class="mm-infographic__item">
+              <a
+                href="#"
+                class="mm-infographic__link"
+                aria-label="Xem infographic: Lộ trình kiểm soát ôtô, xe máy chạy xăng dầu ở Hà Nội"
+              >
+                <div class="mm-infographic__thumb">
+                  <img
+                    src="img/policy-2.png"
+                    alt="Lộ trình kiểm soát ôtô, xe máy chạy xăng dầu ở Hà Nội"
+                    loading="lazy"
+                  />
+                  <div class="mm-infographic__overlay" aria-hidden="true"></div>
+                  <h3 class="mm-infographic__caption">
+                    Lộ trình kiểm soát ôtô, xe máy chạy xăng dầu ở Hà Nội
+                  </h3>
+                </div>
+              </a>
+            </article>
+
+            <!-- Item 6 -->
+            <article class="mm-infographic__item">
+              <a
+                href="#"
+                class="mm-infographic__link"
+                aria-label="Xem infographic: Tàu sân bay Mỹ duy trì hoạt động của hàng chục máy bay thế nào"
+              >
+                <div class="mm-infographic__thumb">
+                  <img
+                    src="img/policy-3.png"
+                    alt="Tàu sân bay Mỹ duy trì hoạt động của hàng chục máy bay thế nào"
+                    loading="lazy"
+                  />
+                  <div class="mm-infographic__overlay" aria-hidden="true"></div>
+                  <h3 class="mm-infographic__caption">
+                    Tàu sân bay Mỹ duy trì hoạt động của hàng chục máy bay thế nào
+                  </h3>
+                </div>
+              </a>
+            </article>
+          </div>
+          <!-- /.mm-infographic__grid -->
+
+          <!-- See more link -->
+          <a href="#" class="mm-see-more" id="mm-infographic-see-more">
+            <span>Xem thêm</span>
+            <span class="mm-see-more__chevron" aria-hidden="true">
+              <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 1L5 5L9 1"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
+      <!-- /.mm-infographic -->
+
+      <!-- Hairline separator -->
+      <div class="mm-section-divider" aria-hidden="true"></div>
+
+      <!-- ================================================================
+             SECTION 5 · PHOTO GALLERY SECTION
+        ================================================================= -->
+      <section class="mm-gallery" id="mm-gallery" aria-labelledby="mm-gallery-heading">
+        <div class="container">
+          <!-- Section heading with inline SVG gallery icon -->
+          <div class="mm-section-heading">
+            <span class="mm-section-heading__icon" aria-hidden="true">
+              <svg
+                width="30"
+                height="29"
+                viewBox="0 0 18 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 3C1.46957 3 0.960859 3.21071 0.585786 3.58579C0.210714 3.96086 0 4.46957 0 5V15C0 15.5304 0.210714 16.0391 0.585786 16.4142C0.960859 16.7893 1.46957 17 2 17H16C16.5304 17 17.0391 16.7893 17.4142 16.4142C17.7893 16.0391 18 15.5304 18 15V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H2ZM2 14L5.5 9.5L8 12.5L11.5 8L16 14H2ZM15 0C15.5304 0 16.0391 0.210714 16.4142 0.585786C16.7893 0.960859 17 1.46957 17 2H1C1 1.46957 1.21071 0.960859 1.58579 0.585786C1.96086 0.210714 2.46957 0 3 0H15Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <h2 class="mm-section-heading__text" id="mm-gallery-heading">Chùm ảnh</h2>
+          </div>
+
+          <!-- Gallery 2-column grid (2 rows) -->
+          <div class="mm-gallery__grid">
+            <!-- Gallery Item 1 -->
+            <article class="mm-gallery__item">
+              <a
+                href="#"
+                class="mm-gallery__link"
+                aria-label="Xem chùm ảnh: Nhà máy sản xuất chip đầu tiên của Việt Nam (12 ảnh)"
+              >
+                <div class="mm-gallery__thumb">
+                  <img
+                    src="img/media-gallery-1.png"
+                    alt="Nhà máy sản xuất chip đầu tiên của Việt Nam"
+                    loading="lazy"
+                  />
+                  <div class="mm-gallery__overlay" aria-hidden="true"></div>
+                  <div class="mm-gallery__caption">
+                    <h3 class="mm-gallery__caption-title">
+                      Nhà máy sản xuất chip đầu tiên của Việt Nam
+                    </h3>
+                    <!-- Photo count label using white-gallery-icon.svg -->
+                    <div class="mm-gallery__label" aria-label="12 ảnh">
+                      <img
+                        src="skin/white-gallery-icon.svg"
+                        alt=""
+                        width="18"
+                        height="17"
+                        aria-hidden="true"
+                      />
+                      <span>12</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Gallery Item 2 -->
+            <article class="mm-gallery__item">
+              <a
+                href="#"
+                class="mm-gallery__link"
+                aria-label="Xem chùm ảnh: Cuộc sống thay đổi nhờ công nghệ AI (12 ảnh)"
+              >
+                <div class="mm-gallery__thumb">
+                  <img
+                    src="img/media-gallery-2.png"
+                    alt="Cuộc sống thay đổi nhờ công nghệ AI"
+                    loading="lazy"
+                  />
+                  <div class="mm-gallery__overlay" aria-hidden="true"></div>
+                  <div class="mm-gallery__caption">
+                    <h3 class="mm-gallery__caption-title">Cuộc sống thay đổi nhờ công nghệ AI</h3>
+                    <div class="mm-gallery__label" aria-label="12 ảnh">
+                      <img
+                        src="skin/white-gallery-icon.svg"
+                        alt=""
+                        width="18"
+                        height="17"
+                        aria-hidden="true"
+                      />
+                      <span>12</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Gallery Item 3 -->
+            <article class="mm-gallery__item">
+              <a
+                href="#"
+                class="mm-gallery__link"
+                aria-label="Xem chùm ảnh: Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á (12 ảnh)"
+              >
+                <div class="mm-gallery__thumb">
+                  <img
+                    src="img/media-gallery-3.png"
+                    alt="Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á"
+                    loading="lazy"
+                  />
+                  <div class="mm-gallery__overlay" aria-hidden="true"></div>
+                  <div class="mm-gallery__caption">
+                    <h3 class="mm-gallery__caption-title">
+                      Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á
+                    </h3>
+                    <div class="mm-gallery__label" aria-label="12 ảnh">
+                      <img
+                        src="skin/white-gallery-icon.svg"
+                        alt=""
+                        width="18"
+                        height="17"
+                        aria-hidden="true"
+                      />
+                      <span>12</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Gallery Item 4 -->
+            <article class="mm-gallery__item">
+              <a
+                href="#"
+                class="mm-gallery__link"
+                aria-label="Xem chùm ảnh: Tàu quỹ đạo Sao Hỏa của NASA dừng hoạt động sau 11 năm (12 ảnh)"
+              >
+                <div class="mm-gallery__thumb">
+                  <img
+                    src="img/media-hero.png"
+                    alt="Tàu quỹ đạo Sao Hỏa của NASA dừng hoạt động sau 11 năm"
+                    loading="lazy"
+                  />
+                  <div class="mm-gallery__overlay" aria-hidden="true"></div>
+                  <div class="mm-gallery__caption">
+                    <h3 class="mm-gallery__caption-title">
+                      Tàu quỹ đạo Sao Hỏa của NASA dừng hoạt động sau 11 năm
+                    </h3>
+                    <div class="mm-gallery__label" aria-label="12 ảnh">
+                      <img
+                        src="skin/white-gallery-icon.svg"
+                        alt=""
+                        width="18"
+                        height="17"
+                        aria-hidden="true"
+                      />
+                      <span>12</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+          <!-- /.mm-gallery__grid -->
+
+          <!-- See more link -->
+          <a href="#" class="mm-see-more" id="mm-gallery-see-more">
+            <span>Xem thêm</span>
+            <span class="mm-see-more__chevron" aria-hidden="true">
+              <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 1L5 5L9 1"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
+      <!-- /.mm-gallery -->
+
+      <div class="mm-video-bg">
+        <div class="sticky-video-bg">
+          <video src="skin/multimedia-video-bg.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
     </div>
     <!-- /.page-body -->
     <div data-include="modules/footer.html"></div>
@@ -50,5 +909,346 @@
   ====================================================================== -->
     <script src="js/home.js"></script>
     <script src="js/common.js"></script>
+
+    <!-- =====================================================================
+       MULTIMEDIA · Smooth-scroll tabs with sticky-header offset
+    ====================================================================== -->
+    <script>
+      (function () {
+        var HEADER_OFFSET = 65; // height of the sticky nav bar (px)
+
+        document.querySelectorAll(".mm-header__tab").forEach(function (tab) {
+          tab.addEventListener("click", function (e) {
+            var href = tab.getAttribute("href");
+            if (!href || href.charAt(0) !== "#") return; // only handle anchors
+
+            var target = document.querySelector(href);
+            if (!target) return;
+
+            e.preventDefault();
+
+            // Calculate destination: top of the section minus header height
+            var targetTop = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+
+            // Smooth ease-in-out scroll via native API (supported in all modern browsers)
+            window.scrollTo({
+              top: targetTop,
+              behavior: "smooth"
+            });
+
+            // Update URL hash without triggering a jump
+            if (history.pushState) {
+              history.pushState(null, "", href);
+            }
+          });
+        });
+      })();
+    </script>
+
+    <!-- =====================================================================
+       MULTIMEDIA · YouTube playlist switcher
+    ====================================================================== -->
+    <script>
+      (function () {
+        var player = document.getElementById("mm-yt-player");
+        var items = document.querySelectorAll(".mm-video__playlist-item[data-yt-url]");
+
+        items.forEach(function (item) {
+          item.querySelector(".mm-video__playlist-link").addEventListener("click", function () {
+            var url = item.getAttribute("data-yt-url");
+            if (!url || !player) return;
+
+            // 1. Swap iframe source → triggers autoplay
+            player.src = url;
+
+            // 2. Remove active state from all items
+            items.forEach(function (el) {
+              el.classList.remove("mm-video__playlist-item--active");
+              var btn = el.querySelector(".mm-video__playlist-link");
+              if (btn) btn.removeAttribute("aria-current");
+              var badge = el.querySelector(".mm-video__playlist-now-playing");
+              if (badge) badge.style.display = "none";
+              var overlay = el.querySelector(".mm-video__playlist-thumb-overlay");
+              if (overlay) overlay.style.display = "none";
+            });
+
+            // 3. Mark clicked item as active
+            item.classList.add("mm-video__playlist-item--active");
+            this.setAttribute("aria-current", "true");
+            var badge = item.querySelector(".mm-video__playlist-now-playing");
+            if (badge) badge.style.removeProperty("display");
+            var overlay = item.querySelector(".mm-video__playlist-thumb-overlay");
+            if (overlay) overlay.style.removeProperty("display");
+          });
+        });
+      })();
+    </script>
+
+    <!-- =====================================================================
+       PODCAST PLAYER OVERLAY (fixed bottom-centre)
+       Controlled by js/podcast-player.js
+    ====================================================================== -->
+    <div
+      id="cds-podcast-player"
+      class="cds-podcast-player"
+      role="region"
+      aria-label="Podcast player"
+      aria-hidden="true"
+    >
+      <!-- Cover art -->
+      <div class="cds-podcast-player__cover">
+        <img id="pp-cover" src="" alt="" aria-hidden="true" />
+      </div>
+
+      <!-- Title + controls column -->
+      <div class="cds-podcast-player__body">
+        <!-- Episode title -->
+        <p id="pp-title" class="cds-podcast-player__title"></p>
+
+        <!-- Controls row -->
+        <div class="cds-podcast-player__controls">
+          <!-- Play / Pause button -->
+          <button
+            id="pp-play-pause"
+            type="button"
+            class="cds-podcast-player__btn cds-podcast-player__btn--play"
+            aria-label="Phát"
+          >
+            <!-- Play icon -->
+            <svg
+              class="pp-icon-play"
+              width="18"
+              height="20"
+              viewBox="0 0 18 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M1 1.5L17 10L1 18.5V1.5Z"
+                fill="white"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <!-- Pause icon -->
+            <svg
+              class="pp-icon-pause"
+              width="16"
+              height="20"
+              viewBox="0 0 16 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect x="1" y="1" width="5" height="18" rx="1.5" fill="white" />
+              <rect x="10" y="1" width="5" height="18" rx="1.5" fill="white" />
+            </svg>
+          </button>
+
+          <!-- Skip controls: -10s / +10s -->
+          <div class="cds-podcast-player__pill">
+            <button
+              id="pp-rewind"
+              type="button"
+              class="cds-podcast-player__skip-btn"
+              aria-label="Tua lại 10 giây"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8Z"
+                  fill="white"
+                />
+                <text
+                  x="7.5"
+                  y="15.5"
+                  font-size="6"
+                  fill="white"
+                  font-family="sans-serif"
+                  font-weight="bold"
+                >
+                  10
+                </text>
+              </svg>
+            </button>
+            <button
+              id="pp-forward"
+              type="button"
+              class="cds-podcast-player__skip-btn"
+              aria-label="Tua tới 10 giây"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8S4 16.42 4 12s3.58-8 8-8Z"
+                  fill="white"
+                />
+                <text
+                  x="7.5"
+                  y="15.5"
+                  font-size="6"
+                  fill="white"
+                  font-family="sans-serif"
+                  font-weight="bold"
+                >
+                  10
+                </text>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Seekbar: current time + range + total time -->
+          <div class="cds-podcast-player__pill cds-podcast-player__pill--seek">
+            <span id="pp-current" class="cds-podcast-player__time">0:00</span>
+            <div class="cds-podcast-player__seek-wrap">
+              <input
+                id="pp-seekbar"
+                type="range"
+                class="cds-podcast-player__range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Vị trí phát"
+              />
+              <div id="pp-progress" class="cds-podcast-player__progress"></div>
+            </div>
+            <span id="pp-duration" class="cds-podcast-player__time">0:00</span>
+          </div>
+
+          <!-- Volume -->
+          <div class="cds-podcast-player__pill cds-podcast-player__pill--volume">
+            <button
+              id="pp-mute"
+              type="button"
+              class="cds-podcast-player__icon-btn"
+              aria-label="Bật/tắt âm thanh"
+            >
+              <!-- Volume on -->
+              <svg
+                class="pp-icon-vol-on"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11 5L6 9H2v6h4l5 4V5ZM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <!-- Volume off -->
+              <svg
+                class="pp-icon-vol-off"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11 5L6 9H2v6h4l5 4V5ZM23 9l-6 6M17 9l6 6"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div class="cds-podcast-player__seek-wrap cds-podcast-player__seek-wrap--vol">
+              <input
+                id="pp-volume"
+                type="range"
+                class="cds-podcast-player__range"
+                min="0"
+                max="1"
+                value="1"
+                step="0.01"
+                aria-label="Âm lượng"
+              />
+              <div id="pp-vol-fill" class="cds-podcast-player__progress"></div>
+            </div>
+          </div>
+
+          <!-- Playback speed -->
+          <button
+            id="pp-speed"
+            type="button"
+            class="cds-podcast-player__pill cds-podcast-player__pill--speed"
+            aria-label="Tốc độ phát"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7Z"
+                fill="white"
+              />
+            </svg>
+            <span class="cds-podcast-player__speed-label">Tốc độ</span>
+            <span id="pp-speed-val" class="cds-podcast-player__speed-val">x1</span>
+          </button>
+        </div>
+        <!-- /.cds-podcast-player__controls -->
+      </div>
+      <!-- /.cds-podcast-player__body -->
+
+      <!-- Close button -->
+      <button
+        id="pp-close"
+        type="button"
+        class="cds-podcast-player__close"
+        aria-label="Đóng podcast player"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M18 6 6 18M6 6l12 12"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <!-- Hidden <audio> element -->
+      <audio id="pp-audio" preload="metadata"></audio>
+    </div>
+    <!-- /#cds-podcast-player -->
+
+    <script src="js/podcast-player.js"></script>
   </body>
 </html>
