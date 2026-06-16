@@ -261,6 +261,7 @@
                 <li
                   class="mm-video__playlist-item mm-video__playlist-item--active"
                   data-yt-url="https://www.youtube.com/embed/JRhwXYfrlss?autoplay=1&rel=0"
+                  data-excerpt="Apple được cho là đang thử nghiệm nguyên mẫu iPhone 19 Pro với màn hình uốn cong ở cả bốn cạnh, đi kèm hệ thống Face ID ẩn dưới tấm nền."
                 >
                   <button type="button" class="mm-video__playlist-link" aria-current="true">
                     <div class="mm-video__playlist-thumb">
@@ -294,6 +295,7 @@
                 <li
                   class="mm-video__playlist-item"
                   data-yt-url="https://www.youtube.com/embed/c6HGJJabr_4?autoplay=1&rel=0"
+                  data-excerpt="Nỗ lực đưa các máy chủ lưu trữ dữ liệu lên quỹ đạo Trái Đất của Elon Musk đang gặp nhiều rào cản kỹ thuật và bài toán kinh tế."
                 >
                   <button type="button" class="mm-video__playlist-link">
                     <div class="mm-video__playlist-thumb">
@@ -335,6 +337,7 @@
                 <li
                   class="mm-video__playlist-item"
                   data-yt-url="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&rel=0"
+                  data-excerpt="Đại diện hãng công nghệ Trung Quốc đã lên tiếng làm rõ về các vi phạm dẫn đến án phạt hành chính từ phía cơ quan quản lý Việt Nam."
                 >
                   <button type="button" class="mm-video__playlist-link">
                     <div class="mm-video__playlist-thumb">
@@ -376,6 +379,7 @@
                 <li
                   class="mm-video__playlist-item"
                   data-yt-url="https://www.youtube.com/embed/ydAqOAL2Bec?autoplay=1&rel=0"
+                  data-excerpt="Tổng hợp những thiết bị phần cứng, robot và giải pháp AI nổi bật nhất tại triển lãm công nghệ lớn nhất châu Á năm nay."
                 >
                   <button type="button" class="mm-video__playlist-link">
                     <div class="mm-video__playlist-thumb">
@@ -1039,6 +1043,20 @@
             // 1. Swap iframe source → triggers autoplay
             player.src = url;
 
+            // Update title and description in feature area
+            var titleText = item.querySelector(".mm-video__playlist-title").textContent.trim();
+            var excerptText = item.getAttribute("data-excerpt") || "";
+            player.title = titleText;
+
+            var featureTitleLink = document.querySelector(".mm-video__feature-title a");
+            if (featureTitleLink) {
+              featureTitleLink.textContent = titleText;
+            }
+            var featureExcerpt = document.querySelector(".mm-video__feature-excerpt");
+            if (featureExcerpt) {
+              featureExcerpt.textContent = excerptText;
+            }
+
             // 2. Remove active state from all items
             items.forEach(function (el) {
               el.classList.remove("mm-video__playlist-item--active");
@@ -1057,6 +1075,19 @@
             if (badge) badge.style.removeProperty("display");
             var overlay = item.querySelector(".mm-video__playlist-thumb-overlay");
             if (overlay) overlay.style.removeProperty("display");
+
+            // 4. Scroll to .mm-video section on mobile (viewport < 768px)
+            if (window.innerWidth < 768) {
+              var target = document.querySelector(".mm-video");
+              if (target) {
+                var HEADER_OFFSET = 65;
+                var targetTop = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+                window.scrollTo({
+                  top: targetTop,
+                  behavior: "smooth"
+                });
+              }
+            }
           });
         });
       })();
