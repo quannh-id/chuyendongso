@@ -112,12 +112,17 @@ img {
   }
 }
 
+
 .site-header {
   z-index: var(--z-header);
   background: var(--cds-color-dark-blue);
 
   &--sticky {
     padding-top: 90px;
+
+    @media (max-width: 768px) {
+      padding-top: 60px;
+    }
   }
 
   &__top {
@@ -133,6 +138,10 @@ img {
       align-items: center;
       width: 200px;
       flex-shrink: 0;
+
+      @media (max-width: 768px) {
+        width: 40px;
+      }
 
       .partner-logo-link {
         display: block;
@@ -151,6 +160,13 @@ img {
         box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: background var(--transition-fast), transform var(--transition-fast);
+
+        @media (max-width: 768px) {
+          width: 40px;
+          height: 40px;
+          background: transparent;
+          border: none;
+        }
 
         &:hover {
           background: rgba(255, 255, 255, 0.15);
@@ -196,6 +212,13 @@ img {
       flex-shrink: 0;
     }
 
+    .header-center {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+
     .cds-logo {
       height: 60px;
       width: auto;
@@ -209,6 +232,10 @@ img {
       width: 200px;
       gap: var(--space-md);
       flex-shrink: 0;
+
+      @media (max-width: 768px) {
+        width: 40px;
+      }
 
       .btn-search {
         display: flex;
@@ -245,6 +272,10 @@ img {
         &:hover {
           opacity: 0.85;
         }
+
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
     }
 
@@ -264,10 +295,6 @@ img {
       padding: 10px var(--space-lg);
       animation: slideDown 0.3s ease-out;
 
-      @media (min-width: 1300px) {
-        padding: 10px calc((100% - var(--container-width)) / 2);
-      }
-
       .header-left {
         .partner-logo-link {
           display: none;
@@ -281,6 +308,10 @@ img {
       .cds-logo {
         height: 33px;
       }
+
+      @media (max-width: 768px) {
+        padding: 10px;
+      }
     }
 
     // Expand Menu (Mega Menu Container)
@@ -290,7 +321,7 @@ img {
       left: 0;
       right: 0;
       width: 100%;
-      background: var(--cds-color-dark-blue);
+      background: var(--bg-primary-color);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
       border-radius: 0 0 10px 10px;
@@ -303,6 +334,13 @@ img {
       overflow-x: hidden;
       overflow-y: auto;
       max-height: calc(100vh - 70px); // prevent going off viewport
+      box-sizing: border-box;
+
+      @media (max-width: 768px) {
+        max-height: calc(100dvh - 60px);
+        padding: 0;
+        border-radius: 0;
+      }
 
       .site-header--menu-open & {
         opacity: 1;
@@ -324,6 +362,12 @@ img {
     align-items: start;
     max-width: var(--container-width);
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
   }
 
   &__brand {
@@ -333,6 +377,12 @@ img {
     width: 265px;
     flex-shrink: 0;
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+      order: 2;
+      width: 100%;
+      align-items: center;
+    }
 
 
     .brand-logo {
@@ -345,7 +395,11 @@ img {
       font-family: var(--font-secondary);
       font-size: 15px;
       line-height: 1.4;
-      color: rgba(255, 255, 255, 0.5);
+      color: var(--text-secondary-color);
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
   }
 
@@ -353,6 +407,10 @@ img {
     align-self: stretch;
     width: 1px;
     border-right: 1px dashed rgba(255, 255, 255, 0.1);
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__categories {
@@ -361,11 +419,17 @@ img {
     flex-direction: column;
     gap: 20px;
 
+    @media (max-width: 768px) {
+      order: 1;
+      border-bottom: 1px dashed var(--color-white-10);
+      padding-bottom: 20px;
+    }
+
     .categories-title {
       font-family: var(--font-secondary);
       font-weight: var(--font-weight-regular);
       font-size: 16px;
-      color: rgba(255, 255, 255, 0.5);
+      color: var(--text-secondary-color);
       margin: 0;
     }
 
@@ -374,13 +438,8 @@ img {
       grid-template-columns: repeat(3, 1fr);
       gap: 30px 20px;
 
-      @media (max-width: 1100px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      @media (max-width: 900px) {
+      @media (max-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px 15px;
       }
     }
 
@@ -394,9 +453,10 @@ img {
         font-family: var(--font-primary);
         font-weight: var(--font-weight-semibold);
         font-size: 16px;
-        color: #ffffff;
+        color: var(--text-primary-color);
         text-decoration: none;
         transition: color var(--transition-fast);
+        white-space: nowrap;
 
         &:hover {
           color: var(--cds-color-light-blue);
@@ -406,12 +466,12 @@ img {
       &-item {
         font-family: var(--font-secondary);
         font-size: 14px;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--text-secondary-color);
         text-decoration: none;
         transition: color var(--transition-fast);
 
         &:hover {
-          color: #ffffff;
+          color: var(--text-primary-color);
         }
       }
     }
@@ -424,10 +484,20 @@ img {
     flex-direction: column;
     gap: 20px;
 
+    @media (max-width: 768px) {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      order: 0;
+      border-bottom: 1px dashed var(--color-white-10);
+      padding-bottom: 20px;
+    }
+
     .settings-title {
       font-family: var(--font-secondary);
       font-size: 16px;
-      color: rgba(255, 255, 255, 0.5);
+      color: var(--text-secondary-color);
       margin: 0;
     }
 
@@ -449,13 +519,18 @@ img {
       .theme-icon {
         flex-shrink: 0;
         transition: transform var(--transition-base);
+
+        path {
+          fill: var(--text-primary-color);
+          stroke: var(--text-primary-color);
+        }
       }
 
       .theme-label {
         font-family: var(--font-secondary);
         font-weight: var(--font-weight-semibold);
         font-size: 13px;
-        color: #ffffff;
+        color: var(--text-primary-color);
         flex-grow: 1;
       }
 
@@ -511,6 +586,10 @@ img {
   box-shadow: var(--shadow-header);
   overflow: visible;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -520,17 +599,6 @@ img {
     max-width: var(--page-width);
     margin: 0 auto;
     overflow: visible;
-
-    @media (max-width: 900px) {
-      overflow-x: auto;
-      justify-content: flex-start;
-      padding: 20px var(--space-lg) 21px;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
   }
 
   &__home-icon {
@@ -630,10 +698,6 @@ img {
       width: 100%;
       height: 15px;
       background: transparent;
-    }
-
-    @media (max-width: 900px) {
-      display: none !important;
     }
   }
 
@@ -745,18 +809,31 @@ img {
   border-top: 1px solid var(--color-white-10);
   padding: var(--space-3xl) var(--space-lg);
 
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
+
   &__inner {
     max-width: var(--container-width);
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__brand {
     display: flex;
     align-items: center;
     gap: var(--space-lg);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
 
     .footer-logo {
       height: 42.5px;
@@ -772,13 +849,21 @@ img {
       opacity: 0.8;
       line-height: 1.5;
       white-space: nowrap;
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
   }
 
   &__links {
     display: flex;
     align-items: center;
-    gap: 25.5px;
+    gap: 25px;
+
+    @media (max-width: 768px) {
+      gap: 15px;
+    }
 
     .footer-link {
       font-family: var(--font-secondary);

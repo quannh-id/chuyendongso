@@ -19,6 +19,12 @@
     position: sticky;
     top: var(--space-5xl);
     align-self: flex-start;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      position: relative;
+      top: 0;
+    }
   }
 
   .spotlight-section__publication,
@@ -38,6 +44,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 // ── Hero image link ──
@@ -81,9 +91,12 @@
     font-size: var(--fs-4xl);
     color: var(--text-primary-color);
     line-height: 1.4;
-    letter-spacing: -0.032em; // ≈ -1.04px at 32px
     text-decoration: none;
     transition: opacity var(--transition-fast);
+
+    @media (max-width: 768px) {
+      font-size: 6vw;
+    }
 
     &:hover {
       opacity: 0.85;

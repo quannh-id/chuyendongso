@@ -1,1886 +1,1212 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
-    <title>
-      Chuyển Động Số – Tin tức công nghệ, khoa học, chính sách số hàng đầu Việt
-      Nam
-    </title>
-    <meta
-      name="description"
-      content="Chuyển Động Số – Kênh thông tin hàng đầu về công nghệ, khoa học, chính sách số, đổi mới sáng tạo và an ninh mạng tại Việt Nam."
-    />
-    <link rel="canonical" href="https://chuyendongso.vn/" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
 
-    <!-- Open Graph Metadata -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Chuyển Động Số – Tin tức công nghệ, khoa học, chính sách số hàng đầu Việt Nam"
-    />
-    <meta
-      property="og:description"
-      content="Chuyển Động Số – Kênh thông tin hàng đầu về công nghệ, khoa học, chính sách số, đổi mới sáng tạo và an ninh mạng tại Việt Nam."
-    />
-    <meta property="og:url" content="https://chuyendongso.vn/" />
-    <meta property="og:site_name" content="Chuyển Động Số" />
-    <meta
-      property="og:image"
-      content="https://chuyendongso.vn/img/hero-main.png"
-    />
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://chuyendongso.vn/#website",
-            "url": "https://chuyendongso.vn/",
-            "name": "Chuyển Động Số",
-            "description": "Kênh thông tin hàng đầu về công nghệ, khoa học, chính sách số, đổi mới sáng tạo và an ninh mạng tại Việt Nam.",
-            "publisher": {
-              "@id": "https://chuyendongso.vn/#organization"
-            },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://chuyendongso.vn/?s={search_term_string}"
-              },
-              "query-input": "required name=search_term_string"
-            }
-          },
-          {
-            "@type": "NewsMediaOrganization",
-            "@id": "https://chuyendongso.vn/#organization",
-            "name": "Chuyển Động Số",
-            "url": "https://chuyendongso.vn/",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://chuyendongso.vn/skin/cds-logo.png"
-            },
-            "sameAs": [
-              "https://www.facebook.com/chuyendongso",
-              "https://www.youtube.com/chuyendongso"
-            ]
-          }
-        ]
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var viewport = document.querySelector("meta[name=viewport]");
+      if (!viewport) {
+        viewport = document.createElement("meta");
+        viewport.name = "viewport";
+        document.head.appendChild(viewport);
       }
-    </script>
+      if (screen.width >= 768) {
+        viewport.content = "width=1440";
+      } else {
+        viewport.content =
+          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
+      }
+    })();
+  </script>
+  <title>Chuyển Động Số – Tin tức công nghệ, khoa học, chính sách số hàng đầu Việt Nam</title>
+  <meta name="description"
+    content="Chuyển Động Số – Kênh thông tin hàng đầu về công nghệ, khoa học, chính sách số, đổi mới sáng tạo và an ninh mạng tại Việt Nam." />
+  <link rel="canonical" href="https://chuyendongso.vn/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
-    <link rel="icon" href="skin/cds-favicon.png" type="image/x-icon" />
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Chuyển Động Số – Tin tức công nghệ, khoa học, chính sách số hàng đầu Việt Nam" />
+  <meta property="og:description"
+    content="Chuyển Động Số – Kênh thông tin hàng đầu về công nghệ, khoa học, chính sách số, đổi mới sáng tạo và an ninh mạng tại Việt Nam." />
+  <meta property="og:url" content="https://chuyendongso.vn/" />
+  <meta property="og:site_name" content="Chuyển Động Số" />
 
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" href="skin/cds-favicon.png" type="image/x-icon" />
 
-    <script type="text/javascript" src="js/jquery-4.0.0.slim.min.js"></script>
-    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
-  </head>
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
 
-  <body>
-    <!-- Apply saved theme state immediately to prevent visual flash (FOUC) -->
-    <script>
-      (function () {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "light") {
-          document.body.classList.add("light-theme");
-        } else {
-          document.body.classList.remove("light-theme");
-        }
-      })();
-    </script>
+  <script type="text/javascript" src="js/jquery-4.0.0.slim.min.js"></script>
+  <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+</head>
 
-    <div data-include="modules/header.html"></div>
+<body>
+  <!-- Apply saved theme state immediately to prevent visual flash (FOUC) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+      } else {
+        document.body.classList.remove("light-theme");
+      }
+    })();
+  </script>
 
-    <div class="page-body cds-home-page">
-      <!-- Visually hidden main H1 for site branding -->
-      <h1 class="visually-hidden">
-        Chuyển Động Số – Tin tức công nghệ, khoa học, chính sách số hàng đầu
-        Việt Nam
-      </h1>
+  <div data-include="modules/header.html"></div>
 
-      <!-- ==================================================================
+  <div class="page-body cds-home-page">
+    <!-- Visually hidden main H1 for site branding -->
+    <h1 class="visually-hidden">
+      Chuyển Động Số – Tin tức công nghệ, khoa học, chính sách số hàng đầu Việt Nam
+    </h1>
+
+    <!-- ==================================================================
          SECTION 1 – TOP FEATURED (Hero Swiper + Recent News)
      =================================================================== -->
-      <section
-        class="home-section home-section--tinted top-featured"
-        id="top-featured"
-        aria-label="Tin nổi bật"
-      >
-        <div class="container">
-          <!-- ── Featured Swiper (left) ── -->
-          <div class="top-featured__swiper">
-            <div class="top-featured__slide-wrapper swiper" id="hero-swiper">
-              <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <article class="top-featured__slide swiper-slide">
-                  <a href="#" class="slide-bg-wrap">
-                    <img
-                      class="slide-bg"
-                      src="img/hero-main.png"
-                      alt="Apple Vision Pro 2 ra mắt với công nghệ AI thế hệ mới"
-                    />
-                  </a>
+    <section class="home-section home-section--tinted top-featured" id="top-featured" aria-label="Tin nổi bật">
+      <div class="container">
+        <!-- ── Featured Swiper (left) ── -->
+        <div class="top-featured__swiper">
+          <div class="top-featured__slide-wrapper swiper" id="hero-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <article class="top-featured__slide swiper-slide">
+                <a href="#" class="slide-bg-wrap">
+                  <img class="slide-bg" src="img/hero-main.png"
+                    alt="Apple Vision Pro 2 ra mắt với công nghệ AI thế hệ mới" />
+                </a>
 
-                  <div class="slide-content">
-                    <div class="slide-meta">
-                      <a href="#" class="badge">Chính sách</a>
-                      <time class="slide-time">4 GIỜ TRƯỚC</time>
-                    </div>
-                    <h2 class="slide-title">
-                      <a href="#"
-                        >Apple Vision Pro 2 ra mắt với công nghệ AI thế hệ
-                        mới</a
-                      >
-                    </h2>
-                    <p class="slide-desc">
-                      Thiết bị thực tế hỗn hợp mới của Apple tích hợp chip M5 và
-                      khả năng xử lý AI tiên tiến, mở ra kỷ nguyên mới cho điện
-                      toán không gian.
-                    </p>
+                <div class="slide-content">
+                  <div class="slide-meta">
+                    <a href="#" class="badge">Chính sách</a>
+                    <time class="slide-time">4 GIỜ TRƯỚC</time>
                   </div>
-                </article>
+                  <h2 class="slide-title">
+                    <a href="#">Apple Vision Pro 2 ra mắt với công nghệ AI thế hệ mới</a>
+                  </h2>
+                  <p class="slide-desc">
+                    Thiết bị thực tế hỗn hợp mới của Apple tích hợp chip M5 và khả năng xử lý AI
+                    tiên tiến, mở ra kỷ nguyên mới cho điện toán không gian.
+                  </p>
+                </div>
+              </article>
 
-                <!-- Slide 2 -->
-                <article class="top-featured__slide swiper-slide">
-                  <a href="#" class="slide-bg-wrap">
-                    <img
-                      class="slide-bg"
-                      src="img/policy-1.png"
-                      alt="Meta phát triển kính AR siêu mỏng chỉ 2mm"
-                    />
-                  </a>
+              <!-- Slide 2 -->
+              <article class="top-featured__slide swiper-slide">
+                <a href="#" class="slide-bg-wrap">
+                  <img class="slide-bg" src="img/policy-1.png" alt="Meta phát triển kính AR siêu mỏng chỉ 2mm" />
+                </a>
 
-                  <div class="slide-content">
-                    <div class="slide-meta">
-                      <a href="#" class="badge">Khoa học</a>
-                      <time class="slide-time">2 GIỜ TRƯỚC</time>
-                    </div>
-                    <h2 class="slide-title">
-                      <a href="#">Meta phát triển kính AR siêu mỏng chỉ 2mm</a>
-                    </h2>
-                    <p class="slide-desc">
-                      Công nghệ quang học mới giúp Meta tạo ra kính AR mỏng nhất
-                      thế giới, hứa hẹn cách mạng hoá thiết bị đeo thông minh.
-                    </p>
+                <div class="slide-content">
+                  <div class="slide-meta">
+                    <a href="#" class="badge">Khoa học</a>
+                    <time class="slide-time">2 GIỜ TRƯỚC</time>
                   </div>
-                </article>
+                  <h2 class="slide-title">
+                    <a href="#">Meta phát triển kính AR siêu mỏng chỉ 2mm</a>
+                  </h2>
+                  <p class="slide-desc">
+                    Công nghệ quang học mới giúp Meta tạo ra kính AR mỏng nhất thế giới, hứa hẹn
+                    cách mạng hoá thiết bị đeo thông minh.
+                  </p>
+                </div>
+              </article>
 
-                <!-- Slide 3 -->
-                <article class="top-featured__slide swiper-slide">
-                  <a href="#" class="slide-bg-wrap">
-                    <img
-                      class="slide-bg"
-                      src="img/policy-2.png"
-                      alt="OpenAI ra mắt GPT-5 với khả năng suy luận vượt trội"
-                    />
-                  </a>
+              <!-- Slide 3 -->
+              <article class="top-featured__slide swiper-slide">
+                <a href="#" class="slide-bg-wrap">
+                  <img class="slide-bg" src="img/policy-2.png"
+                    alt="OpenAI ra mắt GPT-5 với khả năng suy luận vượt trội" />
+                </a>
 
-                  <div class="slide-content">
-                    <div class="slide-meta">
-                      <a href="#" class="badge">AI</a>
-                      <time class="slide-time">1 GIỜ TRƯỚC</time>
-                    </div>
-                    <h2 class="slide-title">
-                      <a href="#"
-                        >OpenAI ra mắt GPT-5 với khả năng suy luận vượt trội</a
-                      >
-                    </h2>
-                    <p class="slide-desc">
-                      GPT-5 đánh dấu bước nhảy vọt về khả năng lập luận đa bước,
-                      mã hoá và hiểu ngữ cảnh phức tạp.
-                    </p>
+                <div class="slide-content">
+                  <div class="slide-meta">
+                    <a href="#" class="badge">AI</a>
+                    <time class="slide-time">1 GIỜ TRƯỚC</time>
                   </div>
-                </article>
-              </div>
-              <!-- /.swiper-wrapper -->
+                  <h2 class="slide-title">
+                    <a href="#">OpenAI ra mắt GPT-5 với khả năng suy luận vượt trội</a>
+                  </h2>
+                  <p class="slide-desc">
+                    GPT-5 đánh dấu bước nhảy vọt về khả năng lập luận đa bước, mã hoá và hiểu ngữ
+                    cảnh phức tạp.
+                  </p>
+                </div>
+              </article>
             </div>
-            <!-- /.swiper -->
-
-            <!-- Shadow strips -->
-            <div class="top-featured__shadow" aria-hidden="true">
-              <div class="shadow-strip"></div>
-            </div>
-
-            <!-- Pagination (rendered by Swiper) -->
-            <div class="swiper-pagination" id="hero-swiper-pagination"></div>
+            <!-- /.swiper-wrapper -->
           </div>
-          <!-- /.top-featured__swiper -->
+          <!-- /.swiper -->
 
-          <!-- ── Recent News (right) ── -->
-          <aside class="top-featured__recent" aria-label="Tin nhanh">
-            <div class="top-featured__recent-border" aria-hidden="true"></div>
+          <!-- Shadow strips -->
+          <div class="top-featured__shadow" aria-hidden="true">
+            <div class="shadow-strip"></div>
+          </div>
 
-            <!-- Heading -->
-            <div class="top-featured__recent-heading">
-              <div class="heading-bar" aria-hidden="true">
-                <div class="bar-accent"></div>
-              </div>
-              <h2 class="section-header__title">Tin nhanh</h2>
-            </div>
-
-            <!-- News list -->
-            <div class="top-featured__news-list" role="list">
-              <article class="top-featured__news-item" role="listitem">
-                <img
-                  class="news-icon"
-                  src="skin/blue-timeline-dot.svg"
-                  alt=""
-                  aria-hidden="true"
-                />
-                <div class="news-body">
-                  <time class="news-date">22/05/2026 11:57</time>
-                  <div class="news-row">
-                    <h3 class="news-title">
-                      <a href="#"
-                        >Chia sẻ thông tin sai sự thật về dịch bệnh có thể bị
-                        phạt tù đến 5 năm</a
-                      >
-                    </h3>
-                    <a href="#" class="news-thumb-wrap">
-                      <img
-                        class="news-thumb"
-                        src="img/news-thumb-1.png"
-                        alt="Chia sẻ thông tin sai sự thật"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="top-featured__news-item" role="listitem">
-                <img
-                  class="news-icon"
-                  src="skin/blue-timeline-dot.svg"
-                  alt=""
-                  aria-hidden="true"
-                />
-                <div class="news-body">
-                  <time class="news-date">22/05/2026 11:57</time>
-                  <div class="news-row">
-                    <h3 class="news-title">
-                      <a href="#"
-                        >Apple chặn 1,1 tỷ lượt tạo tài khoản gian lận trên App
-                        Store</a
-                      >
-                    </h3>
-                    <a href="#" class="news-thumb-wrap">
-                      <img
-                        class="news-thumb"
-                        src="img/news-thumb-2.png"
-                        alt="Apple chặn 1,1 tỷ lượt tạo tài khoản gian lận trên App Store"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="top-featured__news-item" role="listitem">
-                <img
-                  class="news-icon"
-                  src="skin/blue-timeline-dot.svg"
-                  alt=""
-                  aria-hidden="true"
-                />
-                <div class="news-body">
-                  <time class="news-date">22/05/2026 11:57</time>
-                  <div class="news-row">
-                    <h3 class="news-title">
-                      <a href="#"
-                        >Apple đang phát triển vật liệu mới iPhone Pro</a
-                      >
-                    </h3>
-                    <a href="#" class="news-thumb-wrap">
-                      <img
-                        class="news-thumb"
-                        src="img/news-thumb-3.png"
-                        alt="Apple phát triển vật liệu mới"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- /.top-featured__news-list -->
-          </aside>
+          <!-- Pagination (rendered by Swiper) -->
+          <div class="swiper-pagination" id="hero-swiper-pagination"></div>
         </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.top-featured -->
+        <!-- /.top-featured__swiper -->
 
-      <!-- ==================================================================
+        <!-- ── Recent News (right) ── -->
+        <aside class="top-featured__recent" aria-label="Tin nhanh">
+          <div class="top-featured__recent-border" aria-hidden="true"></div>
+
+          <!-- Heading -->
+          <div class="top-featured__recent-heading">
+            <div class="heading-bar" aria-hidden="true">
+              <div class="bar-accent"></div>
+            </div>
+            <h2 class="section-header__title">Tin nhanh</h2>
+          </div>
+
+          <!-- News list -->
+          <div class="top-featured__news-list" role="list">
+            <article class="top-featured__news-item" role="listitem">
+              <img class="news-icon" src="skin/blue-timeline-dot.svg" alt="" aria-hidden="true" />
+              <div class="news-body">
+                <time class="news-date">22/05/2026 11:57</time>
+                <div class="news-row">
+                  <h3 class="news-title">
+                    <a href="#">Chia sẻ thông tin sai sự thật về dịch bệnh có thể bị phạt tù đến 5 năm</a>
+                  </h3>
+                  <a href="#" class="news-thumb-wrap">
+                    <img class="news-thumb" src="img/news-thumb-1.png" alt="Chia sẻ thông tin sai sự thật"
+                      loading="lazy" />
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="top-featured__news-item" role="listitem">
+              <img class="news-icon" src="skin/blue-timeline-dot.svg" alt="" aria-hidden="true" />
+              <div class="news-body">
+                <time class="news-date">22/05/2026 11:57</time>
+                <div class="news-row">
+                  <h3 class="news-title">
+                    <a href="#">Apple chặn 1,1 tỷ lượt tạo tài khoản gian lận trên App Store</a>
+                  </h3>
+                  <a href="#" class="news-thumb-wrap">
+                    <img class="news-thumb" src="img/news-thumb-2.png"
+                      alt="Apple chặn 1,1 tỷ lượt tạo tài khoản gian lận trên App Store" loading="lazy" />
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="top-featured__news-item" role="listitem">
+              <img class="news-icon" src="skin/blue-timeline-dot.svg" alt="" aria-hidden="true" />
+              <div class="news-body">
+                <time class="news-date">22/05/2026 11:57</time>
+                <div class="news-row">
+                  <h3 class="news-title">
+                    <a href="#">Apple đang phát triển vật liệu mới iPhone Pro</a>
+                  </h3>
+                  <a href="#" class="news-thumb-wrap">
+                    <img class="news-thumb" src="img/news-thumb-3.png" alt="Apple phát triển vật liệu mới"
+                      loading="lazy" />
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- /.top-featured__news-list -->
+        </aside>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.top-featured -->
+
+    <!-- ==================================================================
          SECTION 2 – POLICY (Chính sách story cards)
     =================================================================== -->
-      <section
-        class="home-section policy-section"
-        id="policy-section"
-        aria-label="Chính sách"
-      >
-        <div class="container">
-          <!-- Header -->
-          <div class="section-header">
-            <h2 class="section-header__title">Chính sách</h2>
-            <a class="btn-see-all" href="#" aria-label="Xem tất cả chính sách">
-              Xem tất cả
-              <svg
-                class="chevron"
-                viewBox="0 0 6 10"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M1 1L5 5L1 9"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-
-          <!-- Story cards swiper -->
-          <div class="policy-section__swiper-wrapper">
-            <div class="policy-section__swiper-track swiper" id="policy-swiper">
-              <div class="swiper-wrapper">
-                <a class="policy-section__card swiper-slide" href="#">
-                  <img
-                    class="card-img"
-                    src="img/policy-1.png"
-                    alt="Meta phát triển kính AR siêu mỏng chỉ 2mm"
-                    loading="lazy"
-                  />
-                  <div class="card-overlay" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      Meta phát triển kính AR siêu mỏng chỉ 2mm
-                    </h3>
-                  </div>
-                </a>
-
-                <a class="policy-section__card swiper-slide" href="#">
-                  <img
-                    class="card-img"
-                    src="img/policy-2.png"
-                    alt="OpenAI ra mắt GPT-5 với khả năng suy luận vượt trội"
-                    loading="lazy"
-                  />
-                  <div class="card-overlay" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      OpenAI ra mắt GPT-5 với khả năng suy luận vượt trội
-                    </h3>
-                  </div>
-                </a>
-
-                <a class="policy-section__card swiper-slide" href="#">
-                  <img
-                    class="card-img"
-                    src="img/policy-3.png"
-                    alt="Samsung Galaxy S26 sẽ có camera 500MP"
-                    loading="lazy"
-                  />
-                  <div class="card-overlay" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      Samsung Galaxy S26 sẽ có camera 500MP
-                    </h3>
-                  </div>
-                </a>
-
-                <a class="policy-section__card swiper-slide" href="#">
-                  <img
-                    class="card-img"
-                    src="img/policy-4.png"
-                    alt="Việt Nam cấp phép thử nghiệm xe tự lái cấp độ 4"
-                    loading="lazy"
-                  />
-                  <div class="card-overlay" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      Việt Nam cấp phép thử nghiệm xe tự lái cấp độ 4
-                    </h3>
-                  </div>
-                </a>
-
-                <a class="policy-section__card swiper-slide" href="#">
-                  <img
-                    class="card-img"
-                    src="img/policy-5.png"
-                    alt="SpaceX thử nghiệm thành công tên lửa tái sử dụng"
-                    loading="lazy"
-                  />
-                  <div class="card-overlay" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      SpaceX thử nghiệm thành công tên lửa tái sử dụng
-                    </h3>
-                  </div>
-                </a>
-              </div>
-              <!-- /.swiper-wrapper -->
-            </div>
-            <!-- /.swiper -->
-
-            <!-- Next fade + arrow -->
-            <div
-              class="policy-section__nav policy-section__nav--next"
-              aria-hidden="true"
-            >
-              <button class="nav-btn" id="policy-next" aria-label="Xem thêm">
-                <img src="skin/black-arrow-right.svg" alt="" />
-              </button>
-            </div>
-            <!-- Prev fade + arrow -->
-            <div
-              class="policy-section__nav policy-section__nav--prev"
-              aria-hidden="true"
-            >
-              <button class="nav-btn" id="policy-prev" aria-label="Quay lại">
-                <img src="skin/black-arrow-left.svg" alt="" />
-              </button>
-            </div>
-          </div>
-          <!-- /.policy-section__swiper-wrapper -->
-
-          <!-- Pagination scrollbar -->
-          <div
-            class="policy-scrollbar"
-            id="policy-pagination"
-            role="progressbar"
-            aria-label="Policy slide navigation"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-valuenow="0"
-          >
-            <div
-              class="policy-scrollbar__thumb"
-              id="policy-scrollbar-thumb"
-            ></div>
-          </div>
+    <section class="home-section policy-section" id="policy-section" aria-label="Chính sách">
+      <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+          <h2 class="section-header__title">Chính sách</h2>
+          <a class="btn-see-all" href="#" aria-label="Xem tất cả chính sách">
+            Xem tất cả
+            <svg class="chevron" viewBox="0 0 6 10" fill="none" aria-hidden="true">
+              <path d="M1 1L5 5L1 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
         </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.policy-section -->
 
-      <!-- ==================================================================
-         SECTION 3 – SPOTLIGHT (Tiêu điểm + Ấn phẩm)
-    =================================================================== -->
-      <section
-        class="home-section home-section--tinted spotlight-section"
-        id="spotlight-section"
-        aria-label="Tiêu điểm và Ấn phẩm"
-      >
-        <div class="container">
-          <!-- ── Left: Tiêu điểm ── -->
-          <div class="spotlight-section__left">
-            <div class="spotlight-section__left-header">
-              <h2 class="section-header__title">Tiêu điểm</h2>
-              <a class="btn-see-all" href="#" aria-label="Xem tất cả tiêu điểm">
-                Xem tất cả
-                <svg
-                  class="chevron"
-                  viewBox="0 0 6 10"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M1 1L5 5L1 9"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+        <!-- Story cards swiper -->
+        <div class="policy-section__swiper-wrapper">
+          <div class="policy-section__swiper-track swiper" id="policy-swiper">
+            <div class="swiper-wrapper">
+              <a class="policy-section__card swiper-slide" href="#">
+                <img class="card-img" src="img/policy-1.png" alt="Meta phát triển kính AR siêu mỏng chỉ 2mm"
+                  loading="lazy" />
+                <div class="card-overlay" aria-hidden="true"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Meta phát triển kính AR siêu mỏng chỉ 2mm</h3>
+                </div>
+              </a>
+
+              <a class="policy-section__card swiper-slide" href="#">
+                <img class="card-img" src="img/policy-2.png" alt="OpenAI ra mắt GPT-5 với khả năng suy luận vượt trội"
+                  loading="lazy" />
+                <div class="card-overlay" aria-hidden="true"></div>
+                <div class="card-body">
+                  <h3 class="card-title">OpenAI ra mắt GPT-5 với khả năng suy luận vượt trội</h3>
+                </div>
+              </a>
+
+              <a class="policy-section__card swiper-slide" href="#">
+                <img class="card-img" src="img/policy-3.png" alt="Samsung Galaxy S26 sẽ có camera 500MP"
+                  loading="lazy" />
+                <div class="card-overlay" aria-hidden="true"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Samsung Galaxy S26 sẽ có camera 500MP</h3>
+                </div>
+              </a>
+
+              <a class="policy-section__card swiper-slide" href="#">
+                <img class="card-img" src="img/policy-4.png" alt="Việt Nam cấp phép thử nghiệm xe tự lái cấp độ 4"
+                  loading="lazy" />
+                <div class="card-overlay" aria-hidden="true"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Việt Nam cấp phép thử nghiệm xe tự lái cấp độ 4</h3>
+                </div>
+              </a>
+
+              <a class="policy-section__card swiper-slide" href="#">
+                <img class="card-img" src="img/policy-5.png" alt="SpaceX thử nghiệm thành công tên lửa tái sử dụng"
+                  loading="lazy" />
+                <div class="card-overlay" aria-hidden="true"></div>
+                <div class="card-body">
+                  <h3 class="card-title">SpaceX thử nghiệm thành công tên lửa tái sử dụng</h3>
+                </div>
               </a>
             </div>
-
-            <div class="spotlight-section__news-grid">
-              <!-- Small card -->
-              <article class="spotlight-section__card-sm">
-                <a
-                  href="https://znews.vn/co-hoi-nghin-nam-co-mot-cua-viet-nam-post1600400.html"
-                  target="_blank"
-                  rel="noopener"
-                  class="card-img-wrap"
-                >
-                  <img
-                    src="img/spotlight-main.png"
-                    alt="Việt Nam đứng trước cơ hội nghìn năm có một với AI"
-                    loading="lazy"
-                  />
-                </a>
-                <div class="card-text">
-                  <h3 class="card-title">
-                    <a
-                      class=""
-                      href="https://znews.vn/co-hoi-nghin-nam-co-mot-cua-viet-nam-post1600400.html"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      Việt Nam đứng trước cơ hội 'nghìn năm có một' với AI
-                    </a>
-                  </h3>
-
-                  <p class="card-excerpt">
-                    So với những công nghệ khác, Việt Nam đứng trước cơ hội lớn
-                    để bắt kịp xu hướng AI cùng thế giới nếu kịp thời đưa ra
-                    chính sách thu hút nhân lực, phát triển nguồn dữ liệu.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Large card -->
-              <article class="spotlight-section__card-lg">
-                <a
-                  href="https://zingnews.vn/gom-bat-trang-thu-cong-doc-ban-hay-cong-nghe-nhan-ban-post1600357.html"
-                  target="_blank"
-                  rel="noopener"
-                  class="card-img-wrap"
-                >
-                  <img
-                    src="img/cat-science.png"
-                    alt="Gốm Bát Tràng: Thủ công độc bản hay công nghệ nhân bản"
-                    loading="lazy"
-                  />
-                </a>
-                <div class="card-text">
-                  <h3 class="card-title">
-                    <a
-                      href="https://zingnews.vn/gom-bat-trang-thu-cong-doc-ban-hay-cong-nghe-nhan-ban-post1600357.html"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      Gốm Bát Tràng: Thủ công độc bản hay công nghệ 'nhân bản'?
-                    </a>
-                  </h3>
-                  <p class="card-excerpt">
-                    Thiết bị thực tế hỗn hợp mới của Apple tích hợp chip M5 và
-                    khả năng xử lý AI tiên tiến, mở ra kỷ nguyên mới cho điện
-                    toán không gian.
-                  </p>
-                </div>
-              </article>
-
-              <!-- Divider -->
-              <div class="spotlight-section__divider" aria-hidden="true"></div>
-            </div>
+            <!-- /.swiper-wrapper -->
           </div>
-          <!-- /.spotlight-section__left -->
+          <!-- /.swiper -->
 
-          <!-- ── Right: Ấn phẩm ── -->
-          <aside class="spotlight-section__publication" aria-label="Ấn phẩm số">
-            <a href="" class="spotlight-section__pub-header">
-              <h2 class="section-header__title">Ấn phẩm</h2>
-              <span class="external-icon" aria-hidden="true">
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 13 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.39451e-06 9.78808V3.97662C3.39451e-06 3.561 -0.00081937 3.20286 0.0231537 2.90947C0.0478682 2.60721 0.102838 2.30633 0.250176 2.01706C0.470085 1.5856 0.820894 1.23479 1.25236 1.01488C1.54163 0.86754 1.84251 0.812571 2.14476 0.787856C2.43816 0.763883 2.7963 0.764706 3.21192 0.764706H4.58824C5.01057 0.764706 5.35294 1.10708 5.35294 1.52941C5.35294 1.95175 5.01057 2.29412 4.58824 2.29412H3.21192C2.77106 2.29412 2.48614 2.29508 2.26948 2.31279C2.11401 2.3255 2.03165 2.3443 1.98421 2.36133L1.94687 2.37776C1.839 2.43276 1.74633 2.51223 1.67578 2.60926L1.61305 2.71157C1.59373 2.7495 1.56506 2.82658 1.54808 3.03418C1.53038 3.25084 1.52941 3.53577 1.52941 3.97662V9.78808C1.52941 10.2289 1.53038 10.5139 1.54808 10.7305C1.56506 10.9381 1.59373 11.0152 1.61305 11.0531L1.67578 11.1554C1.74633 11.2525 1.839 11.3319 1.94687 11.3869L1.94761 11.3877C1.98493 11.4067 2.06161 11.4357 2.26873 11.4527C2.48507 11.4704 2.76958 11.4706 3.20968 11.4706H9.02562C9.46556 11.4706 9.74974 11.4703 9.96582 11.4527C10.1727 11.4357 10.2495 11.4068 10.2869 11.3877L10.2877 11.3869C10.4318 11.3135 10.5487 11.1967 10.6222 11.0531C10.6416 11.0151 10.671 10.9377 10.688 10.7305C10.7056 10.5143 10.7059 10.2302 10.7059 9.79032V8.41176C10.7059 7.98943 11.0483 7.64706 11.4706 7.64706C11.8929 7.64706 12.2353 7.98943 12.2353 8.41176V9.79032C12.2353 10.2052 12.2361 10.5629 12.2121 10.856C12.1905 11.1203 12.1461 11.3833 12.0367 11.6386L11.9851 11.7476C11.765 12.1787 11.4135 12.529 10.9814 12.7491L10.9822 12.7498C10.6931 12.8973 10.3924 12.9521 10.0905 12.9768C9.79761 13.0008 9.4403 13 9.02562 13H3.20968C2.79483 13 2.43717 13.0008 2.14402 12.9768C1.87987 12.9552 1.61679 12.9102 1.36139 12.8006L1.25236 12.7498C0.820895 12.5299 0.470086 12.1791 0.250176 11.7476C0.102838 11.4584 0.0478682 11.1575 0.0231537 10.8552C-0.00081937 10.5618 3.39451e-06 10.2037 3.39451e-06 9.78808ZM13 4.58823C13 5.01057 12.6576 5.35294 12.2353 5.35294C11.813 5.35294 11.4706 5.01057 11.4706 4.58823V2.61075L7.42303 6.65832C7.12439 6.95695 6.64032 6.95695 6.34168 6.65832C6.04305 6.35968 6.04305 5.87561 6.34168 5.57697L10.3892 1.52941H8.41177C7.98943 1.52941 7.64706 1.18704 7.64706 0.764706C7.64706 0.34237 7.98943 0 8.41177 0H12.2353C12.6576 0 13 0.34237 13 0.764706V4.58823Z"
-                    fill="white"
-                  />
-                </svg>
-              </span>
-            </a>
-
-            <div>
-              <div class="spotlight-section__pub-book swiper" id="pub-swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="#">
-                      <img
-                        src="img/publication.png"
-                        alt="Ấn phẩm số CDS"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#">
-                      <img
-                        src="img/publication.png"
-                        alt="Ấn phẩm số CDS"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#">
-                      <img
-                        src="img/publication.png"
-                        alt="Ấn phẩm số CDS"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Book navigator -->
-              <div class="spotlight-section__pub-nav">
-                <button
-                  class="nav-btn pub-nav--prev"
-                  id="pub-prev"
-                  aria-label="Trang trước"
-                >
-                  <img
-                    class="nav-arrow"
-                    src="skin/white-arrow-left.svg"
-                    alt="Trang trước"
-                  />
-                </button>
-                <!-- Fraction pagination (rendered by Swiper) -->
-                <div
-                  class="swiper-pagination pub-fraction"
-                  id="pub-swiper-pagination"
-                ></div>
-                <button
-                  class="nav-btn pub-nav--next"
-                  id="pub-next"
-                  aria-label="Trang sau"
-                >
-                  <img
-                    class="nav-arrow"
-                    src="skin/white-arrow-right.svg"
-                    alt="Trang sau"
-                  />
-                </button>
-              </div>
-            </div>
-          </aside>
+          <!-- Next fade + arrow -->
+          <div class="policy-section__nav policy-section__nav--next" aria-hidden="true">
+            <button class="nav-btn" id="policy-next" aria-label="Xem thêm">
+              <img src="skin/black-arrow-right.svg" alt="" />
+            </button>
+          </div>
+          <!-- Prev fade + arrow -->
+          <div class="policy-section__nav policy-section__nav--prev" aria-hidden="true">
+            <button class="nav-btn" id="policy-prev" aria-label="Quay lại">
+              <img src="skin/black-arrow-left.svg" alt="" />
+            </button>
+          </div>
         </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.spotlight-section -->
+        <!-- /.policy-section__swiper-wrapper -->
 
-      <!-- ==================================================================
-         SECTION 4 – CATEGORY COLUMNS (3 columns)
+        <!-- Pagination scrollbar -->
+        <div class="policy-scrollbar" id="policy-pagination" role="progressbar" aria-label="Policy slide navigation"
+          aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="policy-scrollbar__thumb" id="policy-scrollbar-thumb"></div>
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.policy-section -->
+
+    <!-- ==================================================================
+         SECTION 3 – SPOTLIGHT (Tiêu điểm + Ấn phẩm)
     =================================================================== -->
-      <section
-        class="home-section category-section"
-        id="category-section"
-        aria-label="Tin theo chuyên mục"
-      >
-        <div class="container">
-          <!-- Column 1: Khoa học - Công nghệ -->
-          <div class="category-section__col">
-            <a href="#" class="category-section__col-header">
-              <h2 class="col-title">Khoa học - Công nghệ</h2>
-              <span
-                class="col-link-icon"
-                src="skin/blue-right-arrow.svg"
-                alt="Xem tất cả Khoa học - Công nghệ"
-              >
-                <img src="skin/white-arrow-right.svg" alt="" />
-              </span>
-            </a>
-            <div class="category-section__article">
-              <div class="category-section__top-news">
-                <a href="#" class="top-news-img">
-                  <img
-                    src="img/cat-science.png"
-                    alt="Siêu chòm vệ tinh có thể thay đổi khí hậu Trái Đất"
-                    loading="lazy"
-                  />
-                </a>
-                <div class="top-news-text">
-                  <h3 class="top-news-title">
-                    <a href="#" target="_blank" rel="noopener">
-                      Siêu chòm vệ tinh có thể thay đổi khí hậu Trái Đất
-                    </a>
-                  </h3>
-                  <p class="top-news-excerpt">
-                    So với những công nghệ khác, Việt Nam đứng trước cơ hội lớn
-                    để bắt kịp xu hướng AI cùng thế giới nếu kịp thời đưa ra
-                    chính sách thu hút nhân lực, phát triển nguồn dữ liệu.
-                  </p>
-                </div>
-              </div>
-              <div class="category-section__text-news-list">
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >Nhà khoa học Việt Nam phát hiện vật liệu siêu dẫn mới</a
-                  >
-                </div>
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >Meta sa thải hàng nghìn nhân viên sau '28 ngày địa ngục'</a
-                  >
-                </div>
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >Cựu CEO Google bị sinh viên la ó khi phát biểu về AI</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.col -->
-
-          <div class="category-section__col-divider" aria-hidden="true"></div>
-
-          <!-- Column 2: Đổi mới sáng tạo -->
-          <div class="category-section__col">
-            <a href="#" class="category-section__col-header">
-              <h2 class="col-title">Đổi mới sáng tạo</h2>
-              <span
-                class="col-link-icon"
-                src="skin/blue-right-arrow.svg"
-                alt="Xem tất cả Khoa học - Công nghệ"
-              >
-                <img src="skin/white-arrow-right.svg" alt="" />
-              </span>
-            </a>
-            <div class="category-section__article">
-              <div class="category-section__top-news">
-                <a href="#" class="top-news-img">
-                  <img
-                    src="img/cat-innovation.png"
-                    alt="Dùng AI ghép ảnh bánh mì, cửa hàng nhận bão một sao"
-                    loading="lazy"
-                  />
-                </a>
-                <div class="top-news-text">
-                  <h3 class="top-news-title">
-                    <a href="#" target="_blank" rel="noopener">
-                      Dùng AI ghép ảnh bánh mì, cửa hàng nhận 'bão một sao'
-                    </a>
-                  </h3>
-                  <p class="top-news-excerpt">
-                    Cửa hàng bánh mì Myer's Bagels sử dụng AI cho các bài quảng
-                    bá trên mạng xã hội, nhưng nhanh chóng bị chấm một sao.
-                  </p>
-                </div>
-              </div>
-              <div class="category-section__text-news-list">
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >AI áp đảo chung kết cuộc thi khởi nghiệp tại châu Âu</a
-                  >
-                </div>
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >Google bắt tay Nvidia, OpenAI để phát hiện nội dung AI</a
-                  >
-                </div>
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >Máy gia tốc hạt AI đầu tiên trên thế giới đang được xây
-                    dựng</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.col -->
-
-          <div class="category-section__col-divider" aria-hidden="true"></div>
-
-          <!-- Column 3: An ninh mạng -->
-          <div class="category-section__col">
-            <a href="#" class="category-section__col-header">
-              <h2 class="col-title">An ninh mạng</h2>
-              <span
-                class="col-link-icon"
-                src="skin/blue-right-arrow.svg"
-                alt="Xem tất cả Khoa học - Công nghệ"
-              >
-                <img src="skin/white-arrow-right.svg" alt="" />
-              </span>
-            </a>
-            <div class="category-section__article">
-              <div class="category-section__top-news">
-                <a href="#" class="top-news-img">
-                  <img
-                    src="img/cat-security.png"
-                    alt="Lỗ hổng đánh gậy bản quyền trên nền tảng online"
-                    loading="lazy"
-                  />
-                </a>
-                <div class="top-news-text">
-                  <h3 class="top-news-title">
-                    <a href="#" target="_blank" rel="noopener">
-                      Lỗ hổng 'đánh gậy' bản quyền trên nền tảng online</a
-                    >
-                  </h3>
-
-                  <p class="top-news-excerpt">
-                    Mạng đa kênh (MCN) được nhận định tăng sức mạnh cho nhà sáng
-                    tạo trên nền tảng số, nhưng cũng gây tranh cãi về hành vi
-                    "đánh gậy" bản quyền.
-                  </p>
-                </div>
-              </div>
-              <div class="category-section__text-news-list">
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >Thủ tướng: Khoa học công nghệ cần chuyển tư duy 'làm cho
-                    có' sang 'thực chất'</a
-                  >
-                </div>
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >'Bán dẫn Việt Nam nên đi theo hướng tối ưu năng lượng'</a
-                  >
-                </div>
-                <div class="category-section__text-news">
-                  <a class="text-news-title" href="#"
-                    >Phiên chợ công nghệ AI tại Hà Nội</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.category-section -->
-
-      <!-- ==================================================================
-         SECTION 5 – PROFILE (Featured person)
-    =================================================================== -->
-      <section
-        class="home-section home-section--tinted profile-section"
-        id="profile-section"
-        aria-label="Nhân vật nổi bật"
-      >
-        <div class="container">
-          <!-- Left: text content -->
-          <div class="profile-section__left">
-            <a href="#" class="profile-section__label">
-              <span class="badge">Nhân vật</span>
-            </a>
-            <h2 class="profile-section__title">
-              <a href="#"
-                >Nguyễn Minh Tuấn: Người định hình tương lai công nghệ Việt
-                Nam</a
-              >
-            </h2>
-            <p class="profile-section__excerpt">
-              Ở tuổi 38, CEO của Tech Viet Group đã khẳng định vị thế là một
-              trong những nhà lãnh đạo công nghệ có tầm ảnh hưởng nhất tại Việt
-              Nam. Với tầm nhìn về chuyển đổi số và AI, ông đang dẫn dắt cuộc
-              cách mạng trong cách người Việt tiếp cận giáo dục và công nghệ.
-            </p>
-
-            <div class="profile-section__related">
-              <p class="profile-section__related-label">Đọc thêm</p>
-              <ul class="profile-section__related-list">
-                <li class="profile-section__related-item">
-                  <div class="related-dot-wrap">
-                    <span class="dot-indicator"></span>
-                  </div>
-                  <a class="related-title" href="#"
-                    >Hành trình từ startup đến ứng dụng quốc dân với 50 triệu
-                    người dùng</a
-                  >
-                </li>
-                <li class="profile-section__related-item">
-                  <div class="related-dot-wrap">
-                    <span class="dot-indicator"></span>
-                  </div>
-                  <a class="related-title" href="#"
-                    >Chiến lược phát triển sản phẩm công nghệ cho thị trường
-                    Việt Nam</a
-                  >
-                </li>
-                <li class="profile-section__related-item">
-                  <div class="related-dot-wrap">
-                    <span class="dot-indicator"></span>
-                  </div>
-                  <a class="related-title" href="#"
-                    >Tầm nhìn về chuyển đổi số và AI trong giáo dục</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Right: photo -->
-          <div class="profile-section__photo">
-            <a href="#" class="profile-photo-wrap">
-              <img
-                src="img/profile-photo.png"
-                alt="Nguyễn Minh Tuấn – CEO Tech Viet Group"
-                loading="lazy"
-              />
-            </a>
-          </div>
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.profile-section -->
-
-      <!-- ==================================================================
-         SECTION 6 – MULTIMEDIA (Nghe & Xem)
-    =================================================================== -->
-      <section
-        class="home-section multimedia-section"
-        id="multimedia-section"
-        aria-label="Nghe và Xem"
-      >
-        <div class="container">
-          <!-- Heading -->
-          <div class="multimedia-section__heading">
-            <h2>Nghe &amp; Xem</h2>
-          </div>
-
-          <!-- Body -->
-          <div class="multimedia-section__body">
-            <!-- Top row: Video hero + side cards -->
-            <div class="multimedia-section__top-row">
-              <!-- Hero video -->
-              <div class="multimedia-section__video-hero">
-                <div
-                  class="multimedia-section__video-swiper swiper"
-                  id="video-swiper"
-                >
-                  <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                      <div class="video-item">
-                        <a href="#" class="video-thumb">
-                          <img
-                            class="video-bg"
-                            src="img/media-hero.png"
-                            alt="iPhone 2027 có thể trang bị màn hình cong bốn cạnh"
-                          />
-                        </a>
-
-                        <!-- Media labels -->
-                        <div class="video-labels">
-                          <a
-                            href="#"
-                            class="media-label__type media-label__type--video"
-                          >
-                            <img
-                              src="skin/label-video-icon.svg"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            VIDEO
-                          </a>
-                          <div class="media-label__duration">
-                            <svg
-                              width="15"
-                              height="15"
-                              viewBox="0 0 15 15"
-                              fill="none"
-                              aria-hidden="true"
-                            >
-                              <circle
-                                cx="7.5"
-                                cy="7.5"
-                                r="6.5"
-                                stroke="white"
-                                stroke-width="1.2"
-                              />
-                              <path
-                                d="M7.5 4V7.5L9.5 9.5"
-                                stroke="white"
-                                stroke-width="1.2"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            8:30
-                          </div>
-                        </div>
-
-                        <!-- Play button -->
-                        <a
-                          href="#"
-                          class="video-play-btn"
-                          aria-label="Phát video"
-                        >
-                          <img src="skin/label-video-icon.svg" alt="" />
-                        </a>
-
-                        <!-- Bottom content -->
-                        <div class="video-bottom">
-                          <h3 class="video-title">
-                            <a href="#"
-                              >iPhone 2027 có thể trang bị màn hình cong bốn
-                              cạnh</a
-                            >
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                      <div class="video-item">
-                        <a href="#" class="video-thumb">
-                          <img
-                            class="video-bg"
-                            src="img/media-hero.png"
-                            alt="Samsung Galaxy S26 sẽ có camera 500MP"
-                          />
-                        </a>
-
-                        <div class="video-labels">
-                          <a
-                            href="#"
-                            class="media-label__type media-label__type--video"
-                          >
-                            <img
-                              src="skin/label-video-icon.svg"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            VIDEO
-                          </a>
-                          <div class="media-label__duration">
-                            <svg
-                              width="15"
-                              height="15"
-                              viewBox="0 0 15 15"
-                              fill="none"
-                              aria-hidden="true"
-                            >
-                              <circle
-                                cx="7.5"
-                                cy="7.5"
-                                r="6.5"
-                                stroke="white"
-                                stroke-width="1.2"
-                              />
-                              <path
-                                d="M7.5 4V7.5L9.5 9.5"
-                                stroke="white"
-                                stroke-width="1.2"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            5:20
-                          </div>
-                        </div>
-
-                        <a
-                          href="#"
-                          class="video-play-btn"
-                          aria-label="Phát video"
-                        >
-                          <img src="skin/label-video-icon.svg" alt="" />
-                        </a>
-
-                        <div class="video-bottom">
-                          <h3 class="video-title">
-                            <a href="#"
-                              >Samsung Galaxy S26 sẽ có camera 500MP</a
-                            >
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                      <div class="video-item">
-                        <a href="#" class="video-thumb">
-                          <img
-                            class="video-bg"
-                            src="img/media-hero.png"
-                            alt="Việt Nam cấp phép thử nghiệm xe tự lái cấp độ 4"
-                          />
-                        </a>
-
-                        <div class="video-labels">
-                          <a
-                            href="#"
-                            class="media-label__type media-label__type--video"
-                          >
-                            <img
-                              src="skin/label-video-icon.svg"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            VIDEO
-                          </a>
-                          <div class="media-label__duration">
-                            <svg
-                              width="15"
-                              height="15"
-                              viewBox="0 0 15 15"
-                              fill="none"
-                              aria-hidden="true"
-                            >
-                              <circle
-                                cx="7.5"
-                                cy="7.5"
-                                r="6.5"
-                                stroke="white"
-                                stroke-width="1.2"
-                              />
-                              <path
-                                d="M7.5 4V7.5L9.5 9.5"
-                                stroke="white"
-                                stroke-width="1.2"
-                                stroke-linecap="round"
-                              />
-                            </svg>
-                            11:45
-                          </div>
-                        </div>
-
-                        <a
-                          href="#"
-                          class="video-play-btn"
-                          aria-label="Phát video"
-                        >
-                          <img src="skin/label-video-icon.svg" alt="" />
-                        </a>
-
-                        <div class="video-bottom">
-                          <h3 class="video-title">
-                            <a href="#"
-                              >Việt Nam cấp phép thử nghiệm xe tự lái cấp độ
-                              4</a
-                            >
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Dots pagination (rendered by Swiper) -->
-                  <div
-                    class="swiper-pagination swiper-pagination--white"
-                    id="video-swiper-pagination"
-                  ></div>
-                </div>
-                <!-- /.video-swiper -->
-
-                <!-- Shadow strips -->
-                <div
-                  class="multimedia-section__video-shadows"
-                  aria-hidden="true"
-                >
-                  <div class="shadow-md"></div>
-                  <div class="shadow-lg"></div>
-                </div>
-              </div>
-              <!-- /.video-hero -->
-
-              <!-- Side cards -->
-              <div class="multimedia-section__side-cards">
-                <!-- Podcast card -->
-                <article class="multimedia-section__media-card">
-                  <a href="#" class="card-inner">
-                    <img
-                      class="card-img"
-                      src="img/media-podcast-1.png"
-                      alt="Tech Talks: Web3 có phải là tương lai?"
-                      loading="lazy"
-                    />
-                    <div class="card-gradient" aria-hidden="true"></div>
-                    <div class="card-labels">
-                      <a
-                        href="#"
-                        class="media-label__type media-label__type--podcast"
-                      >
-                        <img
-                          src="skin/label-podcast-icon.svg"
-                          alt=""
-                          aria-hidden="true"
-                        />
-                        Podcast
-                      </a>
-                      <div class="media-label__duration">
-                        <svg
-                          width="15"
-                          height="15"
-                          viewBox="0 0 15 15"
-                          fill="none"
-                          aria-hidden="true"
-                        >
-                          <circle
-                            cx="7.5"
-                            cy="7.5"
-                            r="6.5"
-                            stroke="white"
-                            stroke-width="1.2"
-                          />
-                          <path
-                            d="M7.5 4V7.5L9.5 9.5"
-                            stroke="white"
-                            stroke-width="1.2"
-                            stroke-linecap="round"
-                          />
-                        </svg>
-                        12:30
-                      </div>
-                    </div>
-                    <h3 class="card-title">
-                      <a href="#">Tech Talks: Web3 có phải là tương lai?</a>
-                    </h3>
-                  </a>
-                </article>
-
-                <!-- Infographic card -->
-                <article class="multimedia-section__media-card">
-                  <a href="#" class="card-inner">
-                    <img
-                      class="card-img"
-                      src="img/media-podcast-2.png"
-                      alt="Phân tích chi tiết hệ sinh thái startup và đầu tư công nghệ"
-                      loading="lazy"
-                    />
-                    <div
-                      class="card-gradient card-gradient--overlay"
-                      aria-hidden="true"
-                    ></div>
-                    <div class="card-labels">
-                      <a
-                        href="#"
-                        class="media-label__type media-label__type--info"
-                      >
-                        <img
-                          src="skin/label-infographic-icon.svg"
-                          alt=""
-                          aria-hidden="true"
-                        />
-                        Infographic
-                      </a>
-                    </div>
-                    <h3 class="card-title">
-                      <a href="#"
-                        >Phân tích chi tiết hệ sinh thái startup và đầu tư công
-                        nghệ</a
-                      >
-                    </h3>
-                  </a>
-                </article>
-              </div>
-              <!-- /.side-cards -->
-            </div>
-            <!-- /.top-row -->
-
-            <!-- Photo gallery row -->
-            <div
-              class="multimedia-section__gallery-row gallery-swiper swiper"
-              id="gallery-swiper"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <article class="multimedia-section__gallery-item">
-                    <a href="#" class="gallery-inner">
-                      <img
-                        class="gallery-img"
-                        src="img/media-gallery-1.png"
-                        alt="Nhà máy sản xuất chip đầu tiên của Việt Nam"
-                        loading="lazy"
-                      />
-                      <div class="gallery-gradient" aria-hidden="true"></div>
-                      <div class="gallery-caption">
-                        <h3 class="caption-text">
-                          <a href="#"
-                            >Nhà máy sản xuất chip đầu tiên của Việt Nam</a
-                          >
-                        </h3>
-                        <div
-                          class="media-label__type media-label__type--gallery"
-                        >
-                          <img
-                            src="skin/white-gallery-icon.svg"
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          12
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-
-                <div class="swiper-slide">
-                  <article class="multimedia-section__gallery-item">
-                    <a href="#" class="gallery-inner">
-                      <img
-                        class="gallery-img"
-                        src="img/media-gallery-2.png"
-                        alt="Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á"
-                        loading="lazy"
-                      />
-                      <div class="gallery-gradient" aria-hidden="true"></div>
-                      <div class="gallery-caption">
-                        <h3 class="caption-text">
-                          <a href="#"
-                            >Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á</a
-                          >
-                        </h3>
-                        <div
-                          class="media-label__type media-label__type--gallery"
-                        >
-                          <img
-                            src="skin/white-gallery-icon.svg"
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          12
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-
-                <div class="swiper-slide">
-                  <article class="multimedia-section__gallery-item">
-                    <a href="#" class="gallery-inner">
-                      <img
-                        class="gallery-img"
-                        src="img/media-gallery-3.png"
-                        alt="Cuộc sống thay đổi nhờ công nghệ AI"
-                        loading="lazy"
-                      />
-                      <div class="gallery-gradient" aria-hidden="true"></div>
-                      <div class="gallery-caption">
-                        <h3 class="caption-text">
-                          <a href="#">Cuộc sống thay đổi nhờ công nghệ AI</a>
-                        </h3>
-                        <div
-                          class="media-label__type media-label__type--gallery"
-                        >
-                          <img
-                            src="skin/white-gallery-icon.svg"
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          12
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article class="multimedia-section__gallery-item">
-                    <a href="#" class="gallery-inner">
-                      <img
-                        class="gallery-img"
-                        src="img/media-gallery-1.png"
-                        alt="Nhà máy sản xuất chip đầu tiên của Việt Nam"
-                        loading="lazy"
-                      />
-                      <div class="gallery-gradient" aria-hidden="true"></div>
-                      <div class="gallery-caption">
-                        <h3 class="caption-text">
-                          <a href="#"
-                            >Nhà máy sản xuất chip đầu tiên của Việt Nam</a
-                          >
-                        </h3>
-                        <div
-                          class="media-label__type media-label__type--gallery"
-                        >
-                          <img
-                            src="skin/white-gallery-icon.svg"
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          12
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-
-                <div class="swiper-slide">
-                  <article class="multimedia-section__gallery-item">
-                    <a href="#" class="gallery-inner">
-                      <img
-                        class="gallery-img"
-                        src="img/media-gallery-2.png"
-                        alt="Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á"
-                        loading="lazy"
-                      />
-                      <div class="gallery-gradient" aria-hidden="true"></div>
-                      <div class="gallery-caption">
-                        <h3 class="caption-text">
-                          <a href="#"
-                            >Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á</a
-                          >
-                        </h3>
-                        <div
-                          class="media-label__type media-label__type--gallery"
-                        >
-                          <img
-                            src="skin/white-gallery-icon.svg"
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          12
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-
-                <div class="swiper-slide">
-                  <article class="multimedia-section__gallery-item">
-                    <a href="#" class="gallery-inner">
-                      <img
-                        class="gallery-img"
-                        src="img/media-gallery-3.png"
-                        alt="Cuộc sống thay đổi nhờ công nghệ AI"
-                        loading="lazy"
-                      />
-                      <div class="gallery-gradient" aria-hidden="true"></div>
-                      <div class="gallery-caption">
-                        <h3 class="caption-text">
-                          <a href="#">Cuộc sống thay đổi nhờ công nghệ AI</a>
-                        </h3>
-                        <div
-                          class="media-label__type media-label__type--gallery"
-                        >
-                          <img
-                            src="skin/white-gallery-icon.svg"
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          12
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-              </div>
-            </div>
-            <!-- /.gallery-row -->
-
-            <!-- Gallery navigation -->
-            <div class="multimedia-section__gallery-pagination">
-              <button
-                class="nav-btn"
-                id="gallery-prev"
-                aria-label="Chùm ảnh trước"
-              >
-                <img class="nav-arrow" src="skin/white-arrow-left.svg" alt="" />
-              </button>
-              <div class="pag-label">Chùm ảnh</div>
-              <button
-                class="nav-btn"
-                id="gallery-next"
-                aria-label="Chùm ảnh tiếp theo"
-              >
-                <img
-                  class="nav-arrow"
-                  src="skin/white-arrow-right.svg"
-                  alt=""
-                />
-              </button>
-            </div>
-          </div>
-          <!-- /.body -->
-        </div>
-        <!-- /.container -->
-        <div class="multimedia-video-bg">
-          <video
-            src="skin/multimedia-video-bg.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="skin/multimedia-video-bg.jpg"
-          ></video>
-        </div>
-      </section>
-      <!-- /.multimedia-section -->
-
-      <!-- ==================================================================
-         SECTION 7 – SOCIAL HUB (Mạng xã hội)
-    =================================================================== -->
-      <section
-        class="home-section home-section--tinted social-section"
-        id="social-section"
-        aria-label="Mạng xã hội"
-      >
-        <div class="container">
-          <!-- Header -->
-          <div class="section-header">
-            <h2 class="section-header__title">Mạng xã hội</h2>
-            <a class="btn-see-all" href="#" aria-label="Xem tất cả mạng xã hội">
+    <section class="home-section home-section--tinted spotlight-section" id="spotlight-section"
+      aria-label="Tiêu điểm và Ấn phẩm">
+      <div class="container">
+        <!-- ── Left: Tiêu điểm ── -->
+        <div class="spotlight-section__left">
+          <div class="spotlight-section__left-header">
+            <h2 class="section-header__title">Tiêu điểm</h2>
+            <a class="btn-see-all" href="#" aria-label="Xem tất cả tiêu điểm">
               Xem tất cả
-              <svg
-                class="chevron"
-                viewBox="0 0 6 10"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M1 1L5 5L1 9"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+              <svg class="chevron" viewBox="0 0 6 10" fill="none" aria-hidden="true">
+                <path d="M1 1L5 5L1 9" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </a>
           </div>
 
-          <!-- YouTube cards grid -->
-          <div
-            class="social-section__grid social-swiper swiper"
-            id="social-swiper"
-          >
+          <div class="spotlight-section__news-grid">
+            <!-- Small card -->
+            <article class="spotlight-section__card-sm">
+              <a href="https://znews.vn/co-hoi-nghin-nam-co-mot-cua-viet-nam-post1600400.html" target="_blank"
+                rel="noopener" class="card-img-wrap">
+                <img src="img/spotlight-main.png" alt="Việt Nam đứng trước cơ hội nghìn năm có một với AI"
+                  loading="lazy" />
+              </a>
+              <div class="card-text">
+                <h3 class="card-title">
+                  <a class="" href="https://znews.vn/co-hoi-nghin-nam-co-mot-cua-viet-nam-post1600400.html"
+                    target="_blank" rel="noopener">
+                    Việt Nam đứng trước cơ hội 'nghìn năm có một' với AI
+                  </a>
+                </h3>
+
+                <p class="card-excerpt">
+                  So với những công nghệ khác, Việt Nam đứng trước cơ hội lớn để bắt kịp xu hướng
+                  AI cùng thế giới nếu kịp thời đưa ra chính sách thu hút nhân lực, phát triển
+                  nguồn dữ liệu.
+                </p>
+              </div>
+            </article>
+
+            <!-- Large card -->
+            <article class="spotlight-section__card-lg">
+              <a href="https://zingnews.vn/gom-bat-trang-thu-cong-doc-ban-hay-cong-nghe-nhan-ban-post1600357.html"
+                target="_blank" rel="noopener" class="card-img-wrap">
+                <img src="img/cat-science.png" alt="Gốm Bát Tràng: Thủ công độc bản hay công nghệ nhân bản"
+                  loading="lazy" />
+              </a>
+              <div class="card-text">
+                <h3 class="card-title">
+                  <a href="https://zingnews.vn/gom-bat-trang-thu-cong-doc-ban-hay-cong-nghe-nhan-ban-post1600357.html"
+                    target="_blank" rel="noopener">
+                    Gốm Bát Tràng: Thủ công độc bản hay công nghệ 'nhân bản'?
+                  </a>
+                </h3>
+                <p class="card-excerpt">
+                  Thiết bị thực tế hỗn hợp mới của Apple tích hợp chip M5 và khả năng xử lý AI
+                  tiên tiến, mở ra kỷ nguyên mới cho điện toán không gian.
+                </p>
+              </div>
+            </article>
+
+            <!-- Divider -->
+            <div class="spotlight-section__divider" aria-hidden="true"></div>
+          </div>
+        </div>
+        <!-- /.spotlight-section__left -->
+
+        <!-- ── Right: Ấn phẩm ── -->
+        <aside class="spotlight-section__publication" aria-label="Ấn phẩm số">
+          <a href="" class="spotlight-section__pub-header">
+            <h2 class="section-header__title">Ấn phẩm</h2>
+            <span class="external-icon" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.39451e-06 9.78808V3.97662C3.39451e-06 3.561 -0.00081937 3.20286 0.0231537 2.90947C0.0478682 2.60721 0.102838 2.30633 0.250176 2.01706C0.470085 1.5856 0.820894 1.23479 1.25236 1.01488C1.54163 0.86754 1.84251 0.812571 2.14476 0.787856C2.43816 0.763883 2.7963 0.764706 3.21192 0.764706H4.58824C5.01057 0.764706 5.35294 1.10708 5.35294 1.52941C5.35294 1.95175 5.01057 2.29412 4.58824 2.29412H3.21192C2.77106 2.29412 2.48614 2.29508 2.26948 2.31279C2.11401 2.3255 2.03165 2.3443 1.98421 2.36133L1.94687 2.37776C1.839 2.43276 1.74633 2.51223 1.67578 2.60926L1.61305 2.71157C1.59373 2.7495 1.56506 2.82658 1.54808 3.03418C1.53038 3.25084 1.52941 3.53577 1.52941 3.97662V9.78808C1.52941 10.2289 1.53038 10.5139 1.54808 10.7305C1.56506 10.9381 1.59373 11.0152 1.61305 11.0531L1.67578 11.1554C1.74633 11.2525 1.839 11.3319 1.94687 11.3869L1.94761 11.3877C1.98493 11.4067 2.06161 11.4357 2.26873 11.4527C2.48507 11.4704 2.76958 11.4706 3.20968 11.4706H9.02562C9.46556 11.4706 9.74974 11.4703 9.96582 11.4527C10.1727 11.4357 10.2495 11.4068 10.2869 11.3877L10.2877 11.3869C10.4318 11.3135 10.5487 11.1967 10.6222 11.0531C10.6416 11.0151 10.671 10.9377 10.688 10.7305C10.7056 10.5143 10.7059 10.2302 10.7059 9.79032V8.41176C10.7059 7.98943 11.0483 7.64706 11.4706 7.64706C11.8929 7.64706 12.2353 7.98943 12.2353 8.41176V9.79032C12.2353 10.2052 12.2361 10.5629 12.2121 10.856C12.1905 11.1203 12.1461 11.3833 12.0367 11.6386L11.9851 11.7476C11.765 12.1787 11.4135 12.529 10.9814 12.7491L10.9822 12.7498C10.6931 12.8973 10.3924 12.9521 10.0905 12.9768C9.79761 13.0008 9.4403 13 9.02562 13H3.20968C2.79483 13 2.43717 13.0008 2.14402 12.9768C1.87987 12.9552 1.61679 12.9102 1.36139 12.8006L1.25236 12.7498C0.820895 12.5299 0.470086 12.1791 0.250176 11.7476C0.102838 11.4584 0.0478682 11.1575 0.0231537 10.8552C-0.00081937 10.5618 3.39451e-06 10.2037 3.39451e-06 9.78808ZM13 4.58823C13 5.01057 12.6576 5.35294 12.2353 5.35294C11.813 5.35294 11.4706 5.01057 11.4706 4.58823V2.61075L7.42303 6.65832C7.12439 6.95695 6.64032 6.95695 6.34168 6.65832C6.04305 6.35968 6.04305 5.87561 6.34168 5.57697L10.3892 1.52941H8.41177C7.98943 1.52941 7.64706 1.18704 7.64706 0.764706C7.64706 0.34237 7.98943 0 8.41177 0H12.2353C12.6576 0 13 0.34237 13 0.764706V4.58823Z"
+                  fill="white" />
+              </svg>
+            </span>
+          </a>
+
+          <div>
+            <div class="spotlight-section__pub-book swiper" id="pub-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="img/publication.png" alt="Ấn phẩm số CDS" loading="lazy" />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="img/publication.png" alt="Ấn phẩm số CDS" loading="lazy" />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="img/publication.png" alt="Ấn phẩm số CDS" loading="lazy" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book navigator -->
+            <div class="spotlight-section__pub-nav">
+              <button class="nav-btn pub-nav--prev" id="pub-prev" aria-label="Trang trước">
+                <img class="nav-arrow" src="skin/white-arrow-left.svg" alt="Trang trước" />
+              </button>
+              <!-- Fraction pagination (rendered by Swiper) -->
+              <div class="swiper-pagination pub-fraction" id="pub-swiper-pagination"></div>
+              <button class="nav-btn pub-nav--next" id="pub-next" aria-label="Trang sau">
+                <img class="nav-arrow" src="skin/white-arrow-right.svg" alt="Trang sau" />
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.spotlight-section -->
+
+    <!-- ==================================================================
+         SECTION 4 – CATEGORY COLUMNS (3 columns)
+    =================================================================== -->
+    <section class="home-section category-section" id="category-section" aria-label="Tin theo chuyên mục">
+      <div class="container">
+        <!-- Column 1: Khoa học - Công nghệ -->
+        <div class="category-section__col">
+          <a href="#" class="category-section__col-header">
+            <h2 class="col-title">Khoa học - Công nghệ</h2>
+            <span class="col-link-icon" src="skin/blue-right-arrow.svg" alt="Xem tất cả Khoa học - Công nghệ">
+              <img src="skin/white-arrow-right.svg" alt="" />
+            </span>
+          </a>
+          <div class="category-section__article">
+            <div class="category-section__top-news">
+              <a href="#" class="top-news-img">
+                <img src="img/cat-science.png" alt="Siêu chòm vệ tinh có thể thay đổi khí hậu Trái Đất"
+                  loading="lazy" />
+              </a>
+              <div class="top-news-text">
+                <h3 class="top-news-title">
+                  <a href="#" target="_blank" rel="noopener">
+                    Siêu chòm vệ tinh có thể thay đổi khí hậu Trái Đất
+                  </a>
+                </h3>
+                <p class="top-news-excerpt">
+                  So với những công nghệ khác, Việt Nam đứng trước cơ hội lớn để bắt kịp xu hướng
+                  AI cùng thế giới nếu kịp thời đưa ra chính sách thu hút nhân lực, phát triển
+                  nguồn dữ liệu.
+                </p>
+              </div>
+            </div>
+            <div class="category-section__text-news-list">
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">Nhà khoa học Việt Nam phát hiện vật liệu siêu dẫn mới</a>
+              </div>
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">Meta sa thải hàng nghìn nhân viên sau '28 ngày địa ngục'</a>
+              </div>
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">Cựu CEO Google bị sinh viên la ó khi phát biểu về AI</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col -->
+
+        <div class="category-section__col-divider" aria-hidden="true"></div>
+
+        <!-- Column 2: Đổi mới sáng tạo -->
+        <div class="category-section__col">
+          <a href="#" class="category-section__col-header">
+            <h2 class="col-title">Đổi mới sáng tạo</h2>
+            <span class="col-link-icon" src="skin/blue-right-arrow.svg" alt="Xem tất cả Khoa học - Công nghệ">
+              <img src="skin/white-arrow-right.svg" alt="" />
+            </span>
+          </a>
+          <div class="category-section__article">
+            <div class="category-section__top-news">
+              <a href="#" class="top-news-img">
+                <img src="img/cat-innovation.png" alt="Dùng AI ghép ảnh bánh mì, cửa hàng nhận bão một sao"
+                  loading="lazy" />
+              </a>
+              <div class="top-news-text">
+                <h3 class="top-news-title">
+                  <a href="#" target="_blank" rel="noopener">
+                    Dùng AI ghép ảnh bánh mì, cửa hàng nhận 'bão một sao'
+                  </a>
+                </h3>
+                <p class="top-news-excerpt">
+                  Cửa hàng bánh mì Myer's Bagels sử dụng AI cho các bài quảng bá trên mạng xã hội,
+                  nhưng nhanh chóng bị chấm một sao.
+                </p>
+              </div>
+            </div>
+            <div class="category-section__text-news-list">
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">AI áp đảo chung kết cuộc thi khởi nghiệp tại châu Âu</a>
+              </div>
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">Google bắt tay Nvidia, OpenAI để phát hiện nội dung AI</a>
+              </div>
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">Máy gia tốc hạt AI đầu tiên trên thế giới đang được xây dựng</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col -->
+
+        <div class="category-section__col-divider" aria-hidden="true"></div>
+
+        <!-- Column 3: An ninh mạng -->
+        <div class="category-section__col">
+          <a href="#" class="category-section__col-header">
+            <h2 class="col-title">An ninh mạng</h2>
+            <span class="col-link-icon" src="skin/blue-right-arrow.svg" alt="Xem tất cả Khoa học - Công nghệ">
+              <img src="skin/white-arrow-right.svg" alt="" />
+            </span>
+          </a>
+          <div class="category-section__article">
+            <div class="category-section__top-news">
+              <a href="#" class="top-news-img">
+                <img src="img/cat-security.png" alt="Lỗ hổng đánh gậy bản quyền trên nền tảng online" loading="lazy" />
+              </a>
+              <div class="top-news-text">
+                <h3 class="top-news-title">
+                  <a href="#" target="_blank" rel="noopener">
+                    Lỗ hổng 'đánh gậy' bản quyền trên nền tảng online</a>
+                </h3>
+
+                <p class="top-news-excerpt">
+                  Mạng đa kênh (MCN) được nhận định tăng sức mạnh cho nhà sáng tạo trên nền tảng
+                  số, nhưng cũng gây tranh cãi về hành vi "đánh gậy" bản quyền.
+                </p>
+              </div>
+            </div>
+            <div class="category-section__text-news-list">
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">Thủ tướng: Khoa học công nghệ cần chuyển tư duy 'làm cho có' sang
+                  'thực
+                  chất'</a>
+              </div>
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">'Bán dẫn Việt Nam nên đi theo hướng tối ưu năng lượng'</a>
+              </div>
+              <div class="category-section__text-news">
+                <a class="text-news-title" href="#">Phiên chợ công nghệ AI tại Hà Nội</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.category-section -->
+
+    <!-- ==================================================================
+         SECTION 5 – PROFILE (Featured person)
+    =================================================================== -->
+    <section class="home-section home-section--tinted profile-section" id="profile-section"
+      aria-label="Nhân vật nổi bật">
+      <div class="container">
+        <!-- Left: text content -->
+        <div class="profile-section__left">
+          <a href="#" class="profile-section__label">
+            <span class="badge">Nhân vật</span>
+          </a>
+          <h2 class="profile-section__title">
+            <a href="#">Nguyễn Minh Tuấn: Người định hình tương lai công nghệ Việt Nam</a>
+          </h2>
+          <p class="profile-section__excerpt">
+            Ở tuổi 38, CEO của Tech Viet Group đã khẳng định vị thế là một trong những nhà lãnh
+            đạo công nghệ có tầm ảnh hưởng nhất tại Việt Nam. Với tầm nhìn về chuyển đổi số và AI,
+            ông đang dẫn dắt cuộc cách mạng trong cách người Việt tiếp cận giáo dục và công nghệ.
+          </p>
+
+          <div class="profile-section__related">
+            <p class="profile-section__related-label">Đọc thêm</p>
+            <ul class="profile-section__related-list">
+              <li class="profile-section__related-item">
+                <div class="related-dot-wrap">
+                  <span class="dot-indicator"></span>
+                </div>
+                <a class="related-title" href="#">Hành trình từ startup đến ứng dụng quốc dân với 50 triệu người
+                  dùng</a>
+              </li>
+              <li class="profile-section__related-item">
+                <div class="related-dot-wrap">
+                  <span class="dot-indicator"></span>
+                </div>
+                <a class="related-title" href="#">Chiến lược phát triển sản phẩm công nghệ cho thị trường Việt Nam</a>
+              </li>
+              <li class="profile-section__related-item">
+                <div class="related-dot-wrap">
+                  <span class="dot-indicator"></span>
+                </div>
+                <a class="related-title" href="#">Tầm nhìn về chuyển đổi số và AI trong giáo dục</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: photo -->
+        <div class="profile-section__photo">
+          <a href="#" class="profile-photo-wrap">
+            <img src="img/profile-photo.png" alt="Nguyễn Minh Tuấn – CEO Tech Viet Group" loading="lazy" />
+          </a>
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.profile-section -->
+
+    <!-- ==================================================================
+         SECTION 6 – MULTIMEDIA (Nghe & Xem)
+    =================================================================== -->
+    <section class="home-section multimedia-section" id="multimedia-section" aria-label="Nghe và Xem">
+      <div class="container">
+        <!-- Heading -->
+        <div class="multimedia-section__heading">
+          <h2>Nghe &amp; Xem</h2>
+        </div>
+
+        <!-- Body -->
+        <div class="multimedia-section__body">
+          <!-- Top row: Video hero + side cards -->
+          <div class="multimedia-section__top-row">
+            <!-- Hero video -->
+            <div class="multimedia-section__video-hero">
+              <div class="multimedia-section__video-swiper swiper" id="video-swiper">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide">
+                    <div class="video-item">
+                      <a href="#" class="video-thumb">
+                        <img class="video-bg" src="img/media-hero.png"
+                          alt="iPhone 2027 có thể trang bị màn hình cong bốn cạnh" />
+                      </a>
+
+                      <!-- Media labels -->
+                      <div class="video-labels">
+                        <a href="#" class="media-label__type media-label__type--video">
+                          <img src="skin/label-video-icon.svg" alt="" aria-hidden="true" />
+                          VIDEO
+                        </a>
+                        <div class="media-label__duration">
+                          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                            <circle cx="7.5" cy="7.5" r="6.5" stroke="white" stroke-width="1.2" />
+                            <path d="M7.5 4V7.5L9.5 9.5" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                          </svg>
+                          8:30
+                        </div>
+                      </div>
+
+                      <!-- Play button -->
+                      <a href="#" class="video-play-btn" aria-label="Phát video">
+                        <img src="skin/label-video-icon.svg" alt="" />
+                      </a>
+
+                      <!-- Bottom content -->
+                      <div class="video-bottom">
+                        <h3 class="video-title">
+                          <a href="#">iPhone 2027 có thể trang bị màn hình cong bốn cạnh</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <div class="video-item">
+                      <a href="#" class="video-thumb">
+                        <img class="video-bg" src="img/media-hero.png" alt="Samsung Galaxy S26 sẽ có camera 500MP" />
+                      </a>
+
+                      <div class="video-labels">
+                        <a href="#" class="media-label__type media-label__type--video">
+                          <img src="skin/label-video-icon.svg" alt="" aria-hidden="true" />
+                          VIDEO
+                        </a>
+                        <div class="media-label__duration">
+                          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                            <circle cx="7.5" cy="7.5" r="6.5" stroke="white" stroke-width="1.2" />
+                            <path d="M7.5 4V7.5L9.5 9.5" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                          </svg>
+                          5:20
+                        </div>
+                      </div>
+
+                      <a href="#" class="video-play-btn" aria-label="Phát video">
+                        <img src="skin/label-video-icon.svg" alt="" />
+                      </a>
+
+                      <div class="video-bottom">
+                        <h3 class="video-title">
+                          <a href="#">Samsung Galaxy S26 sẽ có camera 500MP</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 3 -->
+                  <div class="swiper-slide">
+                    <div class="video-item">
+                      <a href="#" class="video-thumb">
+                        <img class="video-bg" src="img/media-hero.png"
+                          alt="Việt Nam cấp phép thử nghiệm xe tự lái cấp độ 4" />
+                      </a>
+
+                      <div class="video-labels">
+                        <a href="#" class="media-label__type media-label__type--video">
+                          <img src="skin/label-video-icon.svg" alt="" aria-hidden="true" />
+                          VIDEO
+                        </a>
+                        <div class="media-label__duration">
+                          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                            <circle cx="7.5" cy="7.5" r="6.5" stroke="white" stroke-width="1.2" />
+                            <path d="M7.5 4V7.5L9.5 9.5" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                          </svg>
+                          11:45
+                        </div>
+                      </div>
+
+                      <a href="#" class="video-play-btn" aria-label="Phát video">
+                        <img src="skin/label-video-icon.svg" alt="" />
+                      </a>
+
+                      <div class="video-bottom">
+                        <h3 class="video-title">
+                          <a href="#">Việt Nam cấp phép thử nghiệm xe tự lái cấp độ 4</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Dots pagination (rendered by Swiper) -->
+                <div class="swiper-pagination swiper-pagination--white" id="video-swiper-pagination"></div>
+              </div>
+              <!-- /.video-swiper -->
+
+              <!-- Shadow strips -->
+              <div class="multimedia-section__video-shadows" aria-hidden="true">
+                <div class="shadow-md"></div>
+                <div class="shadow-lg"></div>
+              </div>
+            </div>
+            <!-- /.video-hero -->
+
+            <!-- Side cards -->
+            <div class="multimedia-section__side-cards">
+              <!-- Podcast card -->
+              <article class="multimedia-section__media-card">
+                <a href="#" class="card-inner">
+                  <img class="card-img" src="img/media-podcast-1.png" alt="Tech Talks: Web3 có phải là tương lai?"
+                    loading="lazy" />
+                  <div class="card-gradient" aria-hidden="true"></div>
+                  <div class="card-labels">
+                    <a href="#" class="media-label__type media-label__type--podcast">
+                      <img src="skin/label-podcast-icon.svg" alt="" aria-hidden="true" />
+                      Podcast
+                    </a>
+                    <div class="media-label__duration">
+                      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                        <circle cx="7.5" cy="7.5" r="6.5" stroke="white" stroke-width="1.2" />
+                        <path d="M7.5 4V7.5L9.5 9.5" stroke="white" stroke-width="1.2" stroke-linecap="round" />
+                      </svg>
+                      12:30
+                    </div>
+                  </div>
+                  <h3 class="card-title">
+                    <a href="#">Tech Talks: Web3 có phải là tương lai?</a>
+                  </h3>
+                </a>
+              </article>
+
+              <!-- Infographic card -->
+              <article class="multimedia-section__media-card">
+                <a href="#" class="card-inner">
+                  <img class="card-img" src="img/media-podcast-2.png"
+                    alt="Phân tích chi tiết hệ sinh thái startup và đầu tư công nghệ" loading="lazy" />
+                  <div class="card-gradient card-gradient--overlay" aria-hidden="true"></div>
+                  <div class="card-labels">
+                    <a href="#" class="media-label__type media-label__type--info">
+                      <img src="skin/label-infographic-icon.svg" alt="" aria-hidden="true" />
+                      Infographic
+                    </a>
+                  </div>
+                  <h3 class="card-title">
+                    <a href="#">Phân tích chi tiết hệ sinh thái startup và đầu tư công nghệ</a>
+                  </h3>
+                </a>
+              </article>
+            </div>
+            <!-- /.side-cards -->
+          </div>
+          <!-- /.top-row -->
+
+          <!-- Photo gallery row -->
+          <div class="multimedia-section__gallery-row gallery-swiper swiper" id="gallery-swiper">
             <div class="swiper-wrapper">
-              <!-- Card 1 -->
               <div class="swiper-slide">
-                <article class="social-section__card">
-                  <div class="card-inner">
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <a href="#" class="channel-avatar">
-                          <img
-                            src="img/ttxvn-avatar.png"
-                            alt="Tin nhanh Thông tấn"
-                          />
-                        </a>
-
-                        <div class="channel-info">
-                          <a href="#" class="channel-name"
-                            >Tin nhanh Thông tấn</a
-                          >
-                          <time class="channel-date">25/03/2026 15:45</time>
-                        </div>
+                <article class="multimedia-section__gallery-item">
+                  <a href="#" class="gallery-inner">
+                    <img class="gallery-img" src="img/media-gallery-1.png"
+                      alt="Nhà máy sản xuất chip đầu tiên của Việt Nam" loading="lazy" />
+                    <div class="gallery-gradient" aria-hidden="true"></div>
+                    <div class="gallery-caption">
+                      <h3 class="caption-text">
+                        <a href="#">Nhà máy sản xuất chip đầu tiên của Việt Nam</a>
+                      </h3>
+                      <div class="media-label__type media-label__type--gallery">
+                        <img src="skin/white-gallery-icon.svg" alt="" aria-hidden="true" />
+                        12
                       </div>
-                      <img
-                        class="yt-icon"
-                        src="skin/red-youtube-icon.svg"
-                        alt="YouTube"
-                      />
                     </div>
-                    <a href="#" class="card-thumb-wrap">
-                      <img
-                        src="img/social-vid-1.png"
-                        alt="Phát huy hiệu quả các công trình nước sạch nông thôn"
-                        loading="lazy"
-                      />
-                    </a>
-                    <p class="card-video-title">
-                      <a href="#"
-                        >Phát huy hiệu quả các công trình nước sạch nông thôn |
-                        Tin nhanh Thông tấn</a
-                      >
-                    </p>
-                  </div>
+                  </a>
                 </article>
               </div>
 
-              <!-- Card 2 -->
               <div class="swiper-slide">
-                <article class="social-section__card">
-                  <div class="card-inner">
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <a href="#" class="channel-avatar">
-                          <img
-                            src="img/ttxvn-avatar.png"
-                            alt="Tin nhanh Thông tấn"
-                          />
-                        </a>
-                        <div class="channel-info">
-                          <a href="#" class="channel-name"
-                            >Tin nhanh Thông tấn</a
-                          >
-                          <time class="channel-date">25/03/2026 15:45</time>
-                        </div>
+                <article class="multimedia-section__gallery-item">
+                  <a href="#" class="gallery-inner">
+                    <img class="gallery-img" src="img/media-gallery-2.png"
+                      alt="Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á" loading="lazy" />
+                    <div class="gallery-gradient" aria-hidden="true"></div>
+                    <div class="gallery-caption">
+                      <h3 class="caption-text">
+                        <a href="#">Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á</a>
+                      </h3>
+                      <div class="media-label__type media-label__type--gallery">
+                        <img src="skin/white-gallery-icon.svg" alt="" aria-hidden="true" />
+                        12
                       </div>
-                      <img
-                        class="yt-icon"
-                        src="skin/red-youtube-icon.svg"
-                        alt="YouTube"
-                      />
                     </div>
-                    <a href="#" class="card-thumb-wrap">
-                      <img
-                        src="img/social-vid-2.png"
-                        alt="Trục Đại lộ Sông Hồng phát triển gắn với an sinh"
-                        loading="lazy"
-                      />
-                    </a>
-                    <p class="card-video-title">
-                      <a href="#"
-                        >"Trục Đại lộ Sông Hồng" phát triển gắn với an sinh</a
-                      >
-                    </p>
-                  </div>
+                  </a>
                 </article>
               </div>
 
-              <!-- Card 3 -->
               <div class="swiper-slide">
-                <article class="social-section__card">
-                  <div class="card-inner">
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <a href="#" class="channel-avatar">
-                          <img
-                            src="img/ttxvn-avatar.png"
-                            alt="Tin nhanh Thông tấn"
-                          />
-                        </a>
-                        <div class="channel-info">
-                          <a href="#" class="channel-name"
-                            >Tin nhanh Thông tấn</a
-                          >
-                          <time class="channel-date">25/03/2026 15:45</time>
-                        </div>
+                <article class="multimedia-section__gallery-item">
+                  <a href="#" class="gallery-inner">
+                    <img class="gallery-img" src="img/media-gallery-3.png" alt="Cuộc sống thay đổi nhờ công nghệ AI"
+                      loading="lazy" />
+                    <div class="gallery-gradient" aria-hidden="true"></div>
+                    <div class="gallery-caption">
+                      <h3 class="caption-text">
+                        <a href="#">Cuộc sống thay đổi nhờ công nghệ AI</a>
+                      </h3>
+                      <div class="media-label__type media-label__type--gallery">
+                        <img src="skin/white-gallery-icon.svg" alt="" aria-hidden="true" />
+                        12
                       </div>
-                      <img
-                        class="yt-icon"
-                        src="skin/red-youtube-icon.svg"
-                        alt="YouTube"
-                      />
                     </div>
-                    <a href="#" class="card-thumb-wrap">
-                      <img
-                        src="img/social-vid-3.png"
-                        alt="Nâng cao ý thức tiết kiệm điện mùa nắng nóng"
-                        loading="lazy"
-                      />
-                    </a>
-                    <p class="card-video-title">
-                      <a href="#"
-                        >Nâng cao ý thức tiết kiệm điện mùa nắng nóng</a
-                      >
-                    </p>
-                  </div>
+                  </a>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="multimedia-section__gallery-item">
+                  <a href="#" class="gallery-inner">
+                    <img class="gallery-img" src="img/media-gallery-1.png"
+                      alt="Nhà máy sản xuất chip đầu tiên của Việt Nam" loading="lazy" />
+                    <div class="gallery-gradient" aria-hidden="true"></div>
+                    <div class="gallery-caption">
+                      <h3 class="caption-text">
+                        <a href="#">Nhà máy sản xuất chip đầu tiên của Việt Nam</a>
+                      </h3>
+                      <div class="media-label__type media-label__type--gallery">
+                        <img src="skin/white-gallery-icon.svg" alt="" aria-hidden="true" />
+                        12
+                      </div>
+                    </div>
+                  </a>
                 </article>
               </div>
 
-              <!-- Card 4 -->
               <div class="swiper-slide">
-                <article class="social-section__card">
-                  <div class="card-inner">
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <a href="#" class="channel-avatar">
-                          <img
-                            src="img/ttxvn-avatar.png"
-                            alt="Tin nhanh Thông tấn"
-                          />
-                        </a>
-                        <div class="channel-info">
-                          <a href="#" class="channel-name"
-                            >Tin nhanh Thông tấn</a
-                          >
-                          <time class="channel-date">25/03/2026 15:45</time>
-                        </div>
+                <article class="multimedia-section__gallery-item">
+                  <a href="#" class="gallery-inner">
+                    <img class="gallery-img" src="img/media-gallery-2.png"
+                      alt="Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á" loading="lazy" />
+                    <div class="gallery-gradient" aria-hidden="true"></div>
+                    <div class="gallery-caption">
+                      <h3 class="caption-text">
+                        <a href="#">Bên trong trung tâm dữ liệu lớn nhất Đông Nam Á</a>
+                      </h3>
+                      <div class="media-label__type media-label__type--gallery">
+                        <img src="skin/white-gallery-icon.svg" alt="" aria-hidden="true" />
+                        12
                       </div>
-                      <img
-                        class="yt-icon"
-                        src="skin/red-youtube-icon.svg"
-                        alt="YouTube"
-                      />
                     </div>
-                    <a href="#" class="card-thumb-wrap">
-                      <img
-                        src="img/social-vid-4.png"
-                        alt="Đột phá cắt giảm thủ tục hành chính"
-                        loading="lazy"
-                      />
-                    </a>
-                    <p class="card-video-title">
-                      <a href="#">Đột phá cắt giảm thủ tục hành chính</a>
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <!-- Card 1 -->
-              <div class="swiper-slide">
-                <article class="social-section__card">
-                  <div class="card-inner">
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <a href="#" class="channel-avatar">
-                          <img
-                            src="img/ttxvn-avatar.png"
-                            alt="Tin nhanh Thông tấn"
-                          />
-                        </a>
-
-                        <div class="channel-info">
-                          <a href="#" class="channel-name"
-                            >Tin nhanh Thông tấn</a
-                          >
-                          <time class="channel-date">25/03/2026 15:45</time>
-                        </div>
-                      </div>
-                      <img
-                        class="yt-icon"
-                        src="skin/red-youtube-icon.svg"
-                        alt="YouTube"
-                      />
-                    </div>
-                    <a href="#" class="card-thumb-wrap">
-                      <img
-                        src="img/social-vid-1.png"
-                        alt="Phát huy hiệu quả các công trình nước sạch nông thôn"
-                        loading="lazy"
-                      />
-                    </a>
-                    <p class="card-video-title">
-                      <a href="#"
-                        >Phát huy hiệu quả các công trình nước sạch nông thôn |
-                        Tin nhanh Thông tấn</a
-                      >
-                    </p>
-                  </div>
+                  </a>
                 </article>
               </div>
 
-              <!-- Card 2 -->
               <div class="swiper-slide">
-                <article class="social-section__card">
-                  <div class="card-inner">
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <a href="#" class="channel-avatar">
-                          <img
-                            src="img/ttxvn-avatar.png"
-                            alt="Tin nhanh Thông tấn"
-                          />
-                        </a>
-                        <div class="channel-info">
-                          <a href="#" class="channel-name"
-                            >Tin nhanh Thông tấn</a
-                          >
-                          <time class="channel-date">25/03/2026 15:45</time>
-                        </div>
+                <article class="multimedia-section__gallery-item">
+                  <a href="#" class="gallery-inner">
+                    <img class="gallery-img" src="img/media-gallery-3.png" alt="Cuộc sống thay đổi nhờ công nghệ AI"
+                      loading="lazy" />
+                    <div class="gallery-gradient" aria-hidden="true"></div>
+                    <div class="gallery-caption">
+                      <h3 class="caption-text">
+                        <a href="#">Cuộc sống thay đổi nhờ công nghệ AI</a>
+                      </h3>
+                      <div class="media-label__type media-label__type--gallery">
+                        <img src="skin/white-gallery-icon.svg" alt="" aria-hidden="true" />
+                        12
                       </div>
-                      <img
-                        class="yt-icon"
-                        src="skin/red-youtube-icon.svg"
-                        alt="YouTube"
-                      />
                     </div>
-                    <a href="#" class="card-thumb-wrap">
-                      <img
-                        src="img/social-vid-2.png"
-                        alt="Trục Đại lộ Sông Hồng phát triển gắn với an sinh"
-                        loading="lazy"
-                      />
-                    </a>
-                    <p class="card-video-title">
-                      <a href="#"
-                        >"Trục Đại lộ Sông Hồng" phát triển gắn với an sinh</a
-                      >
-                    </p>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="swiper-slide">
-                <article class="social-section__card">
-                  <div class="card-inner">
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <a href="#" class="channel-avatar">
-                          <img
-                            src="img/ttxvn-avatar.png"
-                            alt="Tin nhanh Thông tấn"
-                          />
-                        </a>
-                        <div class="channel-info">
-                          <a href="#" class="channel-name"
-                            >Tin nhanh Thông tấn</a
-                          >
-                          <time class="channel-date">25/03/2026 15:45</time>
-                        </div>
-                      </div>
-                      <img
-                        class="yt-icon"
-                        src="skin/red-youtube-icon.svg"
-                        alt="YouTube"
-                      />
-                    </div>
-                    <a href="#" class="card-thumb-wrap">
-                      <img
-                        src="img/social-vid-3.png"
-                        alt="Nâng cao ý thức tiết kiệm điện mùa nắng nóng"
-                        loading="lazy"
-                      />
-                    </a>
-                    <p class="card-video-title">
-                      <a href="#"
-                        >Nâng cao ý thức tiết kiệm điện mùa nắng nóng</a
-                      >
-                    </p>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Card 4 -->
-              <div class="swiper-slide">
-                <article class="social-section__card">
-                  <div class="card-inner">
-                    <div class="card-meta">
-                      <div class="meta-left">
-                        <a href="#" class="channel-avatar">
-                          <img
-                            src="img/ttxvn-avatar.png"
-                            alt="Tin nhanh Thông tấn"
-                          />
-                        </a>
-                        <div class="channel-info">
-                          <a href="#" class="channel-name"
-                            >Tin nhanh Thông tấn</a
-                          >
-                          <time class="channel-date">25/03/2026 15:45</time>
-                        </div>
-                      </div>
-                      <img
-                        class="yt-icon"
-                        src="skin/red-youtube-icon.svg"
-                        alt="YouTube"
-                      />
-                    </div>
-                    <a href="#" class="card-thumb-wrap">
-                      <img
-                        src="img/social-vid-4.png"
-                        alt="Đột phá cắt giảm thủ tục hành chính"
-                        loading="lazy"
-                      />
-                    </a>
-                    <p class="card-video-title">
-                      <a href="#">Đột phá cắt giảm thủ tục hành chính</a>
-                    </p>
-                  </div>
+                  </a>
                 </article>
               </div>
             </div>
           </div>
-          <!-- /.social-section__grid -->
+          <!-- /.gallery-row -->
 
-          <!-- Social pagination dots (rendered by Swiper) -->
-          <div class="swiper-pagination" id="social-swiper-pagination"></div>
+          <!-- Gallery navigation -->
+          <div class="multimedia-section__gallery-pagination">
+            <button class="nav-btn" id="gallery-prev" aria-label="Chùm ảnh trước">
+              <img class="nav-arrow" src="skin/white-arrow-left.svg" alt="" />
+            </button>
+            <div class="pag-label">Chùm ảnh</div>
+            <button class="nav-btn" id="gallery-next" aria-label="Chùm ảnh tiếp theo">
+              <img class="nav-arrow" src="skin/white-arrow-right.svg" alt="" />
+            </button>
+          </div>
         </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.social-section -->
-    </div>
-    <!-- /.page-body -->
-    <div data-include="modules/footer.html"></div>
-    <!-- =====================================================================
+        <!-- /.body -->
+      </div>
+      <!-- /.container -->
+      <div class="multimedia-video-bg">
+        <video src="skin/multimedia-video-bg.mp4" autoplay muted loop playsinline
+          poster="skin/multimedia-video-bg.jpg"></video>
+      </div>
+    </section>
+    <!-- /.multimedia-section -->
+
+    <!-- ==================================================================
+         SECTION 7 – SOCIAL HUB (Mạng xã hội)
+    =================================================================== -->
+    <section class="home-section home-section--tinted social-section" id="social-section" aria-label="Mạng xã hội">
+      <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+          <h2 class="section-header__title">Mạng xã hội</h2>
+          <a class="btn-see-all" href="#" aria-label="Xem tất cả mạng xã hội">
+            Xem tất cả
+            <svg class="chevron" viewBox="0 0 6 10" fill="none" aria-hidden="true">
+              <path d="M1 1L5 5L1 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- YouTube cards grid -->
+        <div class="social-section__grid social-swiper swiper" id="social-swiper">
+          <div class="swiper-wrapper">
+            <!-- Card 1 -->
+            <div class="swiper-slide">
+              <article class="social-section__card">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <div class="meta-left">
+                      <a href="#" class="channel-avatar">
+                        <img src="img/ttxvn-avatar.png" alt="Tin nhanh Thông tấn" />
+                      </a>
+
+                      <div class="channel-info">
+                        <a href="#" class="channel-name">Tin nhanh Thông tấn</a>
+                        <time class="channel-date">25/03/2026 15:45</time>
+                      </div>
+                    </div>
+                    <img class="yt-icon" src="skin/red-youtube-icon.svg" alt="YouTube" />
+                  </div>
+                  <a href="#" class="card-thumb-wrap">
+                    <img src="img/social-vid-1.png" alt="Phát huy hiệu quả các công trình nước sạch nông thôn"
+                      loading="lazy" />
+                  </a>
+                  <p class="card-video-title">
+                    <a href="#">Phát huy hiệu quả các công trình nước sạch nông thôn | Tin nhanh Thông
+                      tấn</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="swiper-slide">
+              <article class="social-section__card">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <div class="meta-left">
+                      <a href="#" class="channel-avatar">
+                        <img src="img/ttxvn-avatar.png" alt="Tin nhanh Thông tấn" />
+                      </a>
+                      <div class="channel-info">
+                        <a href="#" class="channel-name">Tin nhanh Thông tấn</a>
+                        <time class="channel-date">25/03/2026 15:45</time>
+                      </div>
+                    </div>
+                    <img class="yt-icon" src="skin/red-youtube-icon.svg" alt="YouTube" />
+                  </div>
+                  <a href="#" class="card-thumb-wrap">
+                    <img src="img/social-vid-2.png" alt="Trục Đại lộ Sông Hồng phát triển gắn với an sinh"
+                      loading="lazy" />
+                  </a>
+                  <p class="card-video-title">
+                    <a href="#">"Trục Đại lộ Sông Hồng" phát triển gắn với an sinh</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="swiper-slide">
+              <article class="social-section__card">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <div class="meta-left">
+                      <a href="#" class="channel-avatar">
+                        <img src="img/ttxvn-avatar.png" alt="Tin nhanh Thông tấn" />
+                      </a>
+                      <div class="channel-info">
+                        <a href="#" class="channel-name">Tin nhanh Thông tấn</a>
+                        <time class="channel-date">25/03/2026 15:45</time>
+                      </div>
+                    </div>
+                    <img class="yt-icon" src="skin/red-youtube-icon.svg" alt="YouTube" />
+                  </div>
+                  <a href="#" class="card-thumb-wrap">
+                    <img src="img/social-vid-3.png" alt="Nâng cao ý thức tiết kiệm điện mùa nắng nóng" loading="lazy" />
+                  </a>
+                  <p class="card-video-title">
+                    <a href="#">Nâng cao ý thức tiết kiệm điện mùa nắng nóng</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="swiper-slide">
+              <article class="social-section__card">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <div class="meta-left">
+                      <a href="#" class="channel-avatar">
+                        <img src="img/ttxvn-avatar.png" alt="Tin nhanh Thông tấn" />
+                      </a>
+                      <div class="channel-info">
+                        <a href="#" class="channel-name">Tin nhanh Thông tấn</a>
+                        <time class="channel-date">25/03/2026 15:45</time>
+                      </div>
+                    </div>
+                    <img class="yt-icon" src="skin/red-youtube-icon.svg" alt="YouTube" />
+                  </div>
+                  <a href="#" class="card-thumb-wrap">
+                    <img src="img/social-vid-4.png" alt="Đột phá cắt giảm thủ tục hành chính" loading="lazy" />
+                  </a>
+                  <p class="card-video-title">
+                    <a href="#">Đột phá cắt giảm thủ tục hành chính</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+            <!-- Card 1 -->
+            <div class="swiper-slide">
+              <article class="social-section__card">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <div class="meta-left">
+                      <a href="#" class="channel-avatar">
+                        <img src="img/ttxvn-avatar.png" alt="Tin nhanh Thông tấn" />
+                      </a>
+
+                      <div class="channel-info">
+                        <a href="#" class="channel-name">Tin nhanh Thông tấn</a>
+                        <time class="channel-date">25/03/2026 15:45</time>
+                      </div>
+                    </div>
+                    <img class="yt-icon" src="skin/red-youtube-icon.svg" alt="YouTube" />
+                  </div>
+                  <a href="#" class="card-thumb-wrap">
+                    <img src="img/social-vid-1.png" alt="Phát huy hiệu quả các công trình nước sạch nông thôn"
+                      loading="lazy" />
+                  </a>
+                  <p class="card-video-title">
+                    <a href="#">Phát huy hiệu quả các công trình nước sạch nông thôn | Tin nhanh Thông
+                      tấn</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="swiper-slide">
+              <article class="social-section__card">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <div class="meta-left">
+                      <a href="#" class="channel-avatar">
+                        <img src="img/ttxvn-avatar.png" alt="Tin nhanh Thông tấn" />
+                      </a>
+                      <div class="channel-info">
+                        <a href="#" class="channel-name">Tin nhanh Thông tấn</a>
+                        <time class="channel-date">25/03/2026 15:45</time>
+                      </div>
+                    </div>
+                    <img class="yt-icon" src="skin/red-youtube-icon.svg" alt="YouTube" />
+                  </div>
+                  <a href="#" class="card-thumb-wrap">
+                    <img src="img/social-vid-2.png" alt="Trục Đại lộ Sông Hồng phát triển gắn với an sinh"
+                      loading="lazy" />
+                  </a>
+                  <p class="card-video-title">
+                    <a href="#">"Trục Đại lộ Sông Hồng" phát triển gắn với an sinh</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="swiper-slide">
+              <article class="social-section__card">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <div class="meta-left">
+                      <a href="#" class="channel-avatar">
+                        <img src="img/ttxvn-avatar.png" alt="Tin nhanh Thông tấn" />
+                      </a>
+                      <div class="channel-info">
+                        <a href="#" class="channel-name">Tin nhanh Thông tấn</a>
+                        <time class="channel-date">25/03/2026 15:45</time>
+                      </div>
+                    </div>
+                    <img class="yt-icon" src="skin/red-youtube-icon.svg" alt="YouTube" />
+                  </div>
+                  <a href="#" class="card-thumb-wrap">
+                    <img src="img/social-vid-3.png" alt="Nâng cao ý thức tiết kiệm điện mùa nắng nóng" loading="lazy" />
+                  </a>
+                  <p class="card-video-title">
+                    <a href="#">Nâng cao ý thức tiết kiệm điện mùa nắng nóng</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="swiper-slide">
+              <article class="social-section__card">
+                <div class="card-inner">
+                  <div class="card-meta">
+                    <div class="meta-left">
+                      <a href="#" class="channel-avatar">
+                        <img src="img/ttxvn-avatar.png" alt="Tin nhanh Thông tấn" />
+                      </a>
+                      <div class="channel-info">
+                        <a href="#" class="channel-name">Tin nhanh Thông tấn</a>
+                        <time class="channel-date">25/03/2026 15:45</time>
+                      </div>
+                    </div>
+                    <img class="yt-icon" src="skin/red-youtube-icon.svg" alt="YouTube" />
+                  </div>
+                  <a href="#" class="card-thumb-wrap">
+                    <img src="img/social-vid-4.png" alt="Đột phá cắt giảm thủ tục hành chính" loading="lazy" />
+                  </a>
+                  <p class="card-video-title">
+                    <a href="#">Đột phá cắt giảm thủ tục hành chính</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <!-- /.social-section__grid -->
+
+        <!-- Social pagination dots (rendered by Swiper) -->
+        <div class="swiper-pagination" id="social-swiper-pagination"></div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.social-section -->
+  </div>
+  <!-- /.page-body -->
+  <div data-include="modules/footer.html"></div>
+  <!-- =====================================================================
        JAVASCRIPT
   ====================================================================== -->
-    <script src="js/home.js"></script>
-    <script src="js/common.js"></script>
-  </body>
+  <script src="js/home.js"></script>
+  <script src="js/common.js"></script>
+</body>
+
 </html>

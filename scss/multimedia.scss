@@ -14,10 +14,6 @@
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--space-lg);
-
-    @media (min-width: 1300px) {
-      padding: 0;
-    }
   }
 }
 
@@ -1043,53 +1039,6 @@
 
     svg {
       display: block;
-    }
-  }
-}
-
-// ── Responsive Layout (adaptive bottom panel HUD) ──
-@media (max-width: 991px) {
-  .cds-podcast-player {
-    flex-direction: column;
-    align-items: stretch;
-    padding: var(--space-lg);
-    gap: var(--space-md);
-    border-radius: 0; // span full width on small viewports
-    max-width: 100%;
-
-    &__cover {
-      width: 80px;
-      height: 80px;
-      align-self: center;
-    }
-
-    &__body {
-      padding: 0;
-      gap: var(--space-sm);
-    }
-
-    &__title {
-      font-size: var(--fs-md);
-      text-align: center;
-    }
-
-    &__controls {
-      justify-content: center;
-      gap: var(--space-sm);
-    }
-
-    &__pill {
-      height: 44px;
-
-      &--seek {
-        width: 100%;
-        order: -1; // Seekbar takes priority on top of other control pills
-      }
-    }
-
-    &__btn {
-      width: 44px;
-      height: 44px;
     }
   }
 }

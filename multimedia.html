@@ -2,10 +2,22 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
+    <script>
+      (function () {
+        var viewport = document.querySelector("meta[name=viewport]");
+        if (!viewport) {
+          viewport = document.createElement("meta");
+          viewport.name = "viewport";
+          document.head.appendChild(viewport);
+        }
+        if (screen.width >= 768) {
+          viewport.content = "width=1440";
+        } else {
+          viewport.content =
+            "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
+        }
+      })();
+    </script>
     <title>Nghe &amp; Xem – Multimedia | Chuyển Động Số</title>
     <meta
       name="description"
@@ -290,8 +302,16 @@
                         alt="Tham vọng xây trung tâm dữ liệu vũ trụ của Musk khó thành"
                         loading="lazy"
                       />
-                      <div class="mm-video__playlist-thumb-overlay" aria-hidden="true" style="display: none;"></div>
-                      <span class="mm-video__playlist-now-playing" aria-label="Đang phát" style="display: none;">
+                      <div
+                        class="mm-video__playlist-thumb-overlay"
+                        aria-hidden="true"
+                        style="display: none"
+                      ></div>
+                      <span
+                        class="mm-video__playlist-now-playing"
+                        aria-label="Đang phát"
+                        style="display: none"
+                      >
                         <svg
                           width="10"
                           height="12"
@@ -323,8 +343,16 @@
                         alt="Xiaomi Việt Nam lên tiếng về án phạt 290 triệu đồng"
                         loading="lazy"
                       />
-                      <div class="mm-video__playlist-thumb-overlay" aria-hidden="true" style="display: none;"></div>
-                      <span class="mm-video__playlist-now-playing" aria-label="Đang phát" style="display: none;">
+                      <div
+                        class="mm-video__playlist-thumb-overlay"
+                        aria-hidden="true"
+                        style="display: none"
+                      ></div>
+                      <span
+                        class="mm-video__playlist-now-playing"
+                        aria-label="Đang phát"
+                        style="display: none"
+                      >
                         <svg
                           width="10"
                           height="12"
@@ -356,8 +384,16 @@
                         alt="Loạt sản phẩm điểm nhấn tại Computex 2026"
                         loading="lazy"
                       />
-                      <div class="mm-video__playlist-thumb-overlay" aria-hidden="true" style="display: none;"></div>
-                      <span class="mm-video__playlist-now-playing" aria-label="Đang phát" style="display: none;">
+                      <div
+                        class="mm-video__playlist-thumb-overlay"
+                        aria-hidden="true"
+                        style="display: none"
+                      ></div>
+                      <span
+                        class="mm-video__playlist-now-playing"
+                        aria-label="Đang phát"
+                        style="display: none"
+                      >
                         <svg
                           width="10"
                           height="12"

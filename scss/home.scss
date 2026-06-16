@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0;
+  padding: 0 20px;
 
   &__title {
     font-family: var(--font-primary);
@@ -30,6 +31,10 @@
     line-height: 1;
     color: var(--text-primary-color);
     white-space: nowrap;
+
+    @media (max-width: 768px) {
+      font-size: 6vw;
+    }
   }
 
   &__title--uppercase {
@@ -245,12 +250,20 @@
   background: var(--bg-secondary-color);
   padding: var(--space-4xl) 0;
 
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
   .container {
     display: flex;
     gap: var(--space-lg);
     align-items: flex-start;
     max-width: var(--container-width);
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   // ── Featured Swiper (left) ──
@@ -259,6 +272,10 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     .swiper-pagination {
       position: relative;
@@ -312,6 +329,10 @@
       display: flex;
       flex-direction: column;
       gap: var(--space-md);
+
+      @media (max-width: 768px) {
+        padding: 20px;
+      }
     }
 
     .slide-meta {
@@ -336,6 +357,11 @@
         font-size: var(--fs-5xl);
         color: var(--color-white-100);
         line-height: 1.2;
+
+        @media (max-width: 768px) {
+          font-size: 5vw;
+          line-height: 1.5;
+        }
       }
     }
 
@@ -345,6 +371,10 @@
       font-size: var(--fs-lg);
       color: rgba(255, 255, 255, 0.8);
       line-height: 1.7;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 
@@ -450,6 +480,10 @@
       letter-spacing: 1.16px;
       line-height: 1;
       white-space: nowrap;
+
+      @media (max-width: 768px) {
+        font-size: 3vw;
+      }
     }
 
     .news-row {
@@ -476,18 +510,33 @@
         transition: color var(--transition-fast);
         text-decoration: none;
 
+        @media (max-width: 768px) {
+          font-size: 4vw;
+        }
+
         &:hover {
           opacity: 0.9;
         }
       }
     }
 
-    .news-thumb {
+    .news-thumb-wrap {
       width: 200px;
-      height: 125px;
+      aspect-ratio: 160 / 100;
       flex-shrink: 0;
       object-fit: cover;
       border-radius: var(--radius-lg);
+      overflow: hidden;
+
+      @media (max-width: 768px) {
+        width: 40%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
@@ -498,6 +547,10 @@
 
 .policy-section {
   padding: var(--space-4xl) 0;
+
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
 
   .container {
     max-width: var(--container-width);
@@ -519,17 +572,25 @@
   // Only set overflow so the track can scroll beyond the visible area.
   &__swiper-track {
     overflow: visible; // Swiper sets overflow on .swiper-wrapper itself
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
   }
 
   // Individual story card – Swiper reads the width from here for
   // slidesPerView:'auto'.  Do NOT use flex-shrink; Swiper handles it.
   &__card {
-    width: 365px !important; // !important overrides Swiper's 100% fallback
-    height: 544px;
+    width: 365px; // !important overrides Swiper's 100% fallback    
+    aspect-ratio: 365 / 544;
     border-radius: var(--radius-xl);
     overflow: hidden;
     position: relative;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      width: 60%;
+    }
 
     .card-img {
       position: absolute;
@@ -588,6 +649,11 @@
       visibility var(--transition-base);
 
     // When swiper has reached the edge, JS adds .hidden to disable the nav
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
     &.hidden {
       opacity: 0;
       visibility: hidden;
@@ -666,6 +732,10 @@
     margin: 20px auto 0;
     overflow: hidden;
 
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+
     &__thumb {
       position: absolute;
       top: 0;
@@ -689,6 +759,10 @@
   background: var(--bg-secondary-color);
   padding: var(--space-4xl) 0;
 
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
+
   .container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -696,6 +770,10 @@
     gap: var(--space-xl);
     align-items: flex-start;
     justify-content: flex-end;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   // ── Left: Tiêu điểm ──
@@ -706,13 +784,24 @@
     flex-direction: column;
     gap: var(--space-xl);
     align-self: stretch;
+
+    @media (max-width: 768px) {
+      padding-bottom: 30px;
+      border-bottom: 1px dashed var(--color-white-10);
+      ;
+    }
   }
 
   &__left-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     padding-right: 30px;
+
+    @media (max-width: 768px) {
+      padding-right: 0;
+
+    }
   }
 
   &__news-grid {
@@ -720,6 +809,10 @@
     gap: var(--space-xl);
     align-items: flex-start;
     flex: 1;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
   }
 
   // Small card (left in spotlight)
@@ -840,6 +933,10 @@
     align-self: stretch;
     border-left: var(--border-subtle-dashed);
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   // ── Right: Ấn phẩm ──
@@ -849,6 +946,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__pub-header {
@@ -872,6 +973,10 @@
     box-shadow: var(--shadow-stack-1);
     // overflow must be visible for Swiper cards effect to show stacked cards
     margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     .swiper-slide {
       width: 100%;
@@ -969,6 +1074,10 @@
 .category-section {
   padding: var(--space-4xl) 0;
 
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
+
   .container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -976,6 +1085,10 @@
     gap: var(--space-2xl);
     align-items: flex-start;
     justify-content: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   // Each category column
@@ -993,6 +1106,12 @@
     align-self: stretch;
     border-left: 1px dashed var(--color-white-10);
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px dashed var(--color-white-10);
+    }
   }
 
   &__col-header {
@@ -1115,7 +1234,7 @@
       font-weight: var(--font-weight-semibold);
       font-size: var(--fs-lg);
       color: var(--text-primary-color);
-      line-height: 1.4;
+      line-height: 1.5;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -1140,12 +1259,20 @@
   background: var(--bg-secondary-color);
   padding: var(--space-5xl) 0;
 
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+  }
+
   .container {
     max-width: var(--container-width);
     margin: 0 auto;
     display: flex;
     gap: var(--space-xl);
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
   }
 
   &__left {
@@ -1244,6 +1371,10 @@
     overflow: hidden;
     position: relative;
 
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
     .profile-photo-wrap {
       display: block;
       width: 100%;
@@ -1269,12 +1400,20 @@
   position: relative;
   z-index: 0;
 
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+
   .container {
     max-width: var(--container-width);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: var(--space-3xl);
+
+    @media (max-width: 768px) {
+      gap: 30px;
+    }
   }
 
   &__heading {
@@ -1290,6 +1429,10 @@
       color: var(--color-white-100);
       line-height: 1;
       white-space: nowrap;
+
+      @media (max-width: 768px) {
+        font-size: 8vw;
+      }
     }
   }
 
@@ -1308,6 +1451,11 @@
     overflow-x: auto;
     scrollbar-width: none;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 0 20px;
+    }
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -1319,6 +1467,10 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__video-swiper {
@@ -1335,6 +1487,10 @@
 
     .swiper-pagination {
       bottom: 20px;
+
+      @media (max-width: 768px) {
+        bottom: 10px;
+      }
     }
 
     .video-item {
@@ -1398,6 +1554,10 @@
       visibility: hidden;
       opacity: 0;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       &:hover {
         transform: translate(-50%, -50%) scale(1.08);
       }
@@ -1411,12 +1571,13 @@
 
     .video-bottom {
       position: absolute;
-      bottom: 60px;
+      bottom: 40px;
       left: 30px;
       right: 30px;
       display: flex;
       flex-direction: column;
       gap: var(--space-lg);
+
     }
 
     .video-title {
@@ -1426,6 +1587,10 @@
         font-size: var(--fs-3xl);
         color: var(--color-white-100);
         line-height: 1.3;
+
+        @media (max-width: 768px) {
+          font-size: 5vw;
+        }
       }
     }
 
@@ -1463,13 +1628,21 @@
     flex-direction: column;
     gap: var(--space-xl);
     justify-content: center;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__media-card {
     width: 400px;
-    height: 250px;
+    aspect-ratio: 400 / 250;
     position: relative;
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     .card-inner {
       position: absolute;
@@ -1530,6 +1703,10 @@
     // When used as a Swiper container
     &.swiper {
       overflow: hidden;
+
+      @media (max-width: 768px) {
+        padding: 0 20px;
+      }
     }
 
     .swiper-slide {
@@ -1574,6 +1751,15 @@
       align-items: center;
       gap: var(--space-lg);
 
+      @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 5px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+      }
+
       .caption-text {
         flex: 1;
         min-width: 0;
@@ -1584,6 +1770,10 @@
           font-size: 20.16px;
           color: var(--color-white-100);
           line-height: 1.5;
+
+          @media (max-width: 768px) {
+            font-size: 4vw;
+          }
         }
       }
     }
@@ -1661,6 +1851,10 @@
   padding: var(--space-4xl) 0;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+
   .container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -1678,6 +1872,10 @@
     // When used as a Swiper container
     &.swiper {
       overflow: hidden;
+
+      @media (max-width: 768px) {
+        padding: 0 20px;
+      }
     }
 
     .swiper-slide {
@@ -1787,181 +1985,5 @@
 
   .swiper-pagination {
     position: relative;
-  }
-}
-
-// ---------------------------------------------------------------------------
-// 12. RESPONSIVE STYLES
-// ---------------------------------------------------------------------------
-
-@media (max-width: 1300px) {
-  .top-featured {
-    .container {
-      padding: 0 var(--space-lg);
-    }
-
-    &__swiper {
-      width: 620px;
-    }
-  }
-
-  .policy-section .container,
-  .spotlight-section .container,
-  .category-section .container,
-  .profile-section .container,
-  .multimedia-section .container,
-  .social-section .container,
-  .site-footer__inner,
-  .site-header__top,
-  .site-nav__inner {
-    padding: 0 var(--space-lg);
-  }
-}
-
-@media (max-width: 1100px) {
-  .top-featured {
-    &__swiper {
-      width: 500px;
-    }
-
-    &__news-item .news-thumb {
-      width: 140px;
-      height: 90px;
-    }
-  }
-
-  .spotlight-section .container {
-    flex-wrap: wrap;
-  }
-
-  .spotlight-section__publication {
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .category-section .container {
-    flex-wrap: wrap;
-  }
-
-  .category-section__col {
-    min-width: calc(50% - var(--space-lg));
-  }
-
-  .category-section__col-divider {
-    display: none;
-  }
-}
-
-@media (max-width: 900px) {
-  .top-featured {
-    .container {
-      flex-direction: column;
-    }
-
-    &__swiper {
-      width: 100%;
-    }
-
-    // .swiper-slide is the Swiper-generated class on each article.top-featured__slide
-    &__slide .slide-title,
-    .swiper-slide .slide-title {
-      font-size: var(--fs-2xl);
-    }
-  }
-
-  .policy-section__swiper-track {
-    overflow: visible;
-  }
-
-  // Must use !important to override the desktop rule's !important
-  .policy-section__card {
-    width: 300px !important;
-    height: 420px;
-  }
-
-  .spotlight-section .container {
-    flex-direction: column;
-  }
-
-  .spotlight-section__news-grid {
-    flex-direction: column;
-  }
-
-  .multimedia-section__top-row {
-    flex-direction: column;
-  }
-
-  .multimedia-section__video-hero {
-    width: 100%;
-  }
-
-  .multimedia-section__side-cards {
-    flex-direction: row;
-  }
-
-  .multimedia-section__media-card {
-    width: 100%;
-    height: 200px;
-  }
-
-  .social-section__grid {
-    flex-wrap: wrap;
-  }
-
-  .social-section__card {
-    min-width: calc(50% - var(--space-sm));
-  }
-
-  .site-footer__inner {
-    flex-direction: column;
-    gap: var(--space-lg);
-    text-align: center;
-  }
-
-  .site-footer__links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .site-nav__inner {
-    gap: var(--space-lg);
-    padding: 15px var(--space-lg);
-  }
-
-  .site-nav__item span {
-    font-size: var(--fs-base);
-  }
-
-  .category-section .container {
-    flex-direction: column;
-  }
-
-  .category-section__col {
-    width: 100%;
-  }
-
-  .multimedia-section__gallery-row {
-    flex-direction: column;
-  }
-
-  .multimedia-section__gallery-item {
-    width: 100%;
-    aspect-ratio: 16/9;
-  }
-
-  .social-section__card {
-    min-width: 100%;
-  }
-
-  .profile-section .container {
-    flex-direction: column;
-  }
-
-  .profile-section__photo {
-    width: 100%;
-    height: 250px;
   }
 }

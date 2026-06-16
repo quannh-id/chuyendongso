@@ -33,7 +33,7 @@
   // ---------------------------------------------------------------------------
   // Constants
   // ---------------------------------------------------------------------------
-  var MOBILE_BP = 900; // px – matches the responsive breakpoint in home.scss
+  var MOBILE_BP = 768; // px – matches the responsive breakpoint in home.scss
 
   // ---------------------------------------------------------------------------
   // Module: Hero Swiper  (#hero-swiper)
@@ -105,7 +105,7 @@
   // slidesPerView:'auto' reads the slide CSS width; Swiper must NOT apply its
   // own flex/gap, so spaceBetween handles the gap instead of CSS gap.
   //
-  // On mobile (≤900px) the cards shrink via CSS, so we destroy and re-create
+  // On mobile (≤768px) the cards shrink via CSS, so we destroy and re-create
   // with updated spaceBetween on resize.
   // ---------------------------------------------------------------------------
   var policySwiperInstance = null;

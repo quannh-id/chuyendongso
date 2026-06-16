@@ -2,10 +2,22 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
+    <script>
+      (function () {
+        var viewport = document.querySelector("meta[name=viewport]");
+        if (!viewport) {
+          viewport = document.createElement("meta");
+          viewport.name = "viewport";
+          document.head.appendChild(viewport);
+        }
+        if (screen.width >= 768) {
+          viewport.content = "width=1440";
+        } else {
+          viewport.content =
+            "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
+        }
+      })();
+    </script>
     <title>Chính sách - Chuyển Động Số</title>
     <meta
       name="description"

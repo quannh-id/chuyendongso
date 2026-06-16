@@ -66,6 +66,13 @@ function initStickyHeader() {
   });
 
   const handleScroll = () => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      headerTop.classList.add("site-header__top--sticky");
+      header.classList.add("site-header--sticky");
+      return;
+    }
+
     const threshold = header.offsetTop + header.offsetHeight;
     if (window.scrollY > threshold) {
       headerTop.classList.add("site-header__top--sticky");
@@ -85,6 +92,7 @@ function initStickyHeader() {
   };
 
   window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", handleScroll);
   handleScroll();
 }
 

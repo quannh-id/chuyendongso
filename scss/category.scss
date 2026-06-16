@@ -11,6 +11,10 @@
   background: var(--bg-secondary-color);
   padding: var(--space-3xl) 0;
 
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
+
   .container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -24,6 +28,11 @@
     display: flex;
     align-items: center;
     gap: var(--space-lg);
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      row-gap: 10px;
+    }
   }
 
   &__title {
@@ -34,6 +43,12 @@
     line-height: 1;
     white-space: nowrap;
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      flex-grow: 1;
+      width: 100%;
+      margin-bottom: 10px;
+    }
   }
 
   // Thin vertical divider between title and sub-menu items
@@ -42,6 +57,12 @@
     height: 25px;
     background: var(--color-white-10);
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      &:first-of-type {
+        display: none;
+      }
+    }
   }
 
   // Sub-menu navigation item (clickable tab)
@@ -57,7 +78,7 @@
       font-family: var(--font-secondary);
       font-weight: var(--font-weight-regular);
       font-size: var(--fs-md);
-      color: var(--text-tertiary-color);
+      color: var(--text-secondary-color);
       white-space: nowrap;
       line-height: 1.5;
     }
@@ -85,6 +106,10 @@
     display: flex;
     gap: var(--space-xl);
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   // Dashed vertical separator between grid columns
@@ -93,6 +118,12 @@
     align-self: stretch;
     border-left: var(--border-subtle-dashed);
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 1px;
+      border-bottom: var(--border-subtle-dashed);
+    }
   }
 
   // ── Col 1: Large featured card (image + title + excerpt) ──
@@ -158,6 +189,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__mid-img {
@@ -214,6 +249,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   // Reusable news item within narrow columns
@@ -272,6 +311,10 @@
 .cat-body {
   padding: var(--space-3xl) 0;
 
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+
   .container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -284,6 +327,10 @@
     display: flex;
     gap: var(--space-xl);
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
   }
 
   // ── Left column: news list ──
@@ -294,6 +341,12 @@
     flex-direction: column;
     align-items: center;
     gap: var(--space-xl);
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 
   // Dashed vertical separator between left / right cols
@@ -302,6 +355,13 @@
     align-self: stretch;
     border-left: var(--border-subtle-dashed);
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: calc(100% - 40px);
+      height: 1px;
+      border-bottom: var(--border-subtle-dashed);
+      margin: 0 auto;
+    }
   }
 
   // ── Right column: sidebar ──
@@ -311,6 +371,14 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
+
+    @media (max-width: 768px) {
+      width: 100%;
+      flex-direction: row;
+      overflow-x: scroll;
+      padding: 0 20px;
+      gap: 15px;
+    }
   }
 
   // ── News list: repeating news-item rows ──
@@ -329,6 +397,10 @@
     padding-bottom: var(--space-xl);
     border-bottom: 1px solid var(--color-white-10);
     margin-bottom: var(--space-xl);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__news-title {
@@ -338,7 +410,6 @@
       font-size: var(--fs-xl);
       color: var(--text-primary-color);
       line-height: 1.4;
-      letter-spacing: -0.05em;
       text-decoration: none;
       cursor: pointer;
       transition: opacity var(--transition-fast);
@@ -354,15 +425,23 @@
     display: flex;
     gap: var(--space-lg);
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+      gap: 15px;
+    }
   }
 
   &__news-thumb {
     width: 200px;
-    height: 125px;
+    aspect-ratio: 160 / 100;
     flex-shrink: 0;
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      width: 50%;
+    }
 
     img {
       position: absolute;
@@ -379,7 +458,7 @@
     font-family: var(--font-secondary);
     font-weight: var(--font-weight-regular);
     font-size: var(--fs-base);
-    color: var(--text-tertiary-color);
+    color: var(--text-secondary-color);
     line-height: 1.5;
   }
 
@@ -437,6 +516,14 @@
   gap: var(--space-xl);
   width: 100%;
 
+  @media (max-width: 768px) {
+    padding: 20px;
+    gap: 20px;
+    width: 75vw;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
   // ── Card header: sub-category title + arrow icon ──
   &__header {
     display: flex;
@@ -485,6 +572,10 @@
     display: flex;
     gap: var(--space-lg);
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   // Featured news item with thumbnail
@@ -500,15 +591,23 @@
     display: flex;
     gap: var(--space-md);
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &__featured-thumb {
     width: 170px;
-    height: 106px;
+    aspect-ratio: 160 / 100;
     flex-shrink: 0;
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     img {
       position: absolute;
@@ -561,6 +660,12 @@
     align-self: stretch;
     border-left: var(--border-subtle-dashed);
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 1px;
+      border-bottom: var(--border-subtle-dashed);
+    }
   }
 
   // Bullet link list (right side of card body)
@@ -570,6 +675,11 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
+
+    @media (max-width: 768px) {
+      width: 100%;
+      gap: 10px;
+    }
   }
 
   &__list-item {
